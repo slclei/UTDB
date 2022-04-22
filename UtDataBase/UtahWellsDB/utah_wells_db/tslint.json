@@ -1,0 +1,21 @@
+{
+    "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+    "linterOptions": {
+        "exclude": [
+            "config/**/*.js",
+            "node_modules/**/*.ts"
+        ]
+    },
+    "rules": {
+        "jsx-no-lambda": [false],
+        "no-console": [false],
+        "variable-name": {
+            "options": [
+                "allow-pascal-case",
+                "allow-leading-underscore",
+                "allow-snake-case",
+                "allow-trailing-underscore"
+            ]
+        }
+    }
+}

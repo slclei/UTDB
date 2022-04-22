@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.00bc86fd.css",
+    "main.js": "/static/js/main.eed98bcc.js",
+    "static/js/787.ae742df7.chunk.js": "/static/js/787.ae742df7.chunk.js",
+    "static/media/wellsut.geojson": "/static/media/wellsut.e026edd547214a7e7b7b.geojson",
+    "index.html": "/index.html",
+    "main.00bc86fd.css.map": "/static/css/main.00bc86fd.css.map",
+    "main.eed98bcc.js.map": "/static/js/main.eed98bcc.js.map",
+    "787.ae742df7.chunk.js.map": "/static/js/787.ae742df7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00bc86fd.css",
+    "static/js/main.eed98bcc.js"
+  ]
+}

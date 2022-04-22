@@ -1,0 +1,5 @@
+npx create-react-app mapbox-project
+cd mapbox-project
+npm install react-mapbox-gl mapbox-gl react-mapbox-gl-geocoder --save
+npm start
+npm install @arcgis/core
