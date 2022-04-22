@@ -1,0 +1,17 @@
+“Wells” in the name might be too specific. You could go with “CCS” in the name or similar
+Name can be changed anytime.
+
+I bet we could get a mapping instance on the UGRC: https://gis.utah.gov
+I will use APIs from Mapbox and UGRC for interactive mapping.
+
+We may want to consider a database instance on Amazon’s AWS.
+This depends on where we would like users to visit the database.
+
+The database contains "raw” data from the various sources in the state (DOGM, UGS, DEQ, UGRC, etc). But it also should contain “interpreted” data from our group and the UGS (e.g. porosity values from logs, faults at depth from seismic, more accurate tops data, etc). Beyond that, will it also contain derived data such as CO2 capacity/injectivity? I think it should, but then we need to consider how that data will be discretized (area, depth).
+Besides raw data from current database, other data can also be added to the database as feature data, and displayed in the map as feature layer. It is also possible to derive a new data type from several types of feature data.
+
+Presumably database client software will be allowed access from outside hosts?
+User can visit the database with a browser at any device that can be connected to the host.
+
+Will the UtahWellsDB store other data/layers needed for CCS feasibility assessments, such as land ownership, rights of way, other CO2 sources, etc or will that be pulled from other databases?
+Both data sources work for the database. I will pull data from current databases first. If we need to add custmoized data for our project, we can add data to the database, without changing anything in the system. We can also set different permisson level to each data/layers for users.

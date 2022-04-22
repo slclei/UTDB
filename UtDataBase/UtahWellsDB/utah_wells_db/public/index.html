@@ -22,6 +22,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -170,7 +171,6 @@
                                                     <i style="cursor:pointer;" id="xyIcon" class="material-icons" onclick=" $(this).hide(); $('#xyHideIcon').show(); $('#xyPopoverTemplate').show();" uib-tooltip="Center by X, Y or Latitude, Longitude">my_location</i>
                                                     <i class="material-icons" style="cursor:pointer;display:none;" id="xyHideIcon" onclick="$(this).hide(); $('#xyIcon').show(); $('#xyPopoverTemplate').hide();" uib-tooltip="Center by X, Y or Latitude, Longitude">my_location</i>
                                                 </div>
-                                                <img id="inactiveXYIcon" src="images/assets/xyIconInactive.png" style="display:none;">
                                             </td>
                                             <td style="padding:10px 5px;">
                                                 <div id="pointSelectDiv">
@@ -190,61 +190,49 @@
                                             <td style="padding:10px 5px;">
                                                 <i id="inactivePolygonSelectIcon" class="material-icons" style="display:none;">polyline</i>
                                                 <div id="polygonSelectDiv">
-                                                    <i id="activePolygonSelectIcon" style="cursor:pointer;" class="material-icons" onclick="resetSelectIcons(); $(this).hide(); $('#deactivatePolygonSelectIcon').show(); arby.activateSelectControl($('#cboActiveLayer').val(), 'polySelectControl'); setTooltip(false);"
+                                                    <i id="activePolygonSelectIcon" style="cursor:pointer; opacity: 0.5;" class="material-icons" onclick="resetSelectIcons(); $(this).hide(); $('#deactivatePolygonSelectIcon').show(); arby.activateSelectControl($('#cboActiveLayer').val(), 'polySelectControl'); setTooltip(false);"
                                                         uib-tooltip="Select Wells by Polygon">polyline</i>
                                                     <i id="deactivatePolygonSelectIcon" style="cursor:pointer;display:none;" class="material-icons" onclick="$(this).hide(); $('#activePolygonSelectIcon').show(); arby.deactivateSelectControl('polySelectControl'); setTooltip(toolTip);" uib-tooltip="Select Wells by Polygon">polyline</i>
                                                 </div>
                                             </td>
                                             <td id="bufferIconDiv" style="padding:10px 5px;">
                                                 <div id="bufferSelectDiv">
-                                                    <i style="cursor:pointer;" id="bufferIcon" class="material-icons" onclick=" $(this).hide(); $('#bufferHideIcon').show(); $('#bufferPopoverTemplate').show();" uib-tooltip="Buffer Selection">radio_button_checked</i>
+                                                    <i style="cursor:pointer;opacity: 0.5;" id="bufferIcon" class="material-icons" onclick=" $(this).hide(); $('#bufferHideIcon').show(); $('#bufferPopoverTemplate').show();" uib-tooltip="Buffer Selection">radio_button_checked</i>
                                                     <i style="cursor:pointer;display:none;" id="bufferHideIcon" class="material-icons" onclick="$(this).hide(); $('#bufferIcon').show(); $('#bufferPopoverTemplate').hide();" uib-tooltip="Buffer Selection">radio_button_checked</i>
                                                 </div>
                                             </td>
                                             <td style="padding:10px 5px;">
-                                                <img id="activeMapClearIcon" style="cursor:pointer;" src="images/assets/clearIcon.png" onclick="arby.clearSelection(); markerLayer.getSource().clear(); wellFilter.getSource().clear();" uib-tooltip="Clear Selection">
-                                                <img id="inactiveMapClearIcon" src="images/assets/clearIconInactive.png" style="display:none;" uib-tooltip="Clear Selection">
+                                                <i id="activeMapClearIcon" style="cursor:pointer;" class="material-icons" onclick="arby.clearSelection(); markerLayer.getSource().clear(); wellFilter.getSource().clear();" uib-tooltip="Clear Selection">clear</i>
+                                                <i id="inactiveMapClearIcon" class="material-icons" style="display:none;" uib-tooltip="Clear Selection">clear</i>
                                             </td>
                                             <td style="padding:10px 5px;">
-                                                <img id="inactiveMeasureDistanceIcon" src="images/assets/measureDistanceIconInactive.png" style="display:none;">
                                                 <div id="measureDistanceDiv">
-                                                    <img id="activeMeasureDistanceIcon" style="cursor:pointer;" src="images/assets/measureDistanceIconInactive.png" onclick="resetSelectIcons(); $(this).hide(); $('#deactivateMeasureDistanceIcon').show(); arby.activateControl('measureDistanceControl'); $('#distanceUnitDiv').show(); setTooltip(false);"
-                                                        uib-tooltip="Measure Distance">
-                                                    <img id="deactivateMeasureDistanceIcon" style="cursor:pointer;display:none;" src="images/assets/measureDistanceIcon.png" onclick="$(this).hide(); $('#activeMeasureDistanceIcon').show(); arby.deactivateSelectControl('measureDistanceControl'); $('#distanceUnitDiv').hide(); setTooltip(toolTip);"
-                                                        uib-tooltip="Measure Distance">
+                                                    <i id="activeMeasureDistanceIcon" style="cursor:pointer;" class="material-icons" onclick="resetSelectIcons(); $(this).hide(); $('#deactivateMeasureDistanceIcon').show(); arby.activateControl('measureDistanceControl'); $('#distanceUnitDiv').show(); setTooltip(false);"
+                                                        uib-tooltip="Measure Distance">straighten</i>
+                                                    <i id="deactivateMeasureDistanceIcon" style="cursor:pointer;display:none;" class="material-icons" onclick="$(this).hide(); $('#activeMeasureDistanceIcon').show(); arby.deactivateSelectControl('measureDistanceControl'); $('#distanceUnitDiv').hide(); setTooltip(toolTip);"
+                                                        uib-tooltip="Measure Distance">straighten</i>
                                                 </div>
                                             </td>
                                             <td style="padding:10px 5px;">
-                                                <img id="inactiveMeasureAreaIcon" src="images/assets/measureAreaIconInactive.png" style="display:none;">
                                                 <div id="measureAreaDiv">
-                                                    <img id="activeMeasureAreaIcon" style="cursor:pointer;" src="images/assets/measureAreaIconInactive.png" onclick="resetSelectIcons(); $(this).hide(); $('#deactivateMeasureAreaIcon').show(); arby.activateControl('measureAreaControl'); $('#areaUnitDiv').show(); setTooltip(false);"
-                                                        uib-tooltip="Measure Area">
-                                                    <img id="deactivateMeasureAreaIcon" style="cursor:pointer;display:none;" src="images/assets/measureAreaIcon.png" onclick="$(this).hide(); $('#activeMeasureAreaIcon').show(); arby.deactivateSelectControl('measureAreaControl'); $('#areaUnitDiv').hide(); setTooltip(toolTip);"
-                                                        uib-tooltip="Measure Area">
+                                                    <i id="activeMeasureAreaIcon" style="cursor:pointer;" class="material-icons" onclick="resetSelectIcons(); $(this).hide(); $('#deactivateMeasureAreaIcon').show(); arby.activateControl('measureAreaControl'); $('#areaUnitDiv').show(); setTooltip(false);"
+                                                        uib-tooltip="Measure Area">area_chart</i>
+                                                    <i id="deactivateMeasureAreaIcon" style="cursor:pointer;display:none;" class="material-icons" onclick="$(this).hide(); $('#activeMeasureAreaIcon').show(); arby.deactivateSelectControl('measureAreaControl'); $('#areaUnitDiv').hide(); setTooltip(toolTip);"
+                                                        uib-tooltip="Measure Area">area_chart</i>
                                                 </div>
                                             </td>
                                             <td id="printIconDiv" style="padding:10px 5px;">
-                                                <img id="inactivePrintIcon" src="images/assets/printIconInactive.png" style="display:none;">
                                                 <div id="printSelectDiv">
-                                                    <img style="cursor:pointer;" id="printIcon" src="images/assets/printIcon.png" onclick=" $(this).hide(); $('#printHideIcon').show(); $('#printPopoverTemplate').show(); printDialog(); setTooltip(false);" uib-tooltip="Print Map">
-                                                    <img style="cursor:pointer; display:none;" id="printHideIcon" src="images/assets/printIcon.png" onclick="$('#printHideIcon').hide(); $('#printIcon').show(); $('#printPopoverTemplate').hide(); setTooltip(toolTip);" uib-tooltip="Print Map">
-                                                </div>
-                                            </td>
-                                            <td style="padding:10px 5px;">
-                                                <img id="inactiveSummaryInfoIcon" src="images/assets/summaryInfoIconInactive.png" style="display:none;">
-                                                <div id="tooltipSelectDiv">
-                                                    <img src="images/assets/summaryInfoIconInactive.png" style="display:none;" onclick="$(this).hide(); $('#activeSummaryInfoIcon').show(); toolTip = true; setTooltip(true);" uib-tooltip="Show Tooltip">
-                                                    <img id="activeSummaryInfoIcon" style="cursor:pointer;" src="images/assets/summaryInfoIcon.png" onclick="$(this).hide(); $(this).prev('img').show(); toolTip = false; setTooltip(false);" uib-tooltip="Hide Tooltip">
+                                                    <i style="cursor:pointer;" id="printIcon" class="material-icons" onclick=" $(this).hide(); $('#printHideIcon').show(); $('#printPopoverTemplate').show(); printDialog(); setTooltip(false);" uib-tooltip="Print Map">print</i>
+                                                    <i style="cursor:pointer; display:none;" id="printHideIcon" class="material-icons" onclick="$('#printHideIcon').hide(); $('#printIcon').show(); $('#printPopoverTemplate').hide(); setTooltip(toolTip);" uib-tooltip="Print Map">print</i>
                                                 </div>
                                             </td>
                                             <td id="layerIconDiv" style="padding:10px 10px 10px 5px;">
                                                 <div id="layerSelectDiv">
-                                                    <img id="layersIcon" style="cursor:pointer;" src="images/assets/layersIcon.png" onclick=" $(this).hide(); $('#layersHideIcon').show(); $('#layersPopoverTemplate').show(); $('#cboActiveLayer_chosen').show(); layersExpanded = true;" uib-tooltip="Layers"
-                                                        tooltip-placement="top-right">
-                                                    <img id="layersHideIcon" style="cursor:pointer;display:none; " src="images/assets/layersIcon.png" onclick="$(this).hide(); $('#layersIcon').show(); $('#layersPopoverTemplate').hide(); $('#cboActiveLayer_chosen').show(); layersExpanded = false;" uib-tooltip="Layers"
-                                                        tooltip-placement="top-right">
+                                                    <i id="layersIcon" style="cursor:pointer;" class="material-icons" onclick=" $(this).hide(); $('#layersHideIcon').show(); $('#layersPopoverTemplate').show(); $('#cboActiveLayer_chosen').show(); layersExpanded = true;" uib-tooltip="Layers" tooltip-placement="top-right">layers</i>
+                                                    <i id="layersHideIcon" style="cursor:pointer;display:none; " class="material-icons" onclick="$(this).hide(); $('#layersIcon').show(); $('#layersPopoverTemplate').hide(); $('#cboActiveLayer_chosen').show(); layersExpanded = false;" uib-tooltip="Layers"
+                                                        tooltip-placement="top-right">layers</i>
                                                 </div>
-                                                <img id="inactiveLayersIcon" src="images/assets/layersIconInactive.png" style="display:none;">
                                             </td>
                                         </tr>
                                     </tbody>
