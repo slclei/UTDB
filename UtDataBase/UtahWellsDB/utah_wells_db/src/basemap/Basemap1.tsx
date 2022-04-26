@@ -6,7 +6,7 @@ import welldata from '../data/wellsut.json';
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2xjbGVpIiwiYSI6ImNsMXV6czRnYjJkbnQzZG1qMHRxeGd0YmoifQ.mvtESpI1GCIdTrWSupNEIw';
 
-export default function wellmap() {
+export default function Wellmap() {
   const mapContainer = useRef(null);
   const [lng, setLong] = useState(-111.6);
   const [lat, setLat] = useState(39.2);
@@ -45,15 +45,15 @@ export default function wellmap() {
             map.on('move', () => {
                 const { lng, lat } = map.getCenter();
 
-                setLong(4);
-                setLat(4);
-                setZoom(3);
+                setLong(lng+4);
+                setLat(lat+4);
+                setZoom(zoom+2);
             });
 
         });
         }, []);
 
-  return (
+    return (
       <div className="mainpage">
         <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
