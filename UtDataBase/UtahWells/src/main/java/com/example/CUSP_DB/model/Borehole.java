@@ -11,7 +11,7 @@ import java.util.PrimitiveIterator;
 public class Borehole {
     @Id
     @Column(name="API")
-    private Long API;
+    private String API;
 
     @Column(name="Wellname")
     private String WellName;
@@ -189,7 +189,7 @@ public class Borehole {
     public Borehole() {
     }
 
-    public Borehole(Long API,String wellName) {
+    public Borehole(String API,String wellName) {
         this.WellName=wellName;
         this.API = API;
     }
@@ -198,7 +198,7 @@ public class Borehole {
         WellName = wellName;
     }
 
-    public Borehole(Long API, String wellname, String operator, Long operatorNo, String fieldName, Long groundElev, Long kellyElev, Long drkFloorElev, Float latitude, Float longitude, Long coordsSurfN, Long coordsSurfE, Integer UTM, Long footageNS, String dirNS, Long footageEW, String dirEW, String qtrQtr, Integer section, Integer township, String townshipDir, Integer range, String rangeDir, String meridian, String county, String dirHoriz, String dirVert, String dirDirect, String surfaceOwner, String indianTribe, String confidential, Date confRelDate, String leaseNumber, String leaseType, Date abandonDate, String wellStatus, String wellType, Long totCumOil, Long totCumGas, Long totCumWater, Long multiLats, String origianlField, String unitName, String GISStatusType, Date origComplDate, String jurisdiction, Long TDSNavajo, Long TDSWingate, Long reportsID, Long formationTopDepths, Long thickness, String netSand, String netPay, String extent) {
+    public Borehole(String API, String wellname, String operator, Long operatorNo, String fieldName, Long groundElev, Long kellyElev, Long drkFloorElev, Float latitude, Float longitude, Long coordsSurfN, Long coordsSurfE, Integer UTM, Long footageNS, String dirNS, Long footageEW, String dirEW, String qtrQtr, Integer section, Integer township, String townshipDir, Integer range, String rangeDir, String meridian, String county, String dirHoriz, String dirVert, String dirDirect, String surfaceOwner, String indianTribe, String confidential, Date confRelDate, String leaseNumber, String leaseType, Date abandonDate, String wellStatus, String wellType, Long totCumOil, Long totCumGas, Long totCumWater, Long multiLats, String origianlField, String unitName, String GISStatusType, Date origComplDate, String jurisdiction, Long TDSNavajo, Long TDSWingate, Long reportsID, Long formationTopDepths, Long thickness, String netSand, String netPay, String extent) {
         this.API = API;
         WellName = wellname;
         Operator = operator;
@@ -255,7 +255,7 @@ public class Borehole {
         Extent = extent;
     }
 
-    public Long getAPI() {
+    public String getAPI() {
         return this.API;
     }
 
@@ -263,7 +263,7 @@ public class Borehole {
         return WellName;
     }
 
-    public void setAPI(Long API) {
+    public void setAPI(String API) {
         this.API = API;
     }
 

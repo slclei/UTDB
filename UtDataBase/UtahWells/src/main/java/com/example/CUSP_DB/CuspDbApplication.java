@@ -17,7 +17,7 @@ public class CuspDbApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/api/boreholes").allowedOrigins("http://localhost:8081");
+				registry.addMapping("/boreholes").allowedOrigins("http://localhost:8081");
 			}
 		};
 	}

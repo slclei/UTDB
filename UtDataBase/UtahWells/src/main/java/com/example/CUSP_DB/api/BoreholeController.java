@@ -1,5 +1,6 @@
 package com.example.CUSP_DB.api;
 
+import com.example.CUSP_DB.dao.BoreholeDao;
 import com.example.CUSP_DB.exceptions.BoreholeEmptyNameException;
 import com.example.CUSP_DB.model.Borehole;
 import com.example.CUSP_DB.service.BoreholeService;
@@ -13,10 +14,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.support.MissingServletRequestPartException;
 
 import java.util.List;
+import java.util.Optional;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin
 @RestController
-@RequestMapping("boreholes")
+@RequestMapping("/api")
 public class BoreholeController {
 
     private BoreholeService boreholeService;
@@ -28,7 +30,18 @@ public class BoreholeController {
         this.excelService=excelService;
     }
 
-    @GetMapping
+    @GetMapping("/boreholes/{id}")
+    public ResponseEntity<Borehole> getBorehoelsByAPI(@PathVariable("id") Long id){
+        Optional<Borehole> borehole = boreholeService.getBoreholeById(id);
+
+        if (borehole.isPresent()) {
+            return new ResponseEntity<>(borehole.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/boreholes")
     public List<Borehole> getAllBorehoels(){
         return boreholeService.getAllBoreholes();
     }

@@ -44,7 +44,7 @@ public class HttpParse {
         String api=elements.get(0).text().replaceAll("-","");
 
         System.out.println(api);
-        borehole.setAPI(Long.valueOf(api));
+        borehole.setAPI(Long.valueOf(api).toString());
 
         if (borehole.getAPI()==null){
             throw new BoreholeNonExistException("Cannot find well API.");

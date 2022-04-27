@@ -102,7 +102,7 @@ public class readExcel {
         //TODO add empty string or NA string avoiding
         //set value to result
         //   this.API = API;
-        result.setAPI(Long.valueOf(thisRow[nameNo.get("api")]));
+        result.setAPI(Long.valueOf(thisRow[nameNo.get("api")]).toString());
         //    WellName = wellName;
         result.setWellName((thisRow[nameNo.get("wellname")]));
         //    Operator = operator;

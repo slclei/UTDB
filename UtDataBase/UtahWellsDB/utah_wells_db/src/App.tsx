@@ -17,7 +17,7 @@ class App extends React.Component {
           </Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link to={"/boreholes"} className="nav-link">
+              <Link to={"/boreholes/4304120208"} className="nav-link">
                 boreholes
               </Link>
             </li>
@@ -30,7 +30,7 @@ class App extends React.Component {
         </nav>
                 <div>
                 <Routes>
-                    <Route path="/boreholes" element={<Boreholes/>}/>
+                    <Route path="/boreholes/4304120208" element={<Boreholes/>}/>
                 </Routes>
                 </div>
             </div>

@@ -45,7 +45,7 @@ public class BoreholeService {
     }
 
     public Optional<Borehole> getBoreholeById(Long API){
-        return boreholeDao.findById(API);
+        return boreholeDao.findById(API.toString());
     }
 
     public int insert(long first, long end) throws IOException {
