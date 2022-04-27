@@ -1,12 +1,40 @@
 import * as React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import {Routes, Route, Link} from "react-router-dom";
+import Boreholes from "./elements/WellsList";
 
 import './App.css';
 import Map from './basemap/Basemap1';
 
 class App extends React.Component {
     public render() {
-        return <Map />;
+        //return <Map />;
+        return (
+            <div>
+                 <nav className="navbar navbar-expand navbar-dark bg-dark">
+          <Link to={"/boreholes"} className="navbar-brand">
+            bezKoder
+          </Link>
+          <div className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link to={"/boreholes"} className="nav-link">
+                boreholes
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/add"} className="nav-link">
+                Add
+              </Link>
+            </li>
+          </div>
+        </nav>
+                <div>
+                <Routes>
+                    <Route path="/boreholes" element={<Boreholes/>}/>
+                </Routes>
+                </div>
+            </div>
+        );
     }
 }
 
