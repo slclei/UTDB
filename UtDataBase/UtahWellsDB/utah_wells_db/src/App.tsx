@@ -2,13 +2,19 @@ import * as React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Routes, Route, Link} from "react-router-dom";
 import Boreholes from "./elements/WellsList";
+import {Layout} from "./layout/Layout";
 
 import './App.css';
 import Map from './basemap/Basemap1';
 
 class App extends React.Component {
     public render() {
-        return <Map />;
+        return (
+        <div className="well-map-wrapper">
+            <Layout>
+                <Map />
+            </Layout>
+        </div>);
         /*
         return (
             <div>

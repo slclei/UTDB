@@ -1,13 +1,16 @@
+import welldata from "./wellsut.json";
+import salinegriddata from "./salineGridUT.json";
+
 const WellUT={
     id: "wellsInUT",
     type: "geojson",
-    data: "./wellsut.geojson",
+    data: welldata,
 }
 
 const SalineGridUT={
     id: "salineGridInUT",
     type: "geojson",
-    data: "./salineGridUT.geojson",
+    data: salinegriddata,
 }
 
 const WellUTLayer = {
