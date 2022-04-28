@@ -8,7 +8,8 @@ import Map from './basemap/Basemap1';
 
 class App extends React.Component {
     public render() {
-        //return <Map />;
+        return <Map />;
+        /*
         return (
             <div>
                  <nav className="navbar navbar-expand navbar-dark bg-dark">
@@ -34,7 +35,7 @@ class App extends React.Component {
                 </Routes>
                 </div>
             </div>
-        );
+        );*/
     }
 }
 
