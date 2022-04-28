@@ -1,6 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
-import welldata from '../data/wellsut.json';
+import {useMap} from '../useMap/useMap';
+import "mapbox-gl/dist/mapbox-gl.css";
+import s from "./Map.module.css";
+import {LayerControl} from "../layerControl/LayerControl";
 //import {Source} from "react-map-gl";
 //import Layer from "react-mapbox-gl/lib-esm/layer"; // eslint-disable-line import/no-webpack-loader-syntax
 
@@ -13,54 +16,15 @@ export default function Wellmap() {
   const [zoom, setZoom] = useState(6);
   const [height,setHight]=useState(1500);
 
-    useEffect(() => {
-        let map = new mapboxgl.Map({
-            container: mapContainer.current ?? '',
-            style: 'mapbox://styles/mapbox/outdoors-v11',
-            center: [lng, lat],
-             zoom: zoom
-        });
+  const { layers, map, updateLayerVisibility } = useMap(mapContainer, {
+    style: "mapbox://styles/mapbox/outdoors-v11",
+    center: [lng,lat],
+    zoom: zoom,
+  });
 
-        map.addControl(new mapboxgl.NavigationControl());
-
-        map.once("load", function () {
-            map.addSource('well-source', {
-                'type': 'geojson',
-                'data': welldata
-            });
-
-            map.addLayer({
-                'id': 'well-layer',
-                'type': 'circle',
-                'source': 'well-source',
-                'layout': {},
-                'paint': {
-                    'circle-radius': 4,
-                    'circle-stroke-width': 2,
-                    'circle-color': 'black',
-                    'circle-stroke-color': 'white'
-                }
-            });
-
-            map.on('move', () => {
-                const { lng, lat } = map.getCenter();
-
-                setLong(lng+4);
-                setLat(lat+4);
-                setZoom(zoom+2);
-            });
-
-        });
-        }, []);
-
-    return (
-      <div className="mainpage">
-        <div className="sidebar">
-          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-        </div>
-          <div className="well-map-wrapper">
-                  <div ref={mapContainer} />
-          </div>
-      </div>
+  return (
+    <div id="map" className={s.map} ref={mapContainer}>
+      <LayerControl layers={layers} onToggle={updateLayerVisibility} />
+    </div>
   );
 }
