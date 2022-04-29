@@ -5,7 +5,7 @@ import Boreholes from "./elements/WellsList";
 import {Layout} from "./layout/Layout";
 
 import './App.css';
-import Map from './basemap/Basemap1';
+import Map from './basemap/Basemap';
 
 class App extends React.Component {
     public render() {

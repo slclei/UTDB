@@ -1,5 +1,5 @@
 import welldata from "./wellsut.json";
-import salinegriddata from "./salineGridUT.json";
+import salinedata from "./salineUT.json";
 
 const WellUT={
     id: "wellsInUT",
@@ -7,10 +7,10 @@ const WellUT={
     data: welldata,
 }
 
-const SalineGridUT={
-    id: "salineGridInUT",
+const SalineUT={
+    id: "salineInUT",
     type: "geojson",
-    data: salinegriddata,
+    data: salinedata,
 }
 
 const WellUTLayer = {
@@ -27,11 +27,11 @@ const WellUTLayer = {
     },
   };
 
-const AvalanchePathsLayer = {
-    id: "salineGridInUTLayer",
-    name: "Saline grid in UT",
+const SalineUTLayer = {
+    id: "salineInUTLayer",
+    name: "Saline in UT",
     type: "fill",
-    source: "salineGridInUT",
+    source: "salineInUT",
     paint: {
       "fill-opacity": 0.5,
       "fill-color": "#f05c5c",
@@ -43,10 +43,10 @@ const AvalanchePathsLayer = {
 
   export const Sources=[
       WellUT,
-      SalineGridUT,
+      SalineUT,
   ];
 
   export const Layers=[
     WellUTLayer,
-    AvalanchePathsLayer,
+    SalineUTLayer,
   ];
