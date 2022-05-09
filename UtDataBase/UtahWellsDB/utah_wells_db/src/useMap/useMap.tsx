@@ -6,16 +6,10 @@ import ReactDOM from "react-dom";
 
 const Popup = ({ featureName, featureNumber, field, type }: { featureName: any, featureNumber: any, field: any, type: any }) => (
   <div className="popup">
-    <h3 className="feature-name">{featureName}</h3>
-    <div className="feature-metric-row">
-      <h4 className="row-title">feature #</h4>
-      <div className="row-value">{featureNumber}</div>
-    </div>
-    <div className="feature-metric-row">
-      <h4 className="row-title">feature Type</h4>
-      <div className="row-value">{type}</div>
-    </div>
-    <p className="feature-field">Serves {field}</p>
+    <p className="popField">WellName: {featureName}</p>
+    <p className="popField">API: {featureNumber}</p>
+    <p className="popField">WellType: {type}</p>
+    <p className="popField">FieldName: {field}</p>
   </div>
 );
 
@@ -107,31 +101,40 @@ export const useMap = (ref: any, mapConfig: any) => {
            */
           //build  a Popup component used to render a map popup with information for chosen feature
                     
-          map.on("click", (e: { point: any; lngLat: any; }) => {
-            const features = map.queryRenderedFeatures(e.point, {
-              layers: ["wellsInUTLayer"],
-            });
-            if (features.length > 0) {
-              const feature = features[0];
-              {
-                // create popup node
-                const popupNode = document.createElement("div");
-                ReactDOM.render(
-                  <Popup
-                    featureName={feature?.properties?.wellname}
-                    featureNumber={feature?.properties?.api}
-                    field={feature?.properties?.fieldname}
-                    type={feature?.properties?.welltype}
-                  />,
-                  popupNode
-                );
-                popUpRef.current
-                  .setLngLat(e.lngLat)
-                  .setDOMContent(popupNode)
-                  .addTo(map);
-              }
+        map.on("click", (e: { point: any; lngLat: any; }) => {
+          const features = map.queryRenderedFeatures(e.point, {
+            layers: ["wellsInUTLayer"],
+          });
+          if (features.length > 0) {
+            const feature = features[0];
+            {
+              // create popup node
+              const popupNode = document.createElement("div");
+              ReactDOM.render(
+                <Popup
+                  featureName={feature?.properties?.wellname}
+                  featureNumber={feature?.properties?.api}
+                  field={feature?.properties?.fieldname}
+                  type={feature?.properties?.welltype}
+                />,
+                popupNode
+              );
+              popUpRef.current
+                .setLngLat(e.lngLat)
+                .setDOMContent(popupNode)
+                .addTo(map);
             }
-    });
+          }
+        });
+        // Change the cursor to a pointer when the mouse is over the places layer.
+        map.on('mouseenter', "wellsInUTLayer", () => {
+          map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', "wellsInUTLayer", () => {
+          map.getCanvas().style.cursor = '';
+        });
       }
       if (shouldLoadData) {
         loadData();

@@ -43,9 +43,23 @@ code {
 }
 
 .siteHeaderRect {
-    height: 100px;
+    height: 40px;
     width: 100%;
     margin: 0px 0px 10px 0px;
+    max-width: 100vw;
+}
+
+.header2Text {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.icons {
+    padding: 10px 5px;
+}
+
+.contentContainerRect ui-resizable {
+    height: 100%;
 }
 
 .tableSearch {

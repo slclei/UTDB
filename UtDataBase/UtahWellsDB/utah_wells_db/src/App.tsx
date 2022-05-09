@@ -7,7 +7,10 @@ import {Layout} from "./layout/Layout";
 import './App.css';
 import Map from './basemap/Basemap';
 
+
+
 class App extends React.Component {
+    
     public render() {
         return (
         <div className="well-map-wrapper">
