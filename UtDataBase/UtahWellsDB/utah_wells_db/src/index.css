@@ -116,3 +116,20 @@ code {
     max-width: 100%;
     max-height: 100%;
 }
+
+.popover-icons {
+    position: relative;
+}
+
+.popover-icons .popover-message {
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    background-color: #fff;
+    padding: .5em;
+    left: 5%
+}
+
+.popover-icons:hover .popover-message {
+    display: block;
+}
