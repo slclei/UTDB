@@ -1,59 +1,13 @@
-import * as React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
-import {Routes, Route, Link} from "react-router-dom";
-import Boreholes from "./elements/WellsList";
-import {Layout} from "./layout/Layout";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {LayerControl} from '../layerControl/LayerControl';
 
-import './App.css';
-import {Wellmap} from './basemap/Basemap';
+class LayerControlWhole extends React.Component {
 
-const layerCon=document.getElementById("inMapLegend");
-
-export class App extends React.Component {
-    
-    public render() {
-        return (
-        <div className="well-map-wrapper">
-            <Layout>
-                <Wellmap />
-            </Layout>
-        </div>);
-        /*
-        return (
-            <div>
-                 <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/boreholes"} className="navbar-brand">
-            bezKoder
-          </Link>
-          <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={"/boreholes/4304120208"} className="nav-link">
-                boreholes
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/add"} className="nav-link">
-                Add
-              </Link>
-            </li>
-          </div>
-        </nav>
-                <div>
-                <Routes>
-                    <Route path="/boreholes/4304120208" element={<Boreholes/>}/>
-                </Routes>
-                </div>
-            </div>
-        );*/
-    }
-}
-
-export class LayerControlWhole extends React.Component {
     state = { showing: false };
 
     render() {
         const { showing } = this.state;
-        
         return (
             <div style={{position: 'relative'}} className="popover-icons">
                 <i
@@ -147,6 +101,7 @@ export class LayerControlWhole extends React.Component {
                           </li>
                         </ul>
                         <div className="tab-content">
+                          {/* ngRepeat: tab in tabset.tabs */}
                           <div
                             className="tab-pane ng-scope active"
                             ng-repeat="tab in tabset.tabs"
@@ -172,6 +127,7 @@ export class LayerControlWhole extends React.Component {
                                 top: "50px !important",
                                 height: 200,
                                 border: "none",
+                                display: "none"
                               }}
                               className="ng-scope"
                             ></div>
@@ -186,4 +142,4 @@ export class LayerControlWhole extends React.Component {
     }
 }
 
-
+export default LayerControlWhole;

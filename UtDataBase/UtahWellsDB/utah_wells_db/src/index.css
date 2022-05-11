@@ -133,3 +133,28 @@ code {
 .popover-icons:hover .popover-message {
     display: block;
 }
+
+.LayerC {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 100px;
+    top: 15px;
+    z-index: 1000;
+}
+
+.LayerC .popover-message {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 1000;
+    background-color: #fff;
+    padding: .5em;
+    left: 5%
+}
+
+.LayerC:hover .popover-message {
+    display: block;
+}

@@ -8,9 +8,9 @@ import {
   } from "@mui/material";
   import s from "./LayerControl.module.css";
   
-  export const LayerControl = ({ layers, onToggle }:{layers: any, onToggle: any}) => {
+  export const LayerControl = ({id, layers, onToggle }:{id:string, layers: any, onToggle: any}) => {
     return (
-      <Paper className={s.layerControlRoot}>
+      <Paper className={s.layerControlRoot} id={id}>
         <List>
           <FormGroup>
             {layers.map((layer: any) => (
@@ -33,4 +33,7 @@ import {
       </Paper>
     );
   };
+
+  
+
   

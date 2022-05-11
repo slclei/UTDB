@@ -9,7 +9,7 @@ import {LayerControl} from "../layerControl/LayerControl";
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2xjbGVpIiwiYSI6ImNsMXV6czRnYjJkbnQzZG1qMHRxeGd0YmoifQ.mvtESpI1GCIdTrWSupNEIw';
 
-export default function Wellmap() {
+export function Wellmap(): any {
   const mapContainer = useRef(null);
   const [lng, setLong] = useState(-111.6);
   const [lat, setLat] = useState(39.2);
@@ -22,9 +22,35 @@ export default function Wellmap() {
     zoom: zoom,
   });
 
+  class LayerControlWhole extends React.Component {
+    state = { showing: false };
+
+    render() {
+        const { showing } = this.state;
+        
+        return (
+            <div className="LayerC">
+                <i
+                    style={{ cursor: "pointer" }}
+                    className="material-icons"
+                    id="layersIcon"
+                    uib-tooltip="Layers"
+                    onClick={() => this.setState({ showing: !showing })}>
+                          layers
+                </i>
+                <div className='popover-message'>Layer Control</div>
+                { showing 
+                    ? <LayerControl id="inMapLegend2" layers={layers} onToggle={updateLayerVisibility} />
+                    : null
+                }
+            </div>  
+        )
+    }
+}
+
   return (
-    <div id="map" className={s.map} ref={mapContainer}>
-      <LayerControl layers={layers} onToggle={updateLayerVisibility} />
-    </div>
+    <div id="map" className={s.map} ref={mapContainer}>  
+    <LayerControlWhole />  
+    </div>  
   );
 }
