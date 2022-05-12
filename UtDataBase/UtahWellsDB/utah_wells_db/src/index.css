@@ -1,3 +1,4 @@
+@import 'mapbox-gl/dist/mapbox-gl.css';
 html {
     max-width: 100vw;
     max-height: 100vh;
@@ -5,6 +6,14 @@ html {
     margin: auto;
     box-sizing: border-box;
     font-size: 10px;
+}
+
+.mapboxgl-canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }
 
 body {
@@ -18,7 +27,6 @@ body {
     display: table-cell;
     margin: 0;
     padding: 0;
-    position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
@@ -29,8 +37,8 @@ code {
 }
 
 .well-map-wrapper {
-    height: 100%;
-    width: 100%;
+    height: 70vh;
+    width: 50vw;
     max-width: 100%;
     max-height: 100%;
 }
@@ -103,13 +111,6 @@ code {
     bottom: 0;
 }
 
-.mapboxgl-canvas {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-}
-
 .mapboxgl-canvas-container {
     height: 70vh;
     width: 50vw;
@@ -136,10 +137,10 @@ code {
 
 .LayerC {
     align-items: center;
-    display: flex;
+    display: block;
     justify-content: center;
     position: absolute;
-    right: 100px;
+    right: 300px;
     top: 15px;
     z-index: 1000;
 }
@@ -157,4 +158,53 @@ code {
 
 .LayerC:hover .popover-message {
     display: block;
+}
+
+.md-50 {
+    font-size: 50px !important;
+}
+
+#inMapLegend2 {
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 400px;
+    width: max-content;
+    background-color: #fff;
+    padding: .5em;
+    left: 5%
+}
+
+#features {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    overflow: auto;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+    padding: .5em;
+    left: 5%
+}
+
+#show-location {
+    display: table;
+    position: relative;
+    margin: 0px auto;
+    word-wrap: anywhere;
+    white-space: pre-wrap;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #222;
+    background: #fff;
 }

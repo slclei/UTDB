@@ -3,13 +3,12 @@ import mapboxgl from "mapbox-gl";
 import MapService from "../services/MapService";
 import {Sources, Layers} from "../data/SpatialData";
 import ReactDOM from "react-dom";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
-const Popup = ({ featureName, featureNumber, field, type }: { featureName: any, featureNumber: any, field: any, type: any }) => (
+const Popup = ({ featureName, featureNumber}: { featureName: any, featureNumber: any }) => (
   <div className="popup">
     <p className="popField">WellName: {featureName}</p>
     <p className="popField">API: {featureNumber}</p>
-    <p className="popField">WellType: {type}</p>
-    <p className="popField">FieldName: {field}</p>
   </div>
 );
 
@@ -92,6 +91,9 @@ export const useMap = (ref: any, mapConfig: any) => {
           },
         }));
 
+        //albers, equirectangular, mercator, equalEarth, lambertConformalConic, naturalEarth, winkelTripel
+        map.setProjection("mercator");
+
         /**
            * Event handler for defining what happens when a user clicks on the map
            * In this example, we are checking if the user has clicked on one or more feature layers
@@ -102,7 +104,11 @@ export const useMap = (ref: any, mapConfig: any) => {
           //build  a Popup component used to render a map popup with information for chosen feature
                     
         map.on("click", (e: { point: any; lngLat: any; }) => {
-          const features = map.queryRenderedFeatures(e.point, {
+          const bbox = [
+            [e.point.x - 3, e.point.y - 3],
+            [e.point.x + 3, e.point.y + 3]
+            ];
+          const features = map.queryRenderedFeatures(e.lngLat, {
             layers: ["wellsInUTLayer"],
           });
           if (features.length > 0) {
@@ -114,8 +120,6 @@ export const useMap = (ref: any, mapConfig: any) => {
                 <Popup
                   featureName={feature?.properties?.wellname}
                   featureNumber={feature?.properties?.api}
-                  field={feature?.properties?.fieldname}
-                  type={feature?.properties?.welltype}
                 />,
                 popupNode
               );
@@ -135,6 +139,8 @@ export const useMap = (ref: any, mapConfig: any) => {
         map.on('mouseleave', "wellsInUTLayer", () => {
           map.getCanvas().style.cursor = '';
         });
+
+        
       }
       if (shouldLoadData) {
         loadData();

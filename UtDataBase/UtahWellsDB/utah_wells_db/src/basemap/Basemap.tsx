@@ -4,10 +4,20 @@ import {useMap} from '../useMap/useMap';
 import "mapbox-gl/dist/mapbox-gl.css";
 import s from "./Map.module.css";
 import {LayerControl} from "../layerControl/LayerControl";
+import ReactDOM from "react-dom";
 //import {Source} from "react-map-gl";
 //import Layer from "react-mapbox-gl/lib-esm/layer"; // eslint-disable-line import/no-webpack-loader-syntax
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2xjbGVpIiwiYSI6ImNsMXV6czRnYjJkbnQzZG1qMHRxeGd0YmoifQ.mvtESpI1GCIdTrWSupNEIw';
+
+const Popup = ({ featureName, featureNumber, field, type }: { featureName: any, featureNumber: any, field: any, type: any }) => (
+  <div className="popup">
+    <p className="popField">WellName: {featureName}</p>
+    <p className="popField">API: {featureNumber}</p>
+    <p className="popField">WellType: {type}</p>
+    <p className="popField">FieldName: {field}</p>
+  </div>
+);
 
 export function Wellmap(): any {
   const mapContainer = useRef(null);
@@ -15,6 +25,7 @@ export function Wellmap(): any {
   const [lat, setLat] = useState(39.2);
   const [zoom, setZoom] = useState(6);
   const [height,setHight]=useState(1500);
+  //const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
 
   const { layers, map, updateLayerVisibility } = useMap(mapContainer, {
     style: "mapbox://styles/mapbox/outdoors-v11",
@@ -31,8 +42,8 @@ export function Wellmap(): any {
         return (
             <div className="LayerC">
                 <i
-                    style={{ cursor: "pointer" }}
-                    className="material-icons"
+                    style={{ cursor: "pointer"}}
+                    className="material-icons md-50"
                     id="layersIcon"
                     uib-tooltip="Layers"
                     onClick={() => this.setState({ showing: !showing })}>
@@ -48,9 +59,20 @@ export function Wellmap(): any {
     }
 }
 
+map?.on('mousemove', (e:  { point: any; lngLat: any; }) => {
+  document.getElementById('show-location')!.innerHTML =
+  // `e.point` is the x, y coordinates of the `mousemove` event
+  // relative to the top-left corner of the map.
+  JSON.stringify(e.point) +
+  '<br />' +
+  // `e.lngLat` is the longitude, latitude geographical position of the event.
+  JSON.stringify(e.lngLat.wrap());
+  });
+
   return (
     <div id="map" className={s.map} ref={mapContainer}>  
-    <LayerControlWhole />  
+      
+      <LayerControlWhole />  
     </div>  
   );
 }

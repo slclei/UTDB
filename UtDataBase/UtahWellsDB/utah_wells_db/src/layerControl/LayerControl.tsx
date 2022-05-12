@@ -11,6 +11,7 @@ import {
   export const LayerControl = ({id, layers, onToggle }:{id:string, layers: any, onToggle: any}) => {
     return (
       <Paper className={s.layerControlRoot} id={id}>
+        Layers:
         <List>
           <FormGroup>
             {layers.map((layer: any) => (
