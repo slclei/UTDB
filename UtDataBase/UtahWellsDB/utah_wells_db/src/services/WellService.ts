@@ -5,8 +5,8 @@ const getAll =()=>{
     return http.get<Array<WellData>>("/boreholes");
 };
 
-const getAPI =(api: Number)=>{
-    return http.get<Array<WellData>>(`/boreholes/${api}`);
+const getAPI =(api: any)=>{
+    return http.get<Array<WellData>>(`/api/${api}`);
 };
 
 const findByName =(name: String)=>{

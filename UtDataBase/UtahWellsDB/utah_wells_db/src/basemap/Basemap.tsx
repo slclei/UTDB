@@ -25,7 +25,7 @@ export function Wellmap(): any {
   const [lat, setLat] = useState(39.2);
   const [zoom, setZoom] = useState(6);
   const [height,setHight]=useState(1500);
-  //const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
+  const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
 
   const { layers, map, updateLayerVisibility } = useMap(mapContainer, {
     style: "mapbox://styles/mapbox/outdoors-v11",
@@ -58,6 +58,36 @@ export function Wellmap(): any {
         )
     }
 }
+
+map?.on("click", (e: { point: any; lngLat: any; }) => {
+  if (map.getContainer==null){
+    return;
+  }
+  const bbox = [
+    [e.point.x - 3, e.point.y - 3],
+    [e.point.x + 3, e.point.y + 3]
+    ];
+  const features = map?.queryRenderedFeatures(bbox, {
+    layers: ["wellsInUTLayer"],
+  });
+  if (features.length > 0) {
+    const feature = features[0];
+    {
+      // create popup node
+      const popupNode = document.createElement("div");
+      ReactDOM.render(
+        <Popup
+          featureName={feature?.properties?.wellname}
+          featureNumber={feature?.properties?.api} field={undefined} type={undefined}        />,
+        popupNode
+      );
+      popUpRef.current
+        .setLngLat(e.lngLat)
+        .setDOMContent(popupNode)
+        .addTo(map);
+    }
+  }
+});
 
 map?.on('mousemove', (e:  { point: any; lngLat: any; }) => {
   document.getElementById('show-location')!.innerHTML =

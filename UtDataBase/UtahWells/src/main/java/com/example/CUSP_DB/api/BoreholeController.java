@@ -16,7 +16,7 @@ import org.springframework.web.multipart.support.MissingServletRequestPartExcept
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api")
 public class BoreholeController {
@@ -30,8 +30,9 @@ public class BoreholeController {
         this.excelService=excelService;
     }
 
-    @GetMapping("/boreholes/{id}")
-    public ResponseEntity<Borehole> getBorehoelsByAPI(@PathVariable("id") Long id){
+    //http://localhost:8080/api/api/4300320047
+    @RequestMapping(value="/api/{apiid}",method = RequestMethod.GET)
+    public ResponseEntity<Borehole> getBorehoelsByAPI(@PathVariable("apiid") Long id){
         Optional<Borehole> borehole = boreholeService.getBoreholeById(id);
 
         if (borehole.isPresent()) {

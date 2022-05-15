@@ -5,12 +5,7 @@ import {Sources, Layers} from "../data/SpatialData";
 import ReactDOM from "react-dom";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const Popup = ({ featureName, featureNumber}: { featureName: any, featureNumber: any }) => (
-  <div className="popup">
-    <p className="popField">WellName: {featureName}</p>
-    <p className="popField">API: {featureNumber}</p>
-  </div>
-);
+
 
 export const useMap = (ref: any, mapConfig: any) => {
     const [map, setMap] = useState<typeof ref.current | null>(null);
@@ -103,33 +98,7 @@ export const useMap = (ref: any, mapConfig: any) => {
            */
           //build  a Popup component used to render a map popup with information for chosen feature
                     
-        map.on("click", (e: { point: any; lngLat: any; }) => {
-          const bbox = [
-            [e.point.x - 3, e.point.y - 3],
-            [e.point.x + 3, e.point.y + 3]
-            ];
-          const features = map.queryRenderedFeatures(e.lngLat, {
-            layers: ["wellsInUTLayer"],
-          });
-          if (features.length > 0) {
-            const feature = features[0];
-            {
-              // create popup node
-              const popupNode = document.createElement("div");
-              ReactDOM.render(
-                <Popup
-                  featureName={feature?.properties?.wellname}
-                  featureNumber={feature?.properties?.api}
-                />,
-                popupNode
-              );
-              popUpRef.current
-                .setLngLat(e.lngLat)
-                .setDOMContent(popupNode)
-                .addTo(map);
-            }
-          }
-        });
+        
         // Change the cursor to a pointer when the mouse is over the places layer.
         map.on('mouseenter', "wellsInUTLayer", () => {
           map.getCanvas().style.cursor = 'pointer';

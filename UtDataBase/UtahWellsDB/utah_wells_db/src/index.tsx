@@ -10,10 +10,14 @@ import XySearch from './elements/xySearch';
 import Buff from './elements/bufferS';
 import PrintPage from './elements/printPage';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import SearchBox from './searchBox/SearchBox';
+import WellService from "./services/WellService";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+
 root.render(
   //<React.StrictMode>
   <BrowserRouter>
@@ -129,194 +133,7 @@ root.render(
     <tbody>
       <tr id="trSearchMap">
         {/*Search*/}
-        <td id="tdSearch" valign="top">
-          <div
-            className="contentContainerRect ui-resizable"
-            style={{width: "20vw", height: "100%" }}
-            id="divSearch"
-          >
-            <div className="headerRect">
-              <table>
-                <tbody>
-                  <tr>
-                    <td style={{ padding: 10 }}>
-                      <i className="material-icons">search</i>
-                    </td>
-                    <td className="header1Text" style={{ fontWeight: "bold" }}>
-                      Search
-                    </td>
-                    <td style={{ width: "100%" }} />
-                    <td id="bToggleSearch" style={{ padding: "10px 5px" }}>
-                      <i
-                        className="material-icons"
-                        id="activeSearchIconClear"
-                        uib-tooltip="Reset Filters"
-                      >
-                        clear
-                      </i>
-                      <i
-                        className="material-icons"
-                        id="inactiveSearchClearIcon"
-                        style={{ display: "none", opacity: ".5" }}
-                      >
-                        clear
-                      </i>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div
-              id="searchContentDiv"
-              style={{ padding: 10, overflow: "hidden", height: "100%" }}
-            >
-              <div id="divAdvanced" style={{ height: "80vh" }}>
-                <div
-                  style={{ height: "100%", width: "100%", overflow: "auto" }}
-                >
-                  <div id="filterControl">
-                    <table id="advFilterTable">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <label>Search:</label>
-                          </td>
-                          <td>
-                            <select
-                              className="uiOperatorComboBox"
-                              id="searchBy"
-                              
-                              data-placeholder=" "
-                            >
-                              <option value="BoardOrder">Board Order</option>
-                              <option value="Client">Client</option>
-                              <option value="Group">Group</option>
-                              <option value="PermitSurfaceFacility">
-                                Permit Surface Facility
-                              </option>
-                              <option value="PermitUIC">Permit UIC</option>
-                              <option value="PermitSeismic">
-                                Permit Seismic
-                              </option>
-                              <option value="ProductionEntity">
-                                Production Entity
-                              </option>
-                              <option value="SurfaceFacility">
-                                Surface Facility
-                              </option>
-                              <option defaultValue="Well">
-                                Well
-                              </option>
-                            </select>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="filterPrompt">API 10:</td>
-                          <td>
-                            <select
-                              id="compareAPI10"
-                              className="uiOperatorComboBox"
-                              data-placeholder=" "
-                            >
-                              <option value="" />
-                              <option value="Like">Like</option>
-                              <option defaultValue="=">
-                                =
-                              </option>
-                            </select>
-                          </td>
-                          <td>
-                            <input
-                              type="text"
-                              id="API10"
-                              defaultValue=""
-                              className="uiTextBox"
-                              placeholder="Filter Input..."
-                            />
-                            <div
-                              className="clearSelectedIcon"
-                              onClick={clearFilterInput("API10")}
-                              uib-tooltip="Clear"
-                            />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="filterPrompt">Well Name:</td>
-                          <td>
-                            <select
-                              id="compareWellName"
-                              className="uiOperatorComboBox"
-                              onChange={opSelectionChanged("compareWellName")}
-                              data-placeholder=" "
-                            >
-                              <option value="" />
-                              <option value="Like">Like</option>
-                              <option value="=">=</option>
-                            </select>
-                          </td>
-                          <td>
-                            <input
-                              type="text"
-                              id="WellName"
-                              defaultValue=""
-                              className="uiTextBox"
-                              placeholder="Filter Input..."
-                              onKeyUp={textChanged("WellName")}
-                            />
-                            <div
-                              className="clearSelectedIcon"
-                              onClick={clearFilterInput("WellName")}
-                              uib-tooltip="Clear"
-                            />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div id="jsTreeAdvancedDiv">
-                    <div id="jstreeadvanced" />
-                  </div>
-                </div>
-              </div>
-              <div
-                style={{
-                  height: 40,
-                  boxShadow: "none",
-                  borderTop: "1px solid #CACACA",
-                  boxSizing: "border-box",
-                  position: "relative",
-                  bottom: 0,
-                  width: "100%",
-                  left: 0
-                }}
-                className="headerRect"
-              >
-                <span
-                  id="btnAdd"
-                  className="linkText"
-                  onClick={filterSearch(true)}
-                >
-                  Add to Results
-                </span>
-                <span
-                  id="btnApply"
-                  className="linkText"
-                  onClick={filterSearch(false)}
-                >
-                  Filter New Results
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            className="ui-resizable-handle ui-resizable-e"
-            style={{ zIndex: 90 }}
-          />
-          <div
-            className="ui-resizable-handle ui-resizable-w"
-            style={{ zIndex: 90 }}
-          />
-        </td>
+        <SearchBox />
         {/*Map*/}
         <td
           id="mapTd"
@@ -534,41 +351,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-function clearFilterInput(arg0: string): React.MouseEventHandler<HTMLDivElement> | undefined {
-  const e=document.getElementById(arg0) as HTMLInputElement;
-  if (e){
-    e.value=" ";
-  }
-  return
-}
-//opSelectionChanged
-function opSelectionChanged(arg0: string): React.ChangeEventHandler<HTMLSelectElement> | undefined {
-  const e=document.getElementById(arg0) as HTMLInputElement;
-  if (e){
-    e.value=" ";
-  }
-  return
-}
-function textChanged(arg0: string): React.KeyboardEventHandler<HTMLInputElement> | undefined {
-  const e=document.getElementById(arg0) as HTMLInputElement;
-  if (e){
-    e.value=" ";
-  }
-  return
-}
-
-function filterSearch(arg0: boolean): React.MouseEventHandler<HTMLSpanElement> | undefined {
-  //arg0==true, then apply search
-  if (arg0){
-
-  }
-  //else, clear all contents
-  return
-}
-
-
-function exportToCsv(arg0: string): React.MouseEventHandler<HTMLImageElement> | undefined {
-  return
-}
-
-
