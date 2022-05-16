@@ -8,6 +8,8 @@ import com.example.CUSP_DB.util.HttpParse;
 import com.example.CUSP_DB.util.HttpRequest;
 import org.apache.http.client.ClientProtocolException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -44,8 +46,16 @@ public class BoreholeService {
         return (List<Borehole>) boreholeDao.findAll();
     }
 
+    public List<Borehole> getAllBoreholes(Specification<Borehole> spec){
+        return (List<Borehole>) boreholeDao.findAll(spec);
+    }
+
     public Optional<Borehole> getBoreholeById(Long API){
         return boreholeDao.findById(API.toString());
+    }
+
+    public List<Borehole> getBoreholeLikeId(Long API){
+        return boreholeDao.findByAPIIgnoreCaseContaining(API.toString());
     }
 
     public int insert(long first, long end) throws IOException {

@@ -6,12 +6,19 @@ import IWellData from '../types/Wells';
 
 import {Routes, Route, Link} from "react-router-dom";
 import Boreholes from "../elements/WellsList";
+
+class SearchResult extends React.Component {
+
+}
+
+//interface for onClick in Square . message is used to be displayerd
 interface IProps_Square {
     message: string,
     onClick: any,
   }
   
-  class Square extends React.Component < IProps_Square > {
+  //Square element for onClick 
+class Square extends React.Component < IProps_Square > {
      render() {  
        return (
          <button onClick={this.props.onClick}>
@@ -19,33 +26,24 @@ interface IProps_Square {
          </button>
        );
      }
-  }
+}
   
-  class NewResult extends React.Component {
+class NewResult extends React.Component {
     render() {
       return (
         <Square
-           message = { 'FilterNew Result' }
+           message = { 'Filter New Result' }
            onClick = { async () => {
-            const result=document.getElementById('SearchResult');
-            /*const list=document.createElement("Routes");
-            const list1=document.createElement("Route");
-            list1.setAttribute('path',"/boreholes");
-            list1.setAttribute('element',"{<Boreholes/>}");
-            result?.appendChild(list);
-            list.appendChild(list1);  
-            4304120208
-            */
-            console.log(result?.innerHTML);
+            const result: Promise<any>[]=[];        
             
-            
+          //get information from compareAPI and API elements for search by API
             if(document.getElementById('compareAPI') && document.getElementById('API') && result){
-                console.log("44");
+              //get api value and operation
                 const apiValue=document.getElementById('API')!.value;   
                 const apiOperation=document.getElementById('compareAPI')!.value;
-                console.log(apiValue);
-                console.log(apiOperation);
+                //in case of "=" operation, get result from server, and write it to result
                 if (apiOperation==="="){
+                    //get result from getAPI; promise type
                     const apiResult=WellService.getAPI(apiValue);
                     apiResult.
                     then((res)=>{
@@ -55,9 +53,6 @@ interface IProps_Square {
                     .catch((err)=>{
                         console.log(err);
                     });
-                    
-                    console.log(apiResult);
-                    console.log("===");
                 }
             } 
             return
@@ -65,7 +60,7 @@ interface IProps_Square {
         />
       );
     }
-  }
+}
   
 
 function SearchBox(): any {
@@ -239,7 +234,21 @@ function SearchBox(): any {
                         </tr>
                     </table>
               </div>
-              <div id ="SearchResult" style={{ padding: 10, overflow: "auto", height: "50%", border: "1px solid #e6e6e6"}}>Result</div>
+              <div style={{ padding: 10, overflow: "auto", height: "50%", border: "1px solid #e6e6e6"}}>Result
+                <table>
+                  <thead>
+                    <tr>
+                      <th>API</th>
+                      <th>WellName</th>
+                      <th>County</th>
+                      <th>WellType</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <SearchResult/>
+                  </tbody>
+                </table>
+              </div>
               
             </div>
           </div>
