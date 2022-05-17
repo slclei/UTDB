@@ -8,30 +8,42 @@ function SearchResult() {
     const newResult = async () => {
         //get information from compareAPI and API elements for search by API
         let tmpArr: any[][] = [];
+        //query=api:4300320047,wellName:abc
+        let query: String = "";
         if (document.getElementById('compareAPI') && document.getElementById('API')) {
             //get api value and operation
             const apiValue = document.getElementById('API')!.value;
-            const apiOperation = document.getElementById('compareAPI')!.value;
-            //in case of "=" operation, get result from server, and write it to result
-            if (apiOperation === "=") {
-                //get result from getAPI; promise type
-                const apiResult = WellService.getAPI(apiValue);
-                const tmp: any[] = [];
-                apiResult.
-                    then((res) => {
-                        tmp.push(res.data.api);
-                        tmp.push(res.data.wellName);
-                        tmp.push(res.data.county);
-                        tmp.push(res.data.wellType);
-                        if (tmp.length > 0) {
-                            tmpArr.push(tmp);
-                            setresultList(tmpArr);
+            query += "API:";
+            query += apiValue;
+        }
+        if (document.getElementById('WellName')) {
+            //get api value and operation
+            const nameValue = document.getElementById('WellName')!.value;
+            query += ",WellName:";
+            query += nameValue;
+        }
+        //in case of query is not null, get data with query
+        if (query != "") {
+            const apiResult = WellService.findMultiQueries(query);
+            console.log(apiResult);
+            apiResult.
+                then((res) => {
+                    const tmp: any[]=res.data;
+                    for(var each of tmp){
+                        const tmpEach: any[]=[];
+                        tmpEach.push(each.api);
+                        tmpEach.push(each.wellName);
+                        tmpEach.push(each.county);
+                        tmpEach.push(each.wellType);
+                        if (tmpEach.length>0){
+                            tmpArr.push(tmpEach);
                         }
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    });
-            }
+                    }
+                    setresultList(tmpArr);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         }
         return
     }
@@ -81,12 +93,12 @@ function SearchResult() {
                     </thead>
                 </table>
                 <div id="resultList">
-                    {resultList.length > 0 && resultList.map((item: any) =><table>
+                    {resultList.length > 0 && resultList.map((item: any) => <table>
                         <tr>
                             <th style={{ padding: 0, width: "5vw" }}>{item[0]}</th>
-                            <th style={{ width: "5vw", textAlign:"center" }}>{item[1]}</th>
-                            <th style={{ width: "5vw", textAlign:"center"  }}>{item[2]}</th>
-                            <th style={{ width: "5vw", textAlign:"center"  }}>{item[3]}</th>
+                            <th style={{ width: "5vw", textAlign: "center" }}>{item[1]}</th>
+                            <th style={{ width: "5vw", textAlign: "center" }}>{item[2]}</th>
+                            <th style={{ width: "5vw", textAlign: "center" }}>{item[3]}</th>
                         </tr></table>)}
                 </div>
 

@@ -13,10 +13,15 @@ const findByName =(name: String)=>{
     return http.get<Array<WellData>>(`/boreholes?wellName=${name}`);
 };
 
+const findMultiQueries =(query: String)=>{
+    return http.get<Array<WellData>>(`/like?search=${query}`);
+}
+
 const WellService = {
     getAll,
     getAPI,
     findByName,
+    findMultiQueries,
 };
 
 export default WellService;
