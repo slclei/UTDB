@@ -81,20 +81,22 @@ function SearchResult() {
                     </tr>
                 </table>
             </div>
-            <div style={{ padding: 10, overflow: "auto", height: "50%", border: "1px solid #e6e6e6" }}>Result
+            <div style={{ padding: 10, height: "50%", border: "1px solid #e6e6e6" }}>Result
                 <table>
                     <thead>
                         <tr>
-                            <th style={{ width: "30%" }}>API</th>
-                            <th style={{ width: "30%" }}>WellName</th>
-                            <th style={{ width: "30%" }}>County</th>
-                            <th style={{ width: "30%" }}>WellType</th>
+                            <th style={{ width: "3vw" }}>ItemNo.</th>
+                            <th style={{ width: "5vw" }}>API</th>
+                            <th style={{ width: "5vw" }}>WellName</th>
+                            <th style={{ width: "5vw" }}>County</th>
+                            <th style={{ width: "5vw" }}>WellType</th>
                         </tr>
                     </thead>
                 </table>
-                <div id="resultList">
+                <div id="resultList" style={{overflow:"auto", height:"500px"}}>
                     {resultList.length > 0 && resultList.map((item: any) => <table>
-                        <tr>
+                        <tr style={{ border: "1px solid #e6e6e6" }}>
+                            <th style={{ padding: 0, width: "3vw" }}>{resultList.indexOf(item)}</th>
                             <th style={{ padding: 0, width: "5vw" }}>{item[0]}</th>
                             <th style={{ width: "5vw", textAlign: "center" }}>{item[1]}</th>
                             <th style={{ width: "5vw", textAlign: "center" }}>{item[2]}</th>
