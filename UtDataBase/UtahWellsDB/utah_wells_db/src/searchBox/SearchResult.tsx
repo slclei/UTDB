@@ -23,11 +23,10 @@ function SearchResult() {
             query += nameValue;
         }
         //in case of query is not null, get data with query
-        if (query != "") {
+        if (query !== "") {
             const apiResult = WellService.findMultiQueries(query);
             console.log(apiResult);
-            apiResult.
-                then((res) => {
+            apiResult.then((res) => {
                     const tmp: any[]=res.data;
                     for(var each of tmp){
                         const tmpEach: any[]=[];

@@ -13,9 +13,7 @@ class App extends React.Component {
     public render() {
         return (
         <div className="well-map-wrapper">
-            <Layout>
                 <Wellmap />
-            </Layout>
         </div>);
         /*
         return (

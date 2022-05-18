@@ -137,9 +137,6 @@ root.render(
         {/*Map*/}
         <td
           id="mapTd"
-          style={{ width: "100%", maxWidth: "100%" }}
-          valign="top"
-          align="center"
         >
           
           <div

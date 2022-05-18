@@ -86,9 +86,6 @@ export const useMap = (ref: any, mapConfig: any) => {
           },
         }));
 
-        //albers, equirectangular, mercator, equalEarth, lambertConformalConic, naturalEarth, winkelTripel
-        map.setProjection("mercator");
-
         /**
            * Event handler for defining what happens when a user clicks on the map
            * In this example, we are checking if the user has clicked on one or more feature layers
