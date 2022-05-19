@@ -8,7 +8,23 @@ import { Routes, Route, Link } from "react-router-dom";
 import Boreholes from "../elements/WellsList";
 import SearchResult from './SearchResult';
 
-function SearchBox(): any {
+function SearchBox(this: any): any {
+  const clearSearch = async (fields:string) => {
+    if (fields==="all" || fields==="api"){
+      document.getElementById('compareAPI')!.value="";
+    }
+    if (fields==="all" || fields==="api"){
+      document.getElementById('API')!.value="";
+      document.getElementById('API')!.placeholder="Filter Input...";
+    }
+    if (fields==="all" || fields==="wellName"){
+      document.getElementById('compareWellName')!.value="";
+    }
+    if (fields==="all" || fields==="wellName"){
+      document.getElementById('WellName')!.value="";
+      document.getElementById('WellName')!.placeholder="Filter Input...";
+    }
+  }
 
   return (<td id="tdSearch" valign="top" style={{ width: "20vw", height: "90vh" }}>
     <div
@@ -27,13 +43,13 @@ function SearchBox(): any {
             </td>
             <td style={{ width: "100%" }} />
             <td id="bToggleSearch" style={{ padding: "10px 5px" }}>
-              <i
+              <button
                 className="material-icons"
                 id="activeSearchIconClear"
-                uib-tooltip="Reset Filters"
+                onClick={(e)=>{clearSearch("all")}}
               >
                 clear
-              </i>
+              </button>
             </td>
           </tr>
         </table>
@@ -76,7 +92,7 @@ function SearchBox(): any {
                         <option value="SurfaceFacility">
                           Surface Facility
                         </option>
-                        <option defaultValue="Well">
+                        <option value="Well" selected={true}>
                           Well
                         </option>
                       </select>
@@ -108,7 +124,7 @@ function SearchBox(): any {
                       />
                       <i
                         className="material-icons"
-                        onClick={clearFilterInput("API")}
+                        onClick={(e)=>{clearSearch("api")}}
                         uib-tooltip="Clear"
                       >clear</i>
                     </td>
@@ -136,11 +152,11 @@ function SearchBox(): any {
                         placeholder="Filter Input..."
                         onKeyUp={textChanged("WellName")}
                       />
-                      <div
-                        className="clearSelectedIcon"
-                        onClick={clearFilterInput("WellName")}
+                      <i
+                        className="material-icons"
+                        onClick={(e)=>{clearSearch("wellName")}}
                         uib-tooltip="Clear"
-                      />
+                      >clear</i>
                     </td>
                   </tr>
                 </tbody>
