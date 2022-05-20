@@ -117,11 +117,11 @@ export function Wellmap(): any {
               </td>
               <td
                 style={{ padding: "10px 5px", fontWeight: "bold" }}
-                className="header1Text"
+                className="header3Text"
               >
                 Map
               </td>
-              <td id="show-location" style={{ width: "100%" }} />
+              <td id="show-location" style={{width:"50vw"}}/>
               <td id="addressIconDiv" style={{ padding: "10px 5px" }}>
                 <AddressSearch />
               </td>

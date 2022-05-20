@@ -9,9 +9,6 @@ html {
 }
 
 .mapboxgl-canvas {
-    position: absolute;
-    top: 0;
-    bottom: 0;
     width: 100%;
     height: 100%;
 }
@@ -51,15 +48,21 @@ code {
 }
 
 .siteHeaderRect {
-    height: 40px;
+    height: 70px;
     width: 100%;
-    margin: 0px 0px 10px 0px;
     max-width: 100vw;
+    max-height: 70px;
 }
 
 .header2Text {
     font-weight: bold;
-    font-size: medium;
+    font-size: x-large;
+    padding: 10px;
+    width: 100%;
+}
+
+.header1Text {
+    font-size: large;
     padding: 10px;
     width: 100%;
 }
@@ -86,10 +89,6 @@ code {
     max-width: 100vw;
     max-height: 80%;
     box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }
 
 .trSearchMap {
@@ -104,19 +103,18 @@ code {
     bottom: 0;
 }
 
-.tdSearch {
+#tdSearch {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 20vw;
+    height: 90vh;
 }
 
 #mapTd {
-    height: 80vh;
+    height: 90vh;
     width: 80vw;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }
 
 .mapboxgl-canvas-container {
@@ -217,8 +215,18 @@ code {
     background: #fff;
 }
 
+#advFilterTable {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
 .searchTr {
     border: 1px solid #e6e6e6;
+    font-size: medium;
+}
+
+.filterPrompt {
+    width: 100px;
 }
 
 #map {
@@ -231,4 +239,16 @@ code {
 #feedback {
     height: 200px;
     width: 200px;
+}
+
+#ReNumber {
+    padding: 10;
+    height: 50%;
+    border: 1px solid #e6e6e6;
+    font-size: medium;
+}
+
+.Square {
+    width: max-content;
+    font-size: medium;
 }

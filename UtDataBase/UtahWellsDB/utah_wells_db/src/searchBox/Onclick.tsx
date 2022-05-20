@@ -10,7 +10,7 @@ interface IProps_Square {
 class Square extends React.Component < IProps_Square > {
      render() {  
        return (
-         <button onClick={this.props.onClick}>
+         <button className="Square" onClick={this.props.onClick}>
            {this.props.message}
          </button>
        );

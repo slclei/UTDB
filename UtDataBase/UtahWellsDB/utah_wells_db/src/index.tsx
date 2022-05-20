@@ -22,32 +22,26 @@ root.render(
     <div>
       <div
         className="siteHeaderRect"
-        style={{
-          height: 40,
-          width: "100%",
-          margin: "0px 0px 10px 0px",
-          maxWidth: "100vw"
-        }}
       >
-        <Feedback email={true} emailRequired={true} projectId="6286873e712224000473ab51"/>
+        <Feedback email={true} emailRequired={true} projectId="6286873e712224000473ab51" />
         <table
           style={{
             boxSizing: "border-box",
             width: "100%",
-            margin: "0px 0px 0px 0px",
-            padding: "0px 10px",
-            maxWidth: "100vw"
+            maxWidth: "100vw",
+            height:"50px",
+            maxHeight:"50px"
           }}
         >
           <tbody>
-            <tr style={{ marginBottom: 10, display: "block" }}>
+            <tr style={{ display: "block" }}>
               <td
                 className="header2Text"
-                >
-                  <p>Utah CO2 Capture and Storeage</p>
+              >
+                <p>Utah CO2 Capture and Storeage</p>
               </td>
               <td style={{ width: "100%" }} />
-              <td className="icons" style={{ padding: "10px 5px" }}>
+              <td className="icons">
                 <a
                   href="https://www.egi.utah.edu/"
                   tooltip-placement="bottom"
@@ -57,7 +51,7 @@ root.render(
                   <i className="material-icons">home</i>
                 </a>
               </td>
-              <td className="icons" style={{ padding: "10px 5px" }}>
+              <td className="icons" >
                 <a
                   href="javascript: restart();"
                   tooltip-placement="bottom"
@@ -69,7 +63,7 @@ root.render(
               <td
                 id="alertIconDiv"
                 className="icons"
-                style={{ padding: "10px 5px" }}
+
               >
                 <a
                   href="https://www.google.com"
@@ -79,7 +73,7 @@ root.render(
                   <i className="material-icons">info</i>
                 </a>
               </td>
-              <td id="helpDiv" className="icons" style={{ padding: "10px 5px" }}>
+              <td id="helpDiv" className="icons" >
                 <a
                   href="javascript: help();"
                   tooltip-placement="bottom"
@@ -88,7 +82,7 @@ root.render(
                   <i className="material-icons">help</i>
                 </a>
               </td>
-              <td id="reportingIconDiv" style={{ padding: "10px 5px" }}>
+              <td id="reportingIconDiv" >
                 <a
                   id="reportTop"
                   tooltip-placement="bottom-right"
@@ -101,13 +95,14 @@ root.render(
                   <i className="material-icons">folder</i>
                 </a>
               </td>
-              <td className="login" style={{ padding: "10px 5px" }}>
+              <td className="login" >
                 <button
                   type="button"
                   id="logInBtn"
                   className="btn btn-primary"
                   data-toggle="modal"
                   data-target="#loginDialog"
+                  style={{ width:"50px" }}
                 >
                   Log In
                 </button>
@@ -126,13 +121,13 @@ root.render(
       </div>
       <table id="tableSearch">
         <tbody>
-        
+
           <tr id="trSearchMap">
             {/*Search*/}
             <SearchBox />
-            
+
             {/*Map*/}
-            <td id="mapTd">
+            <td id="mapTd" valign="top">
               <div
                 id="divMap"
                 className="contentContainerRect"
@@ -146,9 +141,6 @@ root.render(
                 <App />
               </div>
 
-            </td>
-            <td rowSpan={3}>
-              <div id="outputDiv" />
             </td>
           </tr>
 

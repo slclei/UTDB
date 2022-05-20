@@ -6,27 +6,27 @@ import IWellData from '../types/Wells';
 
 import { Routes, Route, Link } from "react-router-dom";
 import Boreholes from "../elements/WellsList";
-import SearchResult from './SearchResult';
+import WellSearchResult from './WellSearchResult';
 
 function SearchBox(this: any): any {
-  const clearSearch = async (fields:string) => {
-    if (fields==="all" || fields==="api"){
-      document.getElementById('compareAPI')!.value="";
+  const clearSearch = async (fields: string) => {
+    if (fields === "all" || fields === "api") {
+      document.getElementById('compareAPI')!.value = "";
     }
-    if (fields==="all" || fields==="api"){
-      document.getElementById('API')!.value="";
-      document.getElementById('API')!.placeholder="Filter Input...";
+    if (fields === "all" || fields === "api") {
+      document.getElementById('API')!.value = "";
+      document.getElementById('API')!.placeholder = "Filter Input...";
     }
-    if (fields==="all" || fields==="wellName"){
-      document.getElementById('compareWellName')!.value="";
+    if (fields === "all" || fields === "wellName") {
+      document.getElementById('compareWellName')!.value = "";
     }
-    if (fields==="all" || fields==="wellName"){
-      document.getElementById('WellName')!.value="";
-      document.getElementById('WellName')!.placeholder="Filter Input...";
+    if (fields === "all" || fields === "wellName") {
+      document.getElementById('WellName')!.value = "";
+      document.getElementById('WellName')!.placeholder = "Filter Input...";
     }
   }
 
-  return (<td id="tdSearch" valign="top" style={{ width: "20vw", height: "90vh" }}>
+  return (<td id="tdSearch" valign="top">
     <div
       className="contentContainerRect ui-resizable"
       style={{ width: "20vw", height: "80vh" }}
@@ -38,7 +38,7 @@ function SearchBox(this: any): any {
             <td style={{ padding: 10 }}>
               <i className="material-icons">search</i>
             </td>
-            <td className="header1Text" style={{ fontWeight: "bold" }}>
+            <td className="header1Text">
               Search
             </td>
             <td style={{ width: "100%" }} />
@@ -46,7 +46,7 @@ function SearchBox(this: any): any {
               <button
                 className="material-icons"
                 id="activeSearchIconClear"
-                onClick={(e)=>{clearSearch("all")}}
+                onClick={(e) => { clearSearch("all") }}
               >
                 clear
               </button>
@@ -56,119 +56,105 @@ function SearchBox(this: any): any {
       </div>
       <div
         id="searchContentDiv"
-        style={{ padding: 10, overflow: "hidden", height: "100%" }}
       >
         <div id="divAdvanced" style={{ height: "40%" }}>
-          <div
-            style={{ height: "100%", width: "100%", overflow: "auto" }}
-          >
-            <div id="filterControl">
-              <table id="advFilterTable">
-                <tbody>
-                  <tr className='searchTr'>
-                    <td>
-                      <label>Search:</label>
-                    </td>
-                    <td>
-                      <select
-                        className="uiOperatorComboBox"
-                        id="searchBy"
+          <table>
+            <tr className='searchTr'>
+              <td className="filterPrompt">
+                Search Layer:
+              </td>
+              <td>
+                <select
+                  className="uiOperatorComboBox"
+                  id="searchBy"
 
-                        data-placeholder=" "
-                      >
-                        <option value="BoardOrder">Board Order</option>
-                        <option value="Client">Client</option>
-                        <option value="Group">Group</option>
-                        <option value="PermitSurfaceFacility">
-                          Permit Surface Facility
-                        </option>
-                        <option value="PermitUIC">Permit UIC</option>
-                        <option value="PermitSeismic">
-                          Permit Seismic
-                        </option>
-                        <option value="ProductionEntity">
-                          Production Entity
-                        </option>
-                        <option value="SurfaceFacility">
-                          Surface Facility
-                        </option>
-                        <option value="Well" selected={true}>
-                          Well
-                        </option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr className='searchTr'>
-                    <td className="filterPrompt">API:</td>
-                    <td>
-                      <select
-                        title="compareAPI10"
-                        id="compareAPI"
-                        className="uiOperatorComboBox"
-                        data-placeholder=" "
-                      >
-                        <option value="" />
-                        <option value="Like" selected={true}>Like</option>
-                        <option value="=">
-                          =
-                        </option>
-                      </select>
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        id="API"
-                        defaultValue=""
-                        className="uiTextBox"
-                        placeholder="Filter Input..."
-                      />
-                      <i
-                        className="material-icons"
-                        onClick={(e)=>{clearSearch("api")}}
-                        uib-tooltip="Clear"
-                      >clear</i>
-                    </td>
-                  </tr>
-                  <tr className='searchTr'>
-                    <td className="filterPrompt">Well Name:</td>
-                    <td>
-                      <select
-                        id="compareWellName"
-                        className="uiOperatorComboBox"
-                        onChange={opSelectionChanged("compareWellName")}
-                        data-placeholder=" "
-                      >
-                        <option value="" />
-                        <option value="Like">Like</option>
-                        <option value="=">=</option>
-                      </select>
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        id="WellName"
-                        defaultValue=""
-                        className="uiTextBox"
-                        placeholder="Filter Input..."
-                        onKeyUp={textChanged("WellName")}
-                      />
-                      <i
-                        className="material-icons"
-                        onClick={(e)=>{clearSearch("wellName")}}
-                        uib-tooltip="Clear"
-                      >clear</i>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div id="jsTreeAdvancedDiv">
-              <div id="jstreeadvanced" />
-            </div>
+                  data-placeholder=" "
+                >
+                  <option value="Saline">
+                    Saline 
+                  </option>
+                  <option value="Well" selected={true}>
+                    Well
+                  </option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          <div>
+            <table id="advFilterTable">
+              <tbody>
+                <tr className='searchTr'>
+                  <td className="filterPrompt">API:</td>
+                  <td>
+                    <select
+                      title="compareAPI10"
+                      id="compareAPI"
+                      className="uiOperatorComboBox"
+                      data-placeholder=" "
+                    >
+                      <option value="" />
+                      <option value="Like" selected={true}>Like</option>
+                      <option value="=">
+                        =
+                      </option>
+                    </select>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="API"
+                      defaultValue=""
+                      className="uiTextBox"
+                      placeholder="Filter Input..."
+                    />
+                  </td>
+                  <td>
+                    <i
+                      className="material-icons"
+                      onClick={(e) => { clearSearch("api") }}
+                      uib-tooltip="Clear"
+                    >clear</i>
+                  </td>
+                </tr>
+                <tr className='searchTr'>
+                  <td className="filterPrompt">Well Name:</td>
+                  <td>
+                    <select
+                      id="compareWellName"
+                      className="uiOperatorComboBox"
+                      onChange={opSelectionChanged("compareWellName")}
+                      data-placeholder=" "
+                    >
+                      <option value="" />
+                      <option value="Like">Like</option>
+                      <option value="=">=</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="WellName"
+                      defaultValue=""
+                      className="uiTextBox"
+                      placeholder="Filter Input..."
+                      onKeyUp={textChanged("WellName")}
+                    />
+                  </td>
+                  <td>
+                    <i
+                      className="material-icons"
+                      onClick={(e) => { clearSearch("wellName") }}
+                      uib-tooltip="Clear"
+                    >clear</i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <WellSearchResult />
           </div>
         </div>
 
-        <SearchResult />
+
 
       </div>
     </div>
