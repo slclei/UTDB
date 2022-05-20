@@ -3,6 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
+        - cd UtDataBase/UtahWellsDB/utah_wells_db
         - npm ci
     # IMPORTANT - Please verify your build commands
     build:
@@ -10,9 +11,9 @@ frontend:
         -npm run-script build
   artifacts:
     # IMPORTANT - Please verify your build output directory
-    baseDirectory: UtDataBase/UtahWellsDB/utah_wells_db/build
+    baseDirectory: build
     files:
-      - ' UtDataBase/UtahWellsDB/utah_wells_db/**/*'
+      - '**/*'
   cache:
     paths:  
-      - UtDataBase/UtahWellsDB/utah_wells_db//node_modules/**/*
+      - node_modules/**/*
