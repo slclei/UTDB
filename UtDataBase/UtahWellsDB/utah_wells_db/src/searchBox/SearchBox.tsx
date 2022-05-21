@@ -76,7 +76,7 @@ function SearchBox(this: any): any {
                   <option value="Well" selected={true}>
                     Well
                   </option>
-                </select>
+                </select> 
               </td>
             </tr>
           </table>
