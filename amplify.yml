@@ -7,6 +7,7 @@ applications:
             - npm cache clean --force
             - rm -rf node_modules && rm -f package-lock.json
             - npm install
+            - npx browserslist@latest --update-db
             - npm ci
         build:
           commands:
