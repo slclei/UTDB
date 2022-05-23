@@ -15,6 +15,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+(() => {
+  console.log('webpack worked')
+})()
 
 root.render(
   //<React.StrictMode>

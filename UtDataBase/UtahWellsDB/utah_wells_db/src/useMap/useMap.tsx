@@ -1,10 +1,9 @@
 import {useCallback, useEffect, useState, useRef} from "react";
-import mapboxgl from "mapbox-gl";
+import mapboxgl from 'mapbox-gl';
 import MapService from "../services/MapService";
 import {Sources, Layers} from "../data/SpatialData";
 import ReactDOM from "react-dom";
 import 'mapbox-gl/dist/mapbox-gl.css';
-
 
 
 export const useMap = (ref: any, mapConfig: any) => {
