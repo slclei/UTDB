@@ -25,18 +25,30 @@ module.exports = {
             },
             {
                 test: /\bmapbox-gl-csp-worker.js\b/i,
-                use: { loader: 'worker-loader' }
+                use: {
+                    loader: 'worker-loader'
+                }
+            },
+            {
+                test: /\.svg$/,
+                use: [{
+                    loader: 'svg-url-loader',
+                    options: {
+                        limit: 10000,
+                    },
+                }, ],
             },
         ],
     },
     output: {
-        publicPath: "/",
         path: path.resolve(__dirname, "build"),
-        filename: "bundle.tsx",
+        filename: "bundle.js",
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '.', "./public/index.html")
+            template: path.resolve(__dirname, '.', "./public/index.html"),
+            filename: "index.html",
+            manifest: "./public/manifest.json",
         }),
         new ForkTsCheckerWebpackPlugin({
             typescript: {

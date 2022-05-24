@@ -4,18 +4,18 @@ import WellSearchResult from './WellSearchResult';
 function SearchBox(this: any): any {
   const clearSearch = async (fields: string) => {
     if (fields === "all" || fields === "api") {
-      document.getElementById('compareAPI')!.value = "";
+      (document.getElementById('compareAPI') as HTMLSelectElement)!.value = "";
     }
     if (fields === "all" || fields === "api") {
-      document.getElementById('API')!.value = "";
-      document.getElementById('API')!.placeholder = "Filter Input...";
+      (document.getElementById('API') as HTMLInputElement)!.value = "";
+      (document.getElementById('API') as HTMLInputElement)!.placeholder = "Filter Input...";
     }
     if (fields === "all" || fields === "wellName") {
-      document.getElementById('compareWellName')!.value = "";
+      (document.getElementById('compareWellName') as HTMLSelectElement)!.value = "";
     }
     if (fields === "all" || fields === "wellName") {
-      document.getElementById('WellName')!.value = "";
-      document.getElementById('WellName')!.placeholder = "Filter Input...";
+      (document.getElementById('WellName') as HTMLInputElement)!.value = "";
+      (document.getElementById('WellName') as HTMLInputElement)!.placeholder = "Filter Input...";
     }
   }
 

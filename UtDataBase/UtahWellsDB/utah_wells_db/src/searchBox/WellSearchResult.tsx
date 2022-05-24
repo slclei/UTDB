@@ -13,13 +13,13 @@ function WellSearchResult() {
         let query: String = "";
         if (document.getElementById('compareAPI') && document.getElementById('API')) {
             //get api value and operation
-            const apiValue = document.getElementById('API')!.value;
+            const apiValue = (document.getElementById('API') as HTMLInputElement)!.value;
             query += "API:";
             query += apiValue;
         }
         if (document.getElementById('WellName')) {
             //get api value and operation
-            const nameValue = document.getElementById('WellName')!.value;
+            const nameValue = (document.getElementById('WellName') as HTMLInputElement)!.value;
             query += ",WellName:";
             query += nameValue;
         }
@@ -46,7 +46,7 @@ function WellSearchResult() {
                 setresultList(tmpArr1);
                 console.log(resultList);
             })
-                .catch((err) => {
+                .catch((err: any) => {
                     console.log(err);
                 });
         }
@@ -60,13 +60,13 @@ function WellSearchResult() {
         let query: String = "";
         if (document.getElementById('compareAPI') && document.getElementById('API')) {
             //get api value and operation
-            const apiValue = document.getElementById('API')!.value;
+            const apiValue = (document.getElementById('API') as HTMLInputElement)!.value;
             query += "API:";
             query += apiValue;
         }
         if (document.getElementById('WellName')) {
             //get api value and operation
-            const nameValue = document.getElementById('WellName')!.value;
+            const nameValue = (document.getElementById('WellName') as HTMLInputElement)!.value;
             query += ",WellName:";
             query += nameValue;
         }
@@ -93,7 +93,7 @@ function WellSearchResult() {
                 setresultList(tmpArr1);
                 console.log(resultList);
             })
-                .catch((err) => {
+                .catch((err: any) => {
                     console.log(err);
                 });
         }

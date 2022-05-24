@@ -13,8 +13,8 @@ class NewResult extends React.Component {
           //get information from compareAPI and API elements for search by API
             if(document.getElementById('compareAPI') && document.getElementById('API') && result){
               //get api value and operation
-                const apiValue=document.getElementById('API')!.value;   
-                const apiOperation=document.getElementById('compareAPI')!.value;
+                const apiValue=(document.getElementById('API') as HTMLInputElement)!.value;   
+                const apiOperation=(document.getElementById('compareAPI') as HTMLSelectElement)!.value;
                 //in case of "=" operation, get result from server, and write it to result
                 if (apiOperation==="="){
                     //get result from getAPI; promise type
