@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import { useMap } from '../useMap/useMap';
-import "mapbox-gl/dist/mapbox-gl.css";
 import s from "./Map.module.css";
 import { LayerControl } from "../layerControl/LayerControl";
 import ReactDOM from "react-dom";

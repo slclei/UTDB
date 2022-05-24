@@ -1,9 +1,5 @@
 import * as React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Routes, Route, Link } from "react-router-dom";
-import Boreholes from "./elements/WellsList";
-import { Layout } from "./layout/Layout";
-import 'mapbox-gl/dist/mapbox-gl.css';
 import './App.css';
 import { Wellmap } from './basemap/Basemap';
 

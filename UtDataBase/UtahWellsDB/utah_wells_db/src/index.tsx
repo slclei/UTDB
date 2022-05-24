@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
-import 'mapbox-gl/dist/mapbox-gl.css';
 import SearchBox from './searchBox/SearchBox';
 import WellService from "./services/WellService";
 
@@ -50,6 +49,7 @@ root.render(
                   tooltip-placement="bottom"
                   uib-tooltip="Google Home"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <i className="material-icons">home</i>
                 </a>
@@ -151,11 +151,11 @@ root.render(
           <tr>
             <td id="credits" colSpan={3} style={{ paddingBottom: 5 }}>
               Development support provided by: the{" "}
-              <a href="https://www.egi.utah.edu/" target="_blank">
+              <a href="https://www.egi.utah.edu/" target="_blank" rel="noreferrer">
                 Energy and geoscience institute
               </a>
               , and the{" "}
-              <a href="https://www.utah.edu/" target="_blank">
+              <a href="https://www.utah.edu/" target="_blank" rel="noreferrer">
                 University of Utah
               </a>
               .&nbsp;&nbsp;&nbsp;

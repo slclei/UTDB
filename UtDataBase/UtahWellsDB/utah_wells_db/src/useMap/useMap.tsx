@@ -1,10 +1,10 @@
 import {useCallback, useEffect, useState, useRef} from "react";
-import mapboxgl from 'mapbox-gl';
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
 import MapService from "../services/MapService";
 import {Sources, Layers} from "../data/SpatialData";
-import ReactDOM from "react-dom";
-import 'mapbox-gl/dist/mapbox-gl.css';
 
+mapboxgl.workerClass = MapboxWorker;
 
 export const useMap = (ref: any, mapConfig: any) => {
     const [map, setMap] = useState<typeof ref.current | null>(null);

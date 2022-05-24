@@ -1,11 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Component, ChangeEvent } from "react";
-import WellService from "../services/WellService";
-import IWellData from '../types/Wells';
-
-import { Routes, Route, Link } from "react-router-dom";
-import Boreholes from "../elements/WellsList";
 import WellSearchResult from './WellSearchResult';
 
 function SearchBox(this: any): any {
