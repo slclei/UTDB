@@ -9,14 +9,15 @@ import WellService from "./services/WellService";
 
 import Feedback from "feeder-react-feedback"; // import Feedback component
 import "feeder-react-feedback/dist/feeder-react-feedback.css"; // import stylesheet
+import Amplify from 'aws-amplify';
+import config from './aws-exports';
+import LogIn from './elements/logIn';
+
+Amplify.configure(config);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-
-(() => {
-  console.log('webpack worked')
-})()
 
 root.render(
   //<React.StrictMode>
@@ -99,24 +100,7 @@ root.render(
                 </a>
               </td>
               <td className="login" >
-                <button
-                  type="button"
-                  id="logInBtn"
-                  className="btn btn-primary"
-                  data-toggle="modal"
-                  data-target="#loginDialog"
-                  style={{ width:"50px" }}
-                >
-                  Log In
-                </button>
-                <button
-                  type="button"
-                  id="logOutBtn"
-                  className="btn btn-primary"
-                  style={{ display: "none", opacity: ".5" }}
-                >
-                  Log Out
-                </button>
+                <LogIn signOut={undefined} />
               </td>
             </tr>
           </tbody>

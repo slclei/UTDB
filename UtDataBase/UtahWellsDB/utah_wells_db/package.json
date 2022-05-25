@@ -4,6 +4,8 @@
     "private": true,
     "main": "src/index.tsx",
     "dependencies": {
+        "@aws-amplify/ui-react": "^2.18.2",
+        "aws-amplify": "^4.3.23",
         "babel-plugin-transform-class-properties": "^6.24.1",
         "css-loader": "^6.7.1",
         "react": "^18.0.0",
