@@ -1,12 +1,13 @@
 version: 1
 applications:
-  - backend:
-     phases:
-      build:
-        commands:
-          - '# Execute Amplify CLI with the helper script'
-          - amplifyPush --simple
-  - frontend:
+  -appRoot: UtDataBase/UtahWellsDB/utah_wells_db
+    - backend:
+      phases:
+        build:
+          commands:
+            - '# Execute Amplify CLI with the helper script'
+            - amplifyPush --simple
+    - frontend:
       phases:
         preBuild:
           commands:
@@ -24,4 +25,4 @@ applications:
       cache:
         paths:
           - node_modules/**/*
-    appRoot: UtDataBase/UtahWellsDB/utah_wells_db
+    
