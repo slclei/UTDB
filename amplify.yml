@@ -1,6 +1,6 @@
 version: 1
 applications:
-  -appRoot: UtDataBase/UtahWellsDB/utah_wells_db
+  - appRoot: UtDataBase/UtahWellsDB/utah_wells_db
     backend:
       phases:
         build:
