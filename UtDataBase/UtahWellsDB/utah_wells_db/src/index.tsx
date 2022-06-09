@@ -9,11 +9,11 @@ import WellService from "./services/WellService";
 
 import Feedback from "feeder-react-feedback"; // import Feedback component
 import "feeder-react-feedback/dist/feeder-react-feedback.css"; // import stylesheet
-//import Amplify from 'aws-amplify';
-//import config from './aws-exports';
+import Amplify from 'aws-amplify';
+import config from './aws-exports';
 //import LogIn from './elements/logIn';
 
-//Amplify.configure(config);
+Amplify.configure(config);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
