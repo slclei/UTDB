@@ -20,15 +20,6 @@ class NewResult extends React.Component {
                     //get result from getAPI; promise type
                     const apiResult=WellService.getAPI(apiValue);
                     result.push(apiResult);
-                    /*
-                    apiResult.
-                    then((res)=>{
-                        console.log(res.data.county);
-                        result!.innerHTML +=res.data.api;
-                    })
-                    .catch((err)=>{
-                        console.log(err);
-                    });*/
                 }
             } 
             return
