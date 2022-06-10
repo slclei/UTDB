@@ -2,6 +2,27 @@ import React, { useState } from "react";
 import WellService from "../services/WellService";
 import Square from "./Onclick";
 
+import Amplify from 'aws-amplify';
+
+import config from '../aws-exports';
+import {API} from "aws-amplify";
+import { DataStore } from '@aws-amplify/datastore';
+import { Wells } from '../models';
+//import LogIn from './elements/logIn';
+import * as mutations from '../graphql/mutations';
+
+Amplify.configure(config);
+
+(async ()=>{const newWell={
+    api: "1234",
+    wellName: "test1"
+};
+
+const newInputWell=await API.graphql({ query: mutations.createWells, variables: {input: newWell}});
+console.log(newInputWell);
+})();
+
+
 function WellSearchResult() {
     const [resultDic, setresultDic] = useState<any>({});
     const [resultList, setresultList] = useState<any>([]);
