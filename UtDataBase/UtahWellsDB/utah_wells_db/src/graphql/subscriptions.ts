@@ -6,52 +6,61 @@ export const onCreateWells = /* GraphQL */ `
   subscription OnCreateWells {
     onCreateWells {
       api
-      wellName
+      wellname
       operator
-      operatorNo
-      fieldName
-      groundElev
-      kellyElev
-      drkFloorElev
-      coordsSurfN
-      coordsSurfE
-      utm
+      operatorno
+      fieldname
+      ground_ele
+      kelly_elev
+      drkfloor_e
+      coordssurf
+      coordssu_1
+      utmzone
       latitude
       longitude
-      footageNS
-      dirNS
-      footageEW
-      dirEW
-      qtrQtr
+      footagens
+      dir_ns
+      footageew
+      dir_ew
+      qtrqtr
       section
       township
-      townshipDir
+      townshipdi
       range
-      rangeDir
+      rangedir
       meridian
       county
-      dirHoriz
-      dirVert
-      dirDirect
-      confidential
-      confRelDate
-      leaseNumber
-      leaseType
-      surfaceOwner
-      abandonDate
-      wellStatus
-      totCumOil
-      totCumGas
-      totCumWater
-      indianTribe
-      multiLats
-      origianlField
-      unitName
-      gisstatusType
-      origComplDate
-      jurisdiction
+      dir_horiz
+      dir_vert
+      dir_direct
+      confidenti
+      confreldat
+      leasenumbe
+      leasetype
+      surfaceown
+      abandondat
+      wellstatus
+      welltype
+      totcum_oil
+      totcum_gas
+      totcum_wat
+      indiantrib
+      multi_lats
+      originalfi
+      unitname
+      gisstatust
+      origcompld
+      jurisdicti
+      forklift_h
+      globalid
+      extent
+      formationtopdepths
+      netpay
+      netsand
+      reportsid
       tdsnavajo
       tdswingate
+      thickness
       id
       createdAt
       updatedAt
@@ -65,52 +74,61 @@ export const onUpdateWells = /* GraphQL */ `
   subscription OnUpdateWells {
     onUpdateWells {
       api
-      wellName
+      wellname
       operator
-      operatorNo
-      fieldName
-      groundElev
-      kellyElev
-      drkFloorElev
-      coordsSurfN
-      coordsSurfE
-      utm
+      operatorno
+      fieldname
+      ground_ele
+      kelly_elev
+      drkfloor_e
+      coordssurf
+      coordssu_1
+      utmzone
       latitude
       longitude
-      footageNS
-      dirNS
-      footageEW
-      dirEW
-      qtrQtr
+      footagens
+      dir_ns
+      footageew
+      dir_ew
+      qtrqtr
       section
       township
-      townshipDir
+      townshipdi
       range
-      rangeDir
+      rangedir
       meridian
       county
-      dirHoriz
-      dirVert
-      dirDirect
-      confidential
-      confRelDate
-      leaseNumber
-      leaseType
-      surfaceOwner
-      abandonDate
-      wellStatus
-      totCumOil
-      totCumGas
-      totCumWater
-      indianTribe
-      multiLats
-      origianlField
-      unitName
-      gisstatusType
-      origComplDate
-      jurisdiction
+      dir_horiz
+      dir_vert
+      dir_direct
+      confidenti
+      confreldat
+      leasenumbe
+      leasetype
+      surfaceown
+      abandondat
+      wellstatus
+      welltype
+      totcum_oil
+      totcum_gas
+      totcum_wat
+      indiantrib
+      multi_lats
+      originalfi
+      unitname
+      gisstatust
+      origcompld
+      jurisdicti
+      forklift_h
+      globalid
+      extent
+      formationtopdepths
+      netpay
+      netsand
+      reportsid
       tdsnavajo
       tdswingate
+      thickness
       id
       createdAt
       updatedAt
@@ -124,52 +142,61 @@ export const onDeleteWells = /* GraphQL */ `
   subscription OnDeleteWells {
     onDeleteWells {
       api
-      wellName
+      wellname
       operator
-      operatorNo
-      fieldName
-      groundElev
-      kellyElev
-      drkFloorElev
-      coordsSurfN
-      coordsSurfE
-      utm
+      operatorno
+      fieldname
+      ground_ele
+      kelly_elev
+      drkfloor_e
+      coordssurf
+      coordssu_1
+      utmzone
       latitude
       longitude
-      footageNS
-      dirNS
-      footageEW
-      dirEW
-      qtrQtr
+      footagens
+      dir_ns
+      footageew
+      dir_ew
+      qtrqtr
       section
       township
-      townshipDir
+      townshipdi
       range
-      rangeDir
+      rangedir
       meridian
       county
-      dirHoriz
-      dirVert
-      dirDirect
-      confidential
-      confRelDate
-      leaseNumber
-      leaseType
-      surfaceOwner
-      abandonDate
-      wellStatus
-      totCumOil
-      totCumGas
-      totCumWater
-      indianTribe
-      multiLats
-      origianlField
-      unitName
-      gisstatusType
-      origComplDate
-      jurisdiction
+      dir_horiz
+      dir_vert
+      dir_direct
+      confidenti
+      confreldat
+      leasenumbe
+      leasetype
+      surfaceown
+      abandondat
+      wellstatus
+      welltype
+      totcum_oil
+      totcum_gas
+      totcum_wat
+      indiantrib
+      multi_lats
+      originalfi
+      unitname
+      gisstatust
+      origcompld
+      jurisdicti
+      forklift_h
+      globalid
+      extent
+      formationtopdepths
+      netpay
+      netsand
+      reportsid
       tdsnavajo
       tdswingate
+      thickness
       id
       createdAt
       updatedAt

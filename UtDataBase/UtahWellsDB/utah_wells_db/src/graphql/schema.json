@@ -148,7 +148,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "wellName",
+          "name" : "wellname",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -174,7 +174,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "operatorNo",
+          "name" : "operatorno",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -185,7 +185,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "fieldName",
+          "name" : "fieldname",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -196,7 +196,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "groundElev",
+          "name" : "ground_ele",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -207,7 +207,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "kellyElev",
+          "name" : "kelly_elev",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -218,7 +218,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "drkFloorElev",
+          "name" : "drkfloor_e",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -229,7 +229,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "coordsSurfN",
+          "name" : "coordssurf",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -240,7 +240,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "coordsSurfE",
+          "name" : "coordssu_1",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -251,7 +251,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "utm",
+          "name" : "utmzone",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -284,7 +284,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "footageNS",
+          "name" : "footagens",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -295,7 +295,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "dirNS",
+          "name" : "dir_ns",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -306,7 +306,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "footageEW",
+          "name" : "footageew",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -317,7 +317,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "dirEW",
+          "name" : "dir_ew",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -328,7 +328,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "qtrQtr",
+          "name" : "qtrqtr",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -361,7 +361,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "townshipDir",
+          "name" : "townshipdi",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -383,7 +383,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "rangeDir",
+          "name" : "rangedir",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -416,7 +416,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "dirHoriz",
+          "name" : "dir_horiz",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -427,7 +427,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "dirVert",
+          "name" : "dir_vert",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -438,7 +438,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "dirDirect",
+          "name" : "dir_direct",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -449,7 +449,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "confidential",
+          "name" : "confidenti",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -460,7 +460,18 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "confRelDate",
+          "name" : "confreldat",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDate",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "leasenumbe",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -471,7 +482,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "leaseNumber",
+          "name" : "leasetype",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -482,7 +493,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "leaseType",
+          "name" : "surfaceown",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -493,7 +504,18 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "surfaceOwner",
+          "name" : "abandondat",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDate",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "wellstatus",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -504,7 +526,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "abandonDate",
+          "name" : "welltype",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -515,7 +537,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "wellStatus",
+          "name" : "totcum_oil",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -526,7 +548,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "totCumOil",
+          "name" : "totcum_gas",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -537,7 +559,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "totCumGas",
+          "name" : "totcum_wat",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -548,7 +570,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "totCumWater",
+          "name" : "indiantrib",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -559,18 +581,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "indianTribe",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "multiLats",
+          "name" : "multi_lats",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -581,7 +592,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "origianlField",
+          "name" : "originalfi",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -592,7 +603,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "unitName",
+          "name" : "unitname",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -603,7 +614,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "gisstatusType",
+          "name" : "gisstatust",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -614,7 +625,18 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "origComplDate",
+          "name" : "origcompld",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDate",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "jurisdicti",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -625,7 +647,73 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "jurisdiction",
+          "name" : "forklift_h",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "globalid",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "extent",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "formationtopdepths",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "netpay",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "netsand",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "reportsid",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -653,6 +741,17 @@
           "type" : {
             "kind" : "SCALAR",
             "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "thickness",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -786,6 +885,15 @@
         "possibleTypes" : null
       }, {
         "kind" : "SCALAR",
+        "name" : "AWSDate",
+        "description" : "The `AWSDate` scalar type provided by AWS AppSync, represents a valid ***extended*** [ISO 8601 Date](https://en.wikipedia.org/wiki/ISO_8601#Calendar_dates) string. In other words, this scalar type accepts date strings of the form `YYYY-MM-DD`.  The scalar can also accept \"negative years\" of the form `-YYYY` which correspond to years before `0000`. For example, \"**-2017-05-01**\" and \"**-9999-01-01**\" are both valid dates.  This scalar type can also accept an optional [time zone offset](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators). For example, \"**1970-01-01**\", \"**1970-01-01Z**\", \"**1970-01-01-07:00**\" and \"**1970-01-01+05:30**\" are all valid dates. The time zone offset must either be `Z` (representing the UTC time zone) or be in the format `±hh:mm:ss`. The seconds field in the timezone offset will be considered valid even though it is not part of the ISO 8601 standard.",
+        "fields" : null,
+        "inputFields" : null,
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "SCALAR",
         "name" : "AWSDateTime",
         "description" : "The `AWSDateTime` scalar type provided by AWS AppSync, represents a valid ***extended*** [ISO 8601 DateTime](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) string. In other words, this scalar type accepts datetime strings of the form `YYYY-MM-DDThh:mm:ss.SSSZ`.  The scalar can also accept \"negative years\" of the form `-YYYY` which correspond to years before `0000`. For example, \"**-2017-01-01T00:00Z**\" and \"**-9999-01-01T00:00Z**\" are both valid datetime strings.  The field after the two digit seconds field is a nanoseconds field. It can accept between 1 and 9 digits. So, for example, \"**1970-01-01T12:00:00.2Z**\", \"**1970-01-01T12:00:00.277Z**\" and \"**1970-01-01T12:00:00.123456789Z**\" are all valid datetime strings.  The seconds and nanoseconds fields are optional (the seconds field must be specified if the nanoseconds field is to be used).  The [time zone offset](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) is compulsory for this scalar. The time zone offset must either be `Z` (representing the UTC time zone) or be in the format `±hh:mm:ss`. The seconds field in the timezone offset will be considered valid even though it is not part of the ISO 8601 standard.",
         "fields" : null,
@@ -876,7 +984,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "wellName",
+          "name" : "wellname",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -894,7 +1002,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "operatorNo",
+          "name" : "operatorno",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -903,7 +1011,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fieldName",
+          "name" : "fieldname",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -912,7 +1020,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "groundElev",
+          "name" : "ground_ele",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -921,7 +1029,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "kellyElev",
+          "name" : "kelly_elev",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -930,7 +1038,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "drkFloorElev",
+          "name" : "drkfloor_e",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -939,7 +1047,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "coordsSurfN",
+          "name" : "coordssurf",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -948,7 +1056,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "coordsSurfE",
+          "name" : "coordssu_1",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -957,7 +1065,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "utm",
+          "name" : "utmzone",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -984,7 +1092,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "footageNS",
+          "name" : "footagens",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -993,7 +1101,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirNS",
+          "name" : "dir_ns",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1002,7 +1110,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "footageEW",
+          "name" : "footageew",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1011,7 +1119,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirEW",
+          "name" : "dir_ew",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1020,7 +1128,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "qtrQtr",
+          "name" : "qtrqtr",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1047,7 +1155,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "townshipDir",
+          "name" : "townshipdi",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1065,7 +1173,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "rangeDir",
+          "name" : "rangedir",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1092,7 +1200,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirHoriz",
+          "name" : "dir_horiz",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1101,7 +1209,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirVert",
+          "name" : "dir_vert",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1110,7 +1218,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirDirect",
+          "name" : "dir_direct",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1119,7 +1227,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "confidential",
+          "name" : "confidenti",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1128,7 +1236,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "confRelDate",
+          "name" : "confreldat",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1137,7 +1245,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "leaseNumber",
+          "name" : "leasenumbe",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1146,7 +1254,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "leaseType",
+          "name" : "leasetype",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1155,7 +1263,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "surfaceOwner",
+          "name" : "surfaceown",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1164,7 +1272,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "abandonDate",
+          "name" : "abandondat",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1173,7 +1281,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "wellStatus",
+          "name" : "wellstatus",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1182,7 +1290,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumOil",
+          "name" : "welltype",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1191,7 +1299,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumGas",
+          "name" : "totcum_oil",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1200,7 +1308,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumWater",
+          "name" : "totcum_gas",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1209,7 +1317,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "indianTribe",
+          "name" : "totcum_wat",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1218,7 +1326,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "multiLats",
+          "name" : "indiantrib",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "multi_lats",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1227,7 +1344,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "origianlField",
+          "name" : "originalfi",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1236,7 +1353,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "unitName",
+          "name" : "unitname",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1245,7 +1362,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "gisstatusType",
+          "name" : "gisstatust",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1254,7 +1371,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "origComplDate",
+          "name" : "origcompld",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1263,7 +1380,70 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "jurisdiction",
+          "name" : "jurisdicti",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "forklift_h",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "globalid",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "extent",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "formationtopdepths",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelFloatInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "netpay",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "netsand",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "reportsid",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1286,6 +1466,15 @@
           "type" : {
             "kind" : "INPUT_OBJECT",
             "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "thickness",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelFloatInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -2038,7 +2227,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "wellName",
+          "name" : "wellname",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -2060,7 +2249,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "operatorNo",
+          "name" : "operatorno",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2069,7 +2258,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fieldName",
+          "name" : "fieldname",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2078,7 +2267,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "groundElev",
+          "name" : "ground_ele",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2087,7 +2276,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "kellyElev",
+          "name" : "kelly_elev",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2096,7 +2285,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "drkFloorElev",
+          "name" : "drkfloor_e",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2105,7 +2294,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "coordsSurfN",
+          "name" : "coordssurf",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2114,7 +2303,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "coordsSurfE",
+          "name" : "coordssu_1",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2123,7 +2312,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "utm",
+          "name" : "utmzone",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2150,7 +2339,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "footageNS",
+          "name" : "footagens",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2159,7 +2348,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirNS",
+          "name" : "dir_ns",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2168,7 +2357,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "footageEW",
+          "name" : "footageew",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2177,7 +2366,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirEW",
+          "name" : "dir_ew",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2186,7 +2375,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "qtrQtr",
+          "name" : "qtrqtr",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2213,7 +2402,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "townshipDir",
+          "name" : "townshipdi",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2231,7 +2420,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "rangeDir",
+          "name" : "rangedir",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2258,7 +2447,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirHoriz",
+          "name" : "dir_horiz",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2267,7 +2456,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirVert",
+          "name" : "dir_vert",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2276,7 +2465,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirDirect",
+          "name" : "dir_direct",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2285,7 +2474,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "confidential",
+          "name" : "confidenti",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2294,7 +2483,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "confRelDate",
+          "name" : "confreldat",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDate",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "leasenumbe",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2303,7 +2501,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "leaseNumber",
+          "name" : "leasetype",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2312,7 +2510,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "leaseType",
+          "name" : "surfaceown",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2321,7 +2519,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "surfaceOwner",
+          "name" : "abandondat",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDate",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "wellstatus",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2330,7 +2537,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "abandonDate",
+          "name" : "welltype",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2339,7 +2546,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "wellStatus",
+          "name" : "totcum_oil",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2348,7 +2555,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumOil",
+          "name" : "totcum_gas",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2357,7 +2564,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumGas",
+          "name" : "totcum_wat",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2366,7 +2573,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumWater",
+          "name" : "indiantrib",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2375,16 +2582,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "indianTribe",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "multiLats",
+          "name" : "multi_lats",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2393,7 +2591,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "origianlField",
+          "name" : "originalfi",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2402,7 +2600,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "unitName",
+          "name" : "unitname",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2411,7 +2609,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "gisstatusType",
+          "name" : "gisstatust",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2420,7 +2618,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "origComplDate",
+          "name" : "origcompld",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDate",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "jurisdicti",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2429,7 +2636,61 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "jurisdiction",
+          "name" : "forklift_h",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "globalid",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "extent",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "formationtopdepths",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "netpay",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "netsand",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "reportsid",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2452,6 +2713,15 @@
           "type" : {
             "kind" : "SCALAR",
             "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "thickness",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
             "ofType" : null
           },
           "defaultValue" : null
@@ -2492,7 +2762,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "wellName",
+          "name" : "wellname",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2510,7 +2780,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "operatorNo",
+          "name" : "operatorno",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2519,7 +2789,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fieldName",
+          "name" : "fieldname",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2528,7 +2798,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "groundElev",
+          "name" : "ground_ele",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2537,7 +2807,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "kellyElev",
+          "name" : "kelly_elev",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2546,7 +2816,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "drkFloorElev",
+          "name" : "drkfloor_e",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2555,7 +2825,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "coordsSurfN",
+          "name" : "coordssurf",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2564,7 +2834,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "coordsSurfE",
+          "name" : "coordssu_1",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2573,7 +2843,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "utm",
+          "name" : "utmzone",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2600,7 +2870,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "footageNS",
+          "name" : "footagens",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2609,7 +2879,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirNS",
+          "name" : "dir_ns",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2618,7 +2888,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "footageEW",
+          "name" : "footageew",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2627,7 +2897,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirEW",
+          "name" : "dir_ew",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2636,7 +2906,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "qtrQtr",
+          "name" : "qtrqtr",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2663,7 +2933,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "townshipDir",
+          "name" : "townshipdi",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2681,7 +2951,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "rangeDir",
+          "name" : "rangedir",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2708,7 +2978,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirHoriz",
+          "name" : "dir_horiz",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2717,7 +2987,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirVert",
+          "name" : "dir_vert",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2726,7 +2996,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirDirect",
+          "name" : "dir_direct",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2735,7 +3005,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "confidential",
+          "name" : "confidenti",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2744,7 +3014,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "confRelDate",
+          "name" : "confreldat",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2753,7 +3023,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "leaseNumber",
+          "name" : "leasenumbe",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2762,7 +3032,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "leaseType",
+          "name" : "leasetype",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2771,7 +3041,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "surfaceOwner",
+          "name" : "surfaceown",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2780,7 +3050,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "abandonDate",
+          "name" : "abandondat",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2789,7 +3059,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "wellStatus",
+          "name" : "wellstatus",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2798,7 +3068,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumOil",
+          "name" : "welltype",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2807,7 +3077,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumGas",
+          "name" : "totcum_oil",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2816,7 +3086,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumWater",
+          "name" : "totcum_gas",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2825,7 +3095,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "indianTribe",
+          "name" : "totcum_wat",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2834,7 +3104,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "multiLats",
+          "name" : "indiantrib",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "multi_lats",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2843,7 +3122,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "origianlField",
+          "name" : "originalfi",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2852,7 +3131,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "unitName",
+          "name" : "unitname",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2861,7 +3140,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "gisstatusType",
+          "name" : "gisstatust",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2870,7 +3149,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "origComplDate",
+          "name" : "origcompld",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2879,7 +3158,70 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "jurisdiction",
+          "name" : "jurisdicti",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "forklift_h",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "globalid",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "extent",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "formationtopdepths",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelFloatInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "netpay",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "netsand",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "reportsid",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -2902,6 +3244,15 @@
           "type" : {
             "kind" : "INPUT_OBJECT",
             "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "thickness",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelFloatInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -2959,7 +3310,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "wellName",
+          "name" : "wellname",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2977,7 +3328,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "operatorNo",
+          "name" : "operatorno",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2986,7 +3337,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "fieldName",
+          "name" : "fieldname",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -2995,7 +3346,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "groundElev",
+          "name" : "ground_ele",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3004,7 +3355,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "kellyElev",
+          "name" : "kelly_elev",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3013,7 +3364,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "drkFloorElev",
+          "name" : "drkfloor_e",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3022,7 +3373,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "coordsSurfN",
+          "name" : "coordssurf",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3031,7 +3382,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "coordsSurfE",
+          "name" : "coordssu_1",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3040,7 +3391,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "utm",
+          "name" : "utmzone",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3067,7 +3418,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "footageNS",
+          "name" : "footagens",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3076,7 +3427,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirNS",
+          "name" : "dir_ns",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3085,7 +3436,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "footageEW",
+          "name" : "footageew",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3094,7 +3445,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirEW",
+          "name" : "dir_ew",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3103,7 +3454,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "qtrQtr",
+          "name" : "qtrqtr",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3130,7 +3481,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "townshipDir",
+          "name" : "townshipdi",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3148,7 +3499,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "rangeDir",
+          "name" : "rangedir",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3175,7 +3526,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirHoriz",
+          "name" : "dir_horiz",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3184,7 +3535,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirVert",
+          "name" : "dir_vert",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3193,7 +3544,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "dirDirect",
+          "name" : "dir_direct",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3202,7 +3553,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "confidential",
+          "name" : "confidenti",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3211,7 +3562,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "confRelDate",
+          "name" : "confreldat",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDate",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "leasenumbe",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3220,7 +3580,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "leaseNumber",
+          "name" : "leasetype",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3229,7 +3589,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "leaseType",
+          "name" : "surfaceown",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3238,7 +3598,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "surfaceOwner",
+          "name" : "abandondat",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDate",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "wellstatus",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3247,7 +3616,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "abandonDate",
+          "name" : "welltype",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3256,7 +3625,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "wellStatus",
+          "name" : "totcum_oil",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3265,7 +3634,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumOil",
+          "name" : "totcum_gas",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3274,7 +3643,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumGas",
+          "name" : "totcum_wat",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3283,7 +3652,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "totCumWater",
+          "name" : "indiantrib",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3292,16 +3661,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "indianTribe",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "multiLats",
+          "name" : "multi_lats",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3310,7 +3670,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "origianlField",
+          "name" : "originalfi",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3319,7 +3679,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "unitName",
+          "name" : "unitname",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3328,7 +3688,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "gisstatusType",
+          "name" : "gisstatust",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3337,7 +3697,16 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "origComplDate",
+          "name" : "origcompld",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "AWSDate",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "jurisdicti",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3346,7 +3715,61 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "jurisdiction",
+          "name" : "forklift_h",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "globalid",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "extent",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "formationtopdepths",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "netpay",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "netsand",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "reportsid",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -3369,6 +3792,15 @@
           "type" : {
             "kind" : "SCALAR",
             "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "thickness",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
             "ofType" : null
           },
           "defaultValue" : null
@@ -3472,25 +3904,6 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
-        "kind" : "ENUM",
-        "name" : "ModelSortDirection",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : [ {
-          "name" : "ASC",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "DESC",
-          "description" : null,
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        } ],
-        "possibleTypes" : null
-      }, {
         "kind" : "INPUT_OBJECT",
         "name" : "ModelBooleanInput",
         "description" : null,
@@ -3534,6 +3947,25 @@
         } ],
         "interfaces" : null,
         "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "ENUM",
+        "name" : "ModelSortDirection",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : null,
+        "interfaces" : null,
+        "enumValues" : [ {
+          "name" : "ASC",
+          "description" : null,
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "DESC",
+          "description" : null,
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
@@ -4319,23 +4751,6 @@
         "onFragment" : false,
         "onField" : true
       }, {
-        "name" : "deprecated",
-        "description" : null,
-        "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
-        "args" : [ {
-          "name" : "reason",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : "\"No longer supported\""
-        } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
         "name" : "aws_subscribe",
         "description" : "Tells the service which mutation triggers this subscription.",
         "locations" : [ "FIELD_DEFINITION" ],
@@ -4361,6 +4776,23 @@
         "description" : "Tells the service this field/object has access authorized by an OIDC token.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
         "args" : [ ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+        "name" : "deprecated",
+        "description" : null,
+        "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
+        "args" : [ {
+          "name" : "reason",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : "\"No longer supported\""
+        } ],
         "onOperation" : false,
         "onFragment" : false,
         "onField" : false

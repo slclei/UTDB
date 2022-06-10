@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import WellService from "../services/WellService";
 import Square from "./Onclick";
 
-import Amplify from 'aws-amplify';
+import Amplify, { graphqlOperation } from 'aws-amplify';
 
 import config from '../aws-exports';
 import {API} from "aws-amplify";
@@ -10,18 +10,21 @@ import { DataStore } from '@aws-amplify/datastore';
 import { Wells } from '../models';
 //import LogIn from './elements/logIn';
 import * as mutations from '../graphql/mutations';
+import readToJson from './readFile';
+import {listWells} from '../graphql/queries';
+import gql from 'graphql-tag';
+import AWSAppSyncClient, {AUTH_TYPE} from 'aws-appsync';
 
 Amplify.configure(config);
 
-(async ()=>{const newWell={
-    api: "1234",
-    wellName: "test1"
-};
-
-const newInputWell=await API.graphql({ query: mutations.createWells, variables: {input: newWell}});
-console.log(newInputWell);
-})();
-
+const client=new AWSAppSyncClient({
+    url: config.aws_appsync_graphqlEndpoint,
+    region: config.aws_appsync_region,
+    auth: {
+        type: AUTH_TYPE.API_KEY, // or type: awsconfig.aws_appsync_authenticationType,
+        apiKey: config.aws_appsync_apiKey,
+    }
+});
 
 function WellSearchResult() {
     const [resultDic, setresultDic] = useState<any>({});
@@ -121,6 +124,19 @@ function WellSearchResult() {
         return
     }
 
+    const listAll=async (e: React.MouseEvent<HTMLElement>)=>{
+        console.log("start list all");
+        const wellList=readToJson("D:\\Github\\UTDB\\UtDataBase\\UtahWellsDB\\utah_wells_db\\src\\searchBox\\readFile.tsx");
+    
+        for (var newWell of await wellList){
+            const newInputWell=await API.graphql({ query: mutations.createWells, variables: {input: newWell}});
+        }
+    
+        const allTodos = await API.graphql({ query: listWells });
+        console.log("end list");
+        console.log(allTodos); 
+    };
+
     return (
         <div>
             <div
@@ -141,7 +157,7 @@ function WellSearchResult() {
                         <td style={{ width: "80%" }}>
                             <Square
                                 message={'Add to Result'}
-                                onClick={(e: React.MouseEvent<HTMLElement>) => addToResult(e)}
+                                onClick={(e: React.MouseEvent<HTMLElement>) => listAll(e)}
                             />
                         </td>
                         <td>

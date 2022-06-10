@@ -17,8 +17,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "wellName": {
-                    "name": "wellName",
+                "wellname": {
+                    "name": "wellname",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
@@ -31,57 +31,57 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "operatorNo": {
-                    "name": "operatorNo",
+                "operatorno": {
+                    "name": "operatorno",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 },
-                "fieldName": {
-                    "name": "fieldName",
+                "fieldname": {
+                    "name": "fieldname",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "groundElev": {
-                    "name": "groundElev",
+                "ground_ele": {
+                    "name": "ground_ele",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "kellyElev": {
-                    "name": "kellyElev",
+                "kelly_elev": {
+                    "name": "kelly_elev",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "drkFloorElev": {
-                    "name": "drkFloorElev",
+                "drkfloor_e": {
+                    "name": "drkfloor_e",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "coordsSurfN": {
-                    "name": "coordsSurfN",
+                "coordssurf": {
+                    "name": "coordssurf",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "coordsSurfE": {
-                    "name": "coordsSurfE",
+                "coordssu_1": {
+                    "name": "coordssu_1",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "utm": {
-                    "name": "utm",
+                "utmzone": {
+                    "name": "utmzone",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": false,
@@ -101,36 +101,36 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "footageNS": {
-                    "name": "footageNS",
+                "footagens": {
+                    "name": "footagens",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 },
-                "dirNS": {
-                    "name": "dirNS",
+                "dir_ns": {
+                    "name": "dir_ns",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "footageEW": {
-                    "name": "footageEW",
+                "footageew": {
+                    "name": "footageew",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "dirEW": {
-                    "name": "dirEW",
+                "dir_ew": {
+                    "name": "dir_ew",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "qtrQtr": {
-                    "name": "qtrQtr",
+                "qtrqtr": {
+                    "name": "qtrqtr",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -150,8 +150,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "townshipDir": {
-                    "name": "townshipDir",
+                "townshipdi": {
+                    "name": "townshipdi",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -164,8 +164,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "rangeDir": {
-                    "name": "rangeDir",
+                "rangedir": {
+                    "name": "rangedir",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -185,141 +185,197 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "dirHoriz": {
-                    "name": "dirHoriz",
+                "dir_horiz": {
+                    "name": "dir_horiz",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "dirVert": {
-                    "name": "dirVert",
+                "dir_vert": {
+                    "name": "dir_vert",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "dirDirect": {
-                    "name": "dirDirect",
+                "dir_direct": {
+                    "name": "dir_direct",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "confidential": {
-                    "name": "confidential",
+                "confidenti": {
+                    "name": "confidenti",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "confRelDate": {
-                    "name": "confRelDate",
+                "confreldat": {
+                    "name": "confreldat",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "leasenumbe": {
+                    "name": "leasenumbe",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "leaseNumber": {
-                    "name": "leaseNumber",
+                "leasetype": {
+                    "name": "leasetype",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "leaseType": {
-                    "name": "leaseType",
+                "surfaceown": {
+                    "name": "surfaceown",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "surfaceOwner": {
-                    "name": "surfaceOwner",
+                "abandondat": {
+                    "name": "abandondat",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "wellstatus": {
+                    "name": "wellstatus",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "abandonDate": {
-                    "name": "abandonDate",
+                "welltype": {
+                    "name": "welltype",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "wellStatus": {
-                    "name": "wellStatus",
+                "totcum_oil": {
+                    "name": "totcum_oil",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "totCumOil": {
-                    "name": "totCumOil",
+                "totcum_gas": {
+                    "name": "totcum_gas",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "totCumGas": {
-                    "name": "totCumGas",
+                "totcum_wat": {
+                    "name": "totcum_wat",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "totCumWater": {
-                    "name": "totCumWater",
+                "indiantrib": {
+                    "name": "indiantrib",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "indianTribe": {
-                    "name": "indianTribe",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "multiLats": {
-                    "name": "multiLats",
+                "multi_lats": {
+                    "name": "multi_lats",
                     "isArray": false,
                     "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 },
-                "origianlField": {
-                    "name": "origianlField",
+                "originalfi": {
+                    "name": "originalfi",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "unitName": {
-                    "name": "unitName",
+                "unitname": {
+                    "name": "unitname",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "gisstatusType": {
-                    "name": "gisstatusType",
+                "gisstatust": {
+                    "name": "gisstatust",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "origComplDate": {
-                    "name": "origComplDate",
+                "origcompld": {
+                    "name": "origcompld",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "jurisdicti": {
+                    "name": "jurisdicti",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "jurisdiction": {
-                    "name": "jurisdiction",
+                "forklift_h": {
+                    "name": "forklift_h",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "globalid": {
+                    "name": "globalid",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "extent": {
+                    "name": "extent",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "formationtopdepths": {
+                    "name": "formationtopdepths",
+                    "isArray": false,
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "netpay": {
+                    "name": "netpay",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "netsand": {
+                    "name": "netsand",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "reportsid": {
+                    "name": "reportsid",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -336,6 +392,13 @@ export const schema = {
                     "name": "tdswingate",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "thickness": {
+                    "name": "thickness",
+                    "isArray": false,
+                    "type": "Float",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -384,5 +447,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "8f24a61fad2e055e43aa2fbf4776c401"
+    "version": "98c0b0ca43b0f93c3483c131bb3d1da7"
 };

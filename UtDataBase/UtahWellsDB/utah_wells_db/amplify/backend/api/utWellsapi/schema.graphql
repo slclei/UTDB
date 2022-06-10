@@ -1,49 +1,58 @@
 type Wells @model @auth(rules: [{allow: public}]) {
-  api: ID!
-  wellName: String!
-  operator: String
-  operatorNo: Int
-  fieldName: String
-  groundElev: String
-  kellyElev: String
-  drkFloorElev: String
-  coordsSurfN: String
-  coordsSurfE: String
-  utm: Int
-  latitude: Float
-  longitude: Float
-  footageNS: Int
-  dirNS: String
-  footageEW: String
-  dirEW: String
-  qtrQtr: String
-  section: Int
-  township: String
-  townshipDir: String
-  range: String
-  rangeDir: String
-  meridian: String
-  county: String
-  dirHoriz: String
-  dirVert: String
-  dirDirect: String
-  confidential: String
-  confRelDate: String
-  leaseNumber: String
-  leaseType: String
-  surfaceOwner: String
-  abandonDate: String
-  wellStatus: String
-  totCumOil: String
-  totCumGas: String
-  totCumWater: String
-  indianTribe: String
-  multiLats: Int
-  origianlField: String
-  unitName: String
-  gisstatusType: String
-  origComplDate: String
-  jurisdiction: String
-  tdsnavajo: String
-  tdswingate: String
+api:	ID!
+wellname:	String!
+operator:	String
+operatorno:	Int
+fieldname:	String
+ground_ele:	String
+kelly_elev:	String
+drkfloor_e:	String
+coordssurf:	String
+coordssu_1:	String
+utmzone:	Int
+latitude:	Float
+longitude:	Float
+footagens:	Int
+dir_ns:	String
+footageew:	String
+dir_ew:	String
+qtrqtr:	String
+section:	Int
+township:	String
+townshipdi:	String
+range:	String
+rangedir:	String
+meridian:	String
+county:	String
+dir_horiz:	String
+dir_vert:	String
+dir_direct:	String
+confidenti:	String
+confreldat:	AWSDate
+leasenumbe:	String
+leasetype:	String
+surfaceown:	String
+abandondat:	AWSDate
+wellstatus:	String
+welltype:	String
+totcum_oil:	String
+totcum_gas:	String
+totcum_wat:	String
+indiantrib:	String
+multi_lats:	Int
+originalfi:	String
+unitname:	String
+gisstatust:	String
+origcompld:	AWSDate
+jurisdicti:	String
+forklift_h:	String
+globalid:	String
+extent:	String
+formationtopdepths:	Float
+netpay:	String
+netsand:	String
+reportsid:	String
+tdsnavajo:	String
+tdswingate:	String
+thickness:	Float
 } 
