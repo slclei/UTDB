@@ -1,0 +1,172 @@
+/* tslint:disable */
+/* eslint-disable */
+// this is an auto generated file. This will be overwritten
+
+export const onCreateWells = /* GraphQL */ `
+  subscription OnCreateWells {
+    onCreateWells {
+      api
+      wellName
+      operator
+      operatorNo
+      fieldName
+      groundElev
+      kellyElev
+      drkFloorElev
+      coordsSurfN
+      coordsSurfE
+      utm
+      latitude
+      longitude
+      footageNS
+      dirNS
+      footageEW
+      dirEW
+      qtrQtr
+      section
+      township
+      townshipDir
+      range
+      rangeDir
+      meridian
+      county
+      dirHoriz
+      dirVert
+      dirDirect
+      confidential
+      confRelDate
+      leaseNumber
+      leaseType
+      surfaceOwner
+      abandonDate
+      wellStatus
+      totCumOil
+      totCumGas
+      totCumWater
+      indianTribe
+      multiLats
+      origianlField
+      unitName
+      gisstatusType
+      origComplDate
+      jurisdiction
+      tdsnavajo
+      tdswingate
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateWells = /* GraphQL */ `
+  subscription OnUpdateWells {
+    onUpdateWells {
+      api
+      wellName
+      operator
+      operatorNo
+      fieldName
+      groundElev
+      kellyElev
+      drkFloorElev
+      coordsSurfN
+      coordsSurfE
+      utm
+      latitude
+      longitude
+      footageNS
+      dirNS
+      footageEW
+      dirEW
+      qtrQtr
+      section
+      township
+      townshipDir
+      range
+      rangeDir
+      meridian
+      county
+      dirHoriz
+      dirVert
+      dirDirect
+      confidential
+      confRelDate
+      leaseNumber
+      leaseType
+      surfaceOwner
+      abandonDate
+      wellStatus
+      totCumOil
+      totCumGas
+      totCumWater
+      indianTribe
+      multiLats
+      origianlField
+      unitName
+      gisstatusType
+      origComplDate
+      jurisdiction
+      tdsnavajo
+      tdswingate
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteWells = /* GraphQL */ `
+  subscription OnDeleteWells {
+    onDeleteWells {
+      api
+      wellName
+      operator
+      operatorNo
+      fieldName
+      groundElev
+      kellyElev
+      drkFloorElev
+      coordsSurfN
+      coordsSurfE
+      utm
+      latitude
+      longitude
+      footageNS
+      dirNS
+      footageEW
+      dirEW
+      qtrQtr
+      section
+      township
+      townshipDir
+      range
+      rangeDir
+      meridian
+      county
+      dirHoriz
+      dirVert
+      dirDirect
+      confidential
+      confRelDate
+      leaseNumber
+      leaseType
+      surfaceOwner
+      abandonDate
+      wellStatus
+      totCumOil
+      totCumGas
+      totCumWater
+      indianTribe
+      multiLats
+      origianlField
+      unitName
+      gisstatusType
+      origComplDate
+      jurisdiction
+      tdsnavajo
+      tdswingate
+      id
+      createdAt
+      updatedAt
+    }
+  }
+`;

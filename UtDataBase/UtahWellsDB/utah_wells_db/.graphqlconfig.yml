@@ -1,0 +1,15 @@
+projects:
+  utWellsapi:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.tsx
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/api.tsx
+        docsFilePath: src/graphql
+extensions:
+  amplify:
+    version: 3
