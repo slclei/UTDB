@@ -10,7 +10,7 @@ import { DataStore } from '@aws-amplify/datastore';
 import { Wells } from '../models';
 //import LogIn from './elements/logIn';
 import * as mutations from '../graphql/mutations';
-import readToJson from './readFile';
+import welldata from '../data/wellUTforData.json';
 import {listWells} from '../graphql/queries';
 import gql from 'graphql-tag';
 import AWSAppSyncClient, {AUTH_TYPE} from 'aws-appsync';
@@ -126,9 +126,9 @@ function WellSearchResult() {
 
     const listAll=async (e: React.MouseEvent<HTMLElement>)=>{
         console.log("start list all");
-        const wellList=readToJson("D:\\Github\\UTDB\\UtDataBase\\UtahWellsDB\\utah_wells_db\\src\\searchBox\\readFile.tsx");
-    
-        for (var newWell of await wellList){
+        const wellList=welldata;
+
+        for (const newWell of wellList){
             const newInputWell=await API.graphql({ query: mutations.createWells, variables: {input: newWell}});
         }
     
@@ -157,13 +157,19 @@ function WellSearchResult() {
                         <td style={{ width: "80%" }}>
                             <Square
                                 message={'Add to Result'}
-                                onClick={(e: React.MouseEvent<HTMLElement>) => listAll(e)}
+                                onClick={(e: React.MouseEvent<HTMLElement>) => addToResult(e)}
                             />
                         </td>
                         <td>
                             <Square
                                 message={'Filter New Result'}
                                 onClick={(e: React.MouseEvent<HTMLElement>) => newResult(e)}
+                            />
+                        </td>
+                        <td>
+                            <Square
+                                message={'Add list'}
+                                onClick={(e: React.MouseEvent<HTMLElement>) => listAll(e)}
                             />
                         </td>
                     </tr>

@@ -1,4 +1,4 @@
-export default async function readToJSON(fileName: String){
+export default async function readToJSON(fileName: string){
     console.log('start to json');
     const csv=require('csvtojson');
     const fs=require('fs');
