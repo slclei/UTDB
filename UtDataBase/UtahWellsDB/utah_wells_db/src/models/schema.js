@@ -118,7 +118,7 @@ export const schema = {
                 "footageew": {
                     "name": "footageew",
                     "isArray": false,
-                    "type": "String",
+                    "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -216,7 +216,7 @@ export const schema = {
                 "confreldat": {
                     "name": "confreldat",
                     "isArray": false,
-                    "type": "AWSDate",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -244,7 +244,7 @@ export const schema = {
                 "abandondat": {
                     "name": "abandondat",
                     "isArray": false,
-                    "type": "AWSDate",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -321,7 +321,7 @@ export const schema = {
                 "origcompld": {
                     "name": "origcompld",
                     "isArray": false,
-                    "type": "AWSDate",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -447,5 +447,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "98c0b0ca43b0f93c3483c131bb3d1da7"
+    "version": "0b9e7371cc237130f37faa2d9f084faf"
 };

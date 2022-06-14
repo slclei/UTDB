@@ -11,6 +11,11 @@ projects:
         generatedFileName: src/API.ts
         docsFilePath: src/graphql
         maxDepth: 2
+      config:
+        scalars:
+          AWSJSON: string
+          AWSDate: string
+          AWSTime: string
 extensions:
   amplify:
     version: 3

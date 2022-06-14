@@ -14,7 +14,7 @@ latitude:	Float
 longitude:	Float
 footagens:	Int
 dir_ns:	String
-footageew:	String
+footageew:	Int
 dir_ew:	String
 qtrqtr:	String
 section:	Int
@@ -28,11 +28,11 @@ dir_horiz:	String
 dir_vert:	String
 dir_direct:	String
 confidenti:	String
-confreldat:	AWSDate
+confreldat: String
 leasenumbe:	String
 leasetype:	String
 surfaceown:	String
-abandondat:	AWSDate
+abandondat: String
 wellstatus:	String
 welltype:	String
 totcum_oil:	String
@@ -43,7 +43,7 @@ multi_lats:	Int
 originalfi:	String
 unitname:	String
 gisstatust:	String
-origcompld:	AWSDate
+origcompld: String
 jurisdicti:	String
 forklift_h:	String
 globalid:	String

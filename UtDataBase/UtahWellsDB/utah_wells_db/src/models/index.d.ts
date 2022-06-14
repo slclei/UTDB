@@ -25,7 +25,7 @@ export declare class Wells {
   readonly longitude?: number | null;
   readonly footagens?: number | null;
   readonly dir_ns?: string | null;
-  readonly footageew?: string | null;
+  readonly footageew?: number | null;
   readonly dir_ew?: string | null;
   readonly qtrqtr?: string | null;
   readonly section?: number | null;
