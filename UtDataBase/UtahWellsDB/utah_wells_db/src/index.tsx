@@ -9,7 +9,7 @@ import WellService from "./services/WellService";
 
 import Feedback from "feeder-react-feedback"; // import Feedback component
 import "feeder-react-feedback/dist/feeder-react-feedback.css"; // import stylesheet
-
+import Login from "./elements/logIn";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -96,7 +96,7 @@ root.render(
                 </a>
               </td>
               <td className="login" >
-              <i className="material-icons">login</i>
+              <Login signOut={undefined} />
               </td>
             </tr>
           </tbody>

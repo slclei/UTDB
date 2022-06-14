@@ -10,10 +10,11 @@ import { DataStore } from '@aws-amplify/datastore';
 import { Wells } from '../models';
 //import LogIn from './elements/logIn';
 import * as mutations from '../graphql/mutations';
-import welldata from '../data/test1.json';
+import welldata from '../data/wellUTforData.json';
 import { listWells } from '../graphql/queries';
 import gql from 'graphql-tag';
 import AWSAppSyncClient, { AUTH_TYPE } from 'aws-appsync';
+import * as queries from '../graphql/queries';
 
 Amplify.configure(config);
 
@@ -134,8 +135,7 @@ function WellSearchResult() {
             const newWell = wellList.at(parseInt(well));
             if (newWell !== undefined) {
                 console.log("start list all");
-                await DataStore.save(
-                    new Wells({
+                    const nWell={
                         api: (newWell?.["api"]).toString(),
                         wellname: newWell?.["wellname"],
                         operator: newWell?.["operator"],
@@ -192,14 +192,12 @@ function WellSearchResult() {
                         tdsnavajo: newWell?.["tdsnavajo"],
                         tdswingate: newWell?.["tdswingate"],
                         thickness: parseFloat(newWell?.["thickness"]),
-                    })
-                );
+                    };
+                    const newTodo = await API.graphql({ query: mutations.createWells, variables: {input: nWell}});
+        
             }
         }
-
-        const allWells = await DataStore.query(Wells);
-        console.log("end list");
-        console.log(JSON.stringify(allWells, null, 2)); 
+        
     };
 
     return (
