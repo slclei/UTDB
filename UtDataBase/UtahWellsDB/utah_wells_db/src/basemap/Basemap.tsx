@@ -123,7 +123,7 @@ export function Wellmap(): any {
               >
                 Map
               </td>
-              <td id="show-location" style={{width:"50vw"}}/>
+              <td id="show-location"/>
               <td id="addressIconDiv" style={{ padding: "10px 5px" }}>
                 <AddressSearch />
               </td>

@@ -1,37 +1,21 @@
 /* eslint-disable react/jsx-key */
 import React, { useState } from "react";
-import WellService from "../services/WellService";
 import Square from "./Onclick";
-
-import Amplify, { graphqlOperation } from "aws-amplify";
-
+import Amplify from "aws-amplify";
 import config from "../aws-exports";
-import { API } from "aws-amplify";
-import { DataStore } from "@aws-amplify/datastore";
-import { Wells } from "../models";
-//import LogIn from './elements/logIn';
-import * as mutations from "../graphql/mutations";
 //import welldata from '../data/wellUTforData.json';
-import { listWells } from "../graphql/queries";
-import gql from "graphql-tag";
 import AWSAppSyncClient, { AUTH_TYPE } from "aws-appsync";
-import * as queries from "../graphql/queries";
 import eMap from "../basemap/exportMap";
 
 Amplify.configure(config);
 
-const client = new AWSAppSyncClient({
-  url: config.aws_appsync_graphqlEndpoint,
-  region: config.aws_appsync_region,
-  auth: {
-    type: AUTH_TYPE.API_KEY, // or type: awsconfig.aws_appsync_authenticationType,
-    apiKey: config.aws_appsync_apiKey,
-  },
-});
-
+//get input from search parameters, and search result from target layer
 function WellSearchResult() {
   const [resultDic, setresultDic] = useState<any>({});
   const [resultList, setresultList] = useState<any>([]);
+
+  //get search layer from element searchBy
+  const layer=(document.getElementById("searchBy") as HTMLInputElement)?.value+"InUT";
 
   const newResult = async (e: React.MouseEvent<HTMLElement>) => {
     const map = eMap.map;
@@ -71,7 +55,7 @@ function WellSearchResult() {
     console.log(query);
     //in case of query is not null, get data with query
     if (query.length > 0) {
-      const tmp = map?.querySourceFeatures("wellsInUT", {
+      const tmp = map?.querySourceFeatures(layer, {
         filter: query
       });
       console.log("2");
@@ -169,82 +153,6 @@ function WellSearchResult() {
     return;
   };
 
-  /*
-    const listAll = async (e: React.MouseEvent<HTMLElement>) => {
-        
-        const wellList = welldata;
-
-        //console.log(wellList);
-        for (const well in wellList) {
-            //get sing well from well ist
-            const newWell = wellList.at(parseInt(well));
-            if (newWell !== undefined) {
-                console.log("start list all");
-                    const nWell={
-                        api: (newWell?.["api"]).toString(),
-                        wellname: newWell?.["wellname"],
-                        operator: newWell?.["operator"],
-                        operatorno: newWell?.["operatorno"],
-                        fieldname: newWell?.["fieldname"],
-                        ground_ele: newWell?.["ground_ele"],
-                        kelly_elev: newWell?.["kelly_elev"],
-                        drkfloor_e: newWell?.["drkfloor_e"],
-                        coordssurf: newWell?.["coordssurf"],
-                        coordssu_1: newWell?.["coordssu_1"],
-                        utmzone: newWell?.["utmzone"],
-                        latitude: newWell?.["latitude"],
-                        longitude: newWell?.["longitude"],
-                        footagens: newWell?.["footagens"],
-                        dir_ns: newWell?.["dir_ns"],
-                        footageew: newWell?.["footageew"],
-                        dir_ew: newWell?.["dir_ew"],
-                        qtrqtr: newWell?.["qtrqtr"],
-                        section: newWell?.["section"],
-                        township: newWell?.["township"],
-                        townshipdi: newWell?.["townshipdi"],
-                        range: newWell?.["range"],
-                        rangedir: newWell?.["rangedir"],
-                        meridian: newWell?.["meridian"],
-                        county: newWell?.["county"],
-                        dir_horiz: newWell?.["dir_horiz"],
-                        dir_vert: newWell?.["dir_vert"],
-                        dir_direct: newWell?.["dir_direct"],
-                        confidenti: newWell?.["confidenti"],
-                        confreldat: newWell?.["confreldat"],
-                        leasenumbe: newWell?.["leasenumbe"],
-                        leasetype: newWell?.["leasetype"],
-                        surfaceown: newWell?.["surfaceown"],
-                        abandondat: newWell?.["abandondat"],
-                        wellstatus: newWell?.["wellstatus"],
-                        welltype: newWell?.["welltype"],
-                        totcum_oil: newWell?.["totcum_oil"],
-                        totcum_gas: newWell?.["totcum_gas"],
-                        totcum_wat: newWell?.["totcum_wat"],
-                        indiantrib: newWell?.["indiantrib"],
-                        multi_lats: newWell?.["multi_lats"],
-                        originalfi: newWell?.["originalfi"],
-                        unitname: newWell?.["unitname"],
-                        gisstatust: newWell?.["gisstatust"],
-                        origcompld: newWell?.["origcompld"],
-                        jurisdicti: newWell?.["jurisdicti"],
-                        forklift_h: newWell?.["forklift_h"],
-                        globalid: newWell?.["globalid"],
-                        extent: newWell?.["extent"],
-                        formationtopdepths: parseFloat(newWell?.["formationtopdepths"]),
-                        netpay: newWell?.["netpay"],
-                        netsand: newWell?.["netsand"],
-                        reportsid: newWell?.["reportsid"],
-                        tdsnavajo: newWell?.["tdsnavajo"],
-                        tdswingate: newWell?.["tdswingate"],
-                        thickness: parseFloat(newWell?.["thickness"]),
-                    };
-                    const newTodo = await API.graphql({ query: mutations.createWells, variables: {input: nWell}});
-        
-            }
-        }
-        
-    };*/
-
   return (
     <div>
       <div
@@ -290,7 +198,7 @@ function WellSearchResult() {
             </tr>
           </thead>
         </table>
-        <div id="resultDic" style={{ overflow: "auto", height: "500px" }}>
+        <div id="resultDic" style={{ overflow: "auto" }}>
           {resultList.length > 0 &&
             resultList.map((item: any) => (
               <table>
