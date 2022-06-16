@@ -8,6 +8,7 @@ import AddressSearch from '../elements/addressSearch';
 import XySearch from '../elements/xySearch';
 import Buff from '../elements/bufferS';
 import PrintPage from '../elements/printPage';
+import eMap from './exportMap';
 //import {Source} from "react-map-gl";
 //import Layer from "react-mapbox-gl/lib-esm/layer"; // eslint-disable-line import/no-webpack-loader-syntax
 
@@ -101,6 +102,8 @@ export function Wellmap(): any {
       // `e.lngLat` is the longitude, latitude geographical position of the event.
       JSON.stringify(e.lngLat.wrap());
   });
+
+  eMap.map=map;
 
   return (
     <div className="well-map-wrapper">
@@ -276,3 +279,4 @@ export function Wellmap(): any {
     </div>
   );
 }
+

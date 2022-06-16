@@ -83,10 +83,9 @@ function SearchBox(this: any): any {
                       title="compareAPI10"
                       id="compareAPI"
                       className="uiOperatorComboBox"
-                      data-placeholder=" "
+                      data-placeholder="="
                     >
-                      <option value="" />
-                      <option value="Like" selected={true}>Like</option>
+                      <option value="=" />
                       <option value="=">
                         =
                       </option>
@@ -116,10 +115,9 @@ function SearchBox(this: any): any {
                       id="compareWellName"
                       className="uiOperatorComboBox"
                       onChange={opSelectionChanged("compareWellName")}
-                      data-placeholder=" "
+                      data-placeholder="="
                     >
-                      <option value="" />
-                      <option value="Like">Like</option>
+                      <option value="=" />
                       <option value="=">=</option>
                     </select>
                   </td>

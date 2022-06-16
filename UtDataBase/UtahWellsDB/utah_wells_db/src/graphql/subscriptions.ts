@@ -61,7 +61,6 @@ export const onCreateWells = /* GraphQL */ `
       tdsnavajo
       tdswingate
       thickness
-      id
       createdAt
       updatedAt
       _version
@@ -129,7 +128,6 @@ export const onUpdateWells = /* GraphQL */ `
       tdsnavajo
       tdswingate
       thickness
-      id
       createdAt
       updatedAt
       _version
@@ -197,7 +195,6 @@ export const onDeleteWells = /* GraphQL */ `
       tdsnavajo
       tdswingate
       thickness
-      id
       createdAt
       updatedAt
       _version

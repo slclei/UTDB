@@ -3,8 +3,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const getWells = /* GraphQL */ `
-  query GetWells($id: ID!) {
-    getWells(id: $id) {
+  query GetWells($api: ID!) {
+    getWells(api: $api) {
       api
       wellname
       operator
@@ -61,7 +61,6 @@ export const getWells = /* GraphQL */ `
       tdsnavajo
       tdswingate
       thickness
-      id
       createdAt
       updatedAt
       _version
@@ -72,11 +71,19 @@ export const getWells = /* GraphQL */ `
 `;
 export const listWells = /* GraphQL */ `
   query ListWells(
+    $api: ID
     $filter: ModelWellsFilterInput
     $limit: Int
     $nextToken: String
+    $sortDirection: ModelSortDirection
   ) {
-    listWells(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listWells(
+      api: $api
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
       items {
         api
         wellname
@@ -134,7 +141,6 @@ export const listWells = /* GraphQL */ `
         tdsnavajo
         tdswingate
         thickness
-        id
         createdAt
         updatedAt
         _version
@@ -216,7 +222,6 @@ export const syncWells = /* GraphQL */ `
         tdsnavajo
         tdswingate
         thickness
-        id
         createdAt
         updatedAt
         _version

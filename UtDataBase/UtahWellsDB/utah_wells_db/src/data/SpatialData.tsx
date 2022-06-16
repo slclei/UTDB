@@ -1,3 +1,4 @@
+//import welldata from "./wellsutless.json";
 import welldata from "./wellsut.json";
 import salinedata from "./salineUT.json";
 

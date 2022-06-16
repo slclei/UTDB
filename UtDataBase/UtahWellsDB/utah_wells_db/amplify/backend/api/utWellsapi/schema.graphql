@@ -1,5 +1,5 @@
 type Wells @model @auth(rules: [{allow: public}]) {
-api:	ID!
+api:	ID! @primaryKey
 wellname:	String!
 operator:	String
 operatorno:	Int

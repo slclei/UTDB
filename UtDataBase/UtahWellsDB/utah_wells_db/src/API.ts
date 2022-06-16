@@ -59,12 +59,10 @@ export type CreateWellsInput = {
   tdsnavajo?: string | null,
   tdswingate?: string | null,
   thickness?: number | null,
-  id?: string | null,
   _version?: number | null,
 };
 
 export type ModelWellsConditionInput = {
-  api?: ModelIDInput | null,
   wellname?: ModelStringInput | null,
   operator?: ModelStringInput | null,
   operatorno?: ModelIntInput | null,
@@ -125,7 +123,7 @@ export type ModelWellsConditionInput = {
   not?: ModelWellsConditionInput | null,
 };
 
-export type ModelIDInput = {
+export type ModelStringInput = {
   ne?: string | null,
   eq?: string | null,
   le?: string | null,
@@ -163,22 +161,6 @@ export type ModelSizeInput = {
   ge?: number | null,
   gt?: number | null,
   between?: Array< number | null > | null,
-};
-
-export type ModelStringInput = {
-  ne?: string | null,
-  eq?: string | null,
-  le?: string | null,
-  lt?: string | null,
-  ge?: string | null,
-  gt?: string | null,
-  contains?: string | null,
-  notContains?: string | null,
-  between?: Array< string | null > | null,
-  beginsWith?: string | null,
-  attributeExists?: boolean | null,
-  attributeType?: ModelAttributeTypes | null,
-  size?: ModelSizeInput | null,
 };
 
 export type ModelIntInput = {
@@ -263,7 +245,6 @@ export type Wells = {
   tdsnavajo?: string | null,
   tdswingate?: string | null,
   thickness?: number | null,
-  id: string,
   createdAt: string,
   updatedAt: string,
   _version: number,
@@ -272,7 +253,7 @@ export type Wells = {
 };
 
 export type UpdateWellsInput = {
-  api?: string | null,
+  api: string,
   wellname?: string | null,
   operator?: string | null,
   operatorno?: number | null,
@@ -328,12 +309,11 @@ export type UpdateWellsInput = {
   tdsnavajo?: string | null,
   tdswingate?: string | null,
   thickness?: number | null,
-  id: string,
   _version?: number | null,
 };
 
 export type DeleteWellsInput = {
-  id: string,
+  api: string,
   _version?: number | null,
 };
 
@@ -398,6 +378,28 @@ export type ModelWellsFilterInput = {
   or?: Array< ModelWellsFilterInput | null > | null,
   not?: ModelWellsFilterInput | null,
 };
+
+export type ModelIDInput = {
+  ne?: string | null,
+  eq?: string | null,
+  le?: string | null,
+  lt?: string | null,
+  ge?: string | null,
+  gt?: string | null,
+  contains?: string | null,
+  notContains?: string | null,
+  between?: Array< string | null > | null,
+  beginsWith?: string | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+  size?: ModelSizeInput | null,
+};
+
+export enum ModelSortDirection {
+  ASC = "ASC",
+  DESC = "DESC",
+}
+
 
 export type ModelWellsConnection = {
   __typename: "ModelWellsConnection",
@@ -470,7 +472,6 @@ export type CreateWellsMutation = {
     tdsnavajo?: string | null,
     tdswingate?: string | null,
     thickness?: number | null,
-    id: string,
     createdAt: string,
     updatedAt: string,
     _version: number,
@@ -543,7 +544,6 @@ export type UpdateWellsMutation = {
     tdsnavajo?: string | null,
     tdswingate?: string | null,
     thickness?: number | null,
-    id: string,
     createdAt: string,
     updatedAt: string,
     _version: number,
@@ -616,7 +616,6 @@ export type DeleteWellsMutation = {
     tdsnavajo?: string | null,
     tdswingate?: string | null,
     thickness?: number | null,
-    id: string,
     createdAt: string,
     updatedAt: string,
     _version: number,
@@ -626,7 +625,7 @@ export type DeleteWellsMutation = {
 };
 
 export type GetWellsQueryVariables = {
-  id: string,
+  api: string,
 };
 
 export type GetWellsQuery = {
@@ -688,7 +687,6 @@ export type GetWellsQuery = {
     tdsnavajo?: string | null,
     tdswingate?: string | null,
     thickness?: number | null,
-    id: string,
     createdAt: string,
     updatedAt: string,
     _version: number,
@@ -698,9 +696,11 @@ export type GetWellsQuery = {
 };
 
 export type ListWellsQueryVariables = {
+  api?: string | null,
   filter?: ModelWellsFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
 };
 
 export type ListWellsQuery = {
@@ -764,7 +764,6 @@ export type ListWellsQuery = {
       tdsnavajo?: string | null,
       tdswingate?: string | null,
       thickness?: number | null,
-      id: string,
       createdAt: string,
       updatedAt: string,
       _version: number,
@@ -844,7 +843,6 @@ export type SyncWellsQuery = {
       tdsnavajo?: string | null,
       tdswingate?: string | null,
       thickness?: number | null,
-      id: string,
       createdAt: string,
       updatedAt: string,
       _version: number,
@@ -915,7 +913,6 @@ export type OnCreateWellsSubscription = {
     tdsnavajo?: string | null,
     tdswingate?: string | null,
     thickness?: number | null,
-    id: string,
     createdAt: string,
     updatedAt: string,
     _version: number,
@@ -983,7 +980,6 @@ export type OnUpdateWellsSubscription = {
     tdsnavajo?: string | null,
     tdswingate?: string | null,
     thickness?: number | null,
-    id: string,
     createdAt: string,
     updatedAt: string,
     _version: number,
@@ -1051,7 +1047,6 @@ export type OnDeleteWellsSubscription = {
     tdsnavajo?: string | null,
     tdswingate?: string | null,
     thickness?: number | null,
-    id: string,
     createdAt: string,
     updatedAt: string,
     _version: number,
