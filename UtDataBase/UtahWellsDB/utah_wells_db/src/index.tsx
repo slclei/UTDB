@@ -11,6 +11,7 @@ import Feedback from "feeder-react-feedback"; // import Feedback component
 import "feeder-react-feedback/dist/feeder-react-feedback.css"; // import stylesheet
 import Login from "./elements/logIn";
 import { Table } from "@mui/material";
+import Info from "./elements/info";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -61,13 +62,7 @@ root.render(
               </a>
             </td>
             <td id="alertIconDiv" className="icons">
-              <a
-                href="https://www.google.com"
-                tooltip-placement="bottom"
-                uib-tooltip="alert Session"
-              >
-                <i className="material-icons">info</i>
-              </a>
+              <Info />
             </td>
             <td id="helpDiv" className="icons">
               <a

@@ -6,6 +6,7 @@ import config from "../aws-exports";
 //import welldata from '../data/wellUTforData.json';
 import AWSAppSyncClient, { AUTH_TYPE } from "aws-appsync";
 import eMap from "../basemap/exportMap";
+import mapboxgl from "mapbox-gl";
 
 Amplify.configure(config);
 
@@ -15,12 +16,13 @@ function WellSearchResult() {
   const [resultList, setresultList] = useState<any>([]);
 
   //get search layer from element searchBy
-  const layer=(document.getElementById("searchBy") as HTMLInputElement)?.value+"InUT";
+  const layer =
+    (document.getElementById("searchBy") as HTMLInputElement)?.value + "InUT";
 
   const newResult = async (e: React.MouseEvent<HTMLElement>) => {
     const map = eMap.map;
     //get information from compareAPI and API elements for search by API
-    const tmpArr:  { [key: number]:any[]; }= {};
+    const tmpArr: { [key: number]: any[] } = {};
     //query=api:4300320047,wellName:abc
     const query: any[] = ["all"];
     if (
@@ -51,37 +53,30 @@ function WellSearchResult() {
         query.push(tmpQ);
       }
     }
-    console.log("1");
-    console.log(query);
     //in case of query is not null, get data with query
     if (query.length > 0) {
       const tmp = map?.querySourceFeatures(layer, {
-        filter: query
+        filter: query,
       });
-      console.log("2");
-      
+
       for (const each of tmp) {
         const tmpEach: any[] = [];
         tmpEach.push(each.properties.api);
         tmpEach.push(each.properties.wellname);
         tmpEach.push(each.properties.county);
         tmpEach.push(each.properties.welltype);
+        tmpEach.push(each.geometry.coordinates);
         if (tmpEach.length > 0) {
           tmpArr[each.properties.api] = tmpEach;
         }
       }
-      
+
       setresultDic(tmpArr);
-      console.log(resultDic);
       const tmpArr1: any[][] = [];
       for (const key in resultDic) {
-        console.log(resultDic[key]);
         tmpArr1.push(resultDic[key]);
       }
-      console.log(tmpArr1);
       setresultList(tmpArr1);
-      console.log("3");
-      console.log(resultList);
     }
     return;
   };
@@ -89,9 +84,9 @@ function WellSearchResult() {
   const addToResult = async (e: React.MouseEvent<HTMLElement>) => {
     const map = eMap.map;
     //get information from compareAPI and API elements for search by API
-    const tmpArr = resultDic;
+    const tmpArr: { [key: number]: any[] } = resultDic;
     //query=api:4300320047,wellName:abc
-    const query = [];
+    const query: any[] = ["all"];
     if (
       document.getElementById("compareAPI") &&
       document.getElementById("API")
@@ -99,60 +94,79 @@ function WellSearchResult() {
       //get api value and operation
       const apiValue = (document.getElementById("API") as HTMLInputElement)
         ?.value;
-      const tmpQ = [];
-      tmpQ.push("like");
-      tmpQ.push("api");
-      tmpQ.push(apiValue);
-      query.push(tmpQ);
+      if (apiValue !== "") {
+        const tmpQ: any[] = [];
+        tmpQ.push("==");
+        tmpQ.push("api");
+        tmpQ.push(parseInt(apiValue));
+        query.push(tmpQ);
+      }
     }
     if (document.getElementById("WellName")) {
       //get api value and operation
       const nameValue = (
         document.getElementById("WellName") as HTMLInputElement
       )?.value;
-      const tmpQ = [];
-      tmpQ.push("like");
-      tmpQ.push("wellname");
-      tmpQ.push(nameValue);
-      query.push(tmpQ);
+      if (nameValue != "") {
+        const tmpQ = [];
+        tmpQ.push("==");
+        tmpQ.push("wellname");
+        tmpQ.push(nameValue);
+        query.push(tmpQ);
+      }
     }
     //in case of query is not null, get data with query
     if (query.length > 0) {
-      /*const relatedCounties = map.querySourceFeatures('counties', {
-                sourceLayer: 'original',
-                filter: ['in', 'COUNTY', feature.properties.COUNTY]
-            });
-            var breweryFilter=[
-                "all",
-                ["in", "stateNam", 'Utah','Texas','Florida'],
-                ["in", "breweryType", 'Irish','American']
-            ] */
-
-      const tmp = map?.querySourceFeatures("wellsInUTLayer", {
+      const tmp = map?.querySourceFeatures(layer, {
         filter: query,
       });
 
       for (const each of tmp) {
         const tmpEach: any[] = [];
-        tmpEach.push(each.api);
-        tmpEach.push(each.wellName);
-        tmpEach.push(each.county);
-        tmpEach.push(each.wellType);
+        tmpEach.push(each.properties.api);
+        tmpEach.push(each.properties.wellname);
+        tmpEach.push(each.properties.county);
+        tmpEach.push(each.properties.welltype);
+        tmpEach.push(each.geometry.coordinates);
         if (tmpEach.length > 0) {
-          tmpArr[each.api] = tmpEach;
+          tmpArr[each.properties.api] = tmpEach;
         }
       }
+
       setresultDic(tmpArr);
       const tmpArr1: any[][] = [];
       for (const key in resultDic) {
         tmpArr1.push(resultDic[key]);
       }
       setresultList(tmpArr1);
-      console.log(resultList);
     }
     return;
   };
 
+  const handler = async (event: React.MouseEvent<HTMLElement>) => {
+    if (event.target instanceof Element) {
+      if (event.type == "mouseover" && event.target.parentElement != null) {
+        event.target.parentElement!.className = "SelectedRow";
+        if (event.target.parentElement!.childNodes[0].textContent != null) {
+          const i = parseInt(
+            event.target.parentElement!.childNodes[0].textContent
+          );
+          const cor=resultList[i][4];
+
+          const el = document.createElement('div');
+          el.className = 'marker';
+          new mapboxgl.Marker(el).setLngLat(cor).addTo(eMap.map)
+        }
+      }
+      if (event.type == "mouseout" && event.target.parentElement != null) {
+        event.target.parentElement!.className = "";
+        const els=document.getElementsByClassName('marker');
+        for (const el of els) {
+          el.className='markerdisabled';
+        }
+      }
+    }
+  };
   return (
     <div>
       <div
@@ -202,7 +216,11 @@ function WellSearchResult() {
           {resultList.length > 0 &&
             resultList.map((item: any) => (
               <table>
-                <tr style={{ border: "1px solid #e6e6e6" }}>
+                <tr
+                  style={{ border: "1px solid #e6e6e6" }}
+                  onMouseOver={(e: React.MouseEvent<HTMLElement>) => handler(e)}
+                  onMouseOut={(e: React.MouseEvent<HTMLElement>) => handler(e)}
+                >
                   <td style={{ padding: 0, width: "5vw" }}>
                     {resultList.indexOf(item)}
                   </td>
