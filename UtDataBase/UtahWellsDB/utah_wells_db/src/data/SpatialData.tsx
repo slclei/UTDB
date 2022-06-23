@@ -1,5 +1,5 @@
+import welldata from "./wellsut.json";
 //import welldata from "./wellsutless.json";
-import welldata from "./wellsutless.json";
 import salinedata from "./salineUT.json";
 
 const WellUT={

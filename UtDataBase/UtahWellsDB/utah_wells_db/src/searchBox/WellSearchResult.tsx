@@ -5,10 +5,11 @@ import Amplify from "aws-amplify";
 import config from "../aws-exports";
 //import welldata from '../data/wellUTforData.json';
 import AWSAppSyncClient, { AUTH_TYPE } from "aws-appsync";
-import eMap from "../basemap/exportMap";
+import {MapControl} from "../basemap/exportMap";
 import mapboxgl from "mapbox-gl";
 
 Amplify.configure(config);
+const eMap=MapControl[0];
 
 //get input from search parameters, and search result from target layer
 function WellSearchResult() {

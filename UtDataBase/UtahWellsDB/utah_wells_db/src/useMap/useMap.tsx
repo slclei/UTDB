@@ -3,6 +3,7 @@ import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
 import MapService from "../services/MapService";
 import {Sources, Layers} from "../data/SpatialData";
+import {MapControl} from '../basemap/exportMap';
 
 mapboxgl.workerClass = MapboxWorker;
 
@@ -140,6 +141,9 @@ export const useMap = (ref: any, mapConfig: any) => {
       loadMapData();
     }, [loadMapData]);
   
+    MapControl[0].map=map;
+    MapControl[1].layer=layers;
+
     return {
       layers,
       map,

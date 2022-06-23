@@ -8,7 +8,8 @@ import AddressSearch from '../elements/addressSearch';
 import XySearch from '../elements/xySearch';
 import Buff from '../elements/bufferS';
 import PrintPage from '../elements/printPage';
-import eMap from './exportMap';
+import LayerControlWhole from '../elements/layerControlWhole';
+import {MapControl} from './exportMap';
 //import {Source} from "react-map-gl";
 //import Layer from "react-mapbox-gl/lib-esm/layer"; // eslint-disable-line import/no-webpack-loader-syntax
 
@@ -47,13 +48,13 @@ export function Wellmap(): any {
         <div className="LayerC">
           <i
             style={{ cursor: "pointer" }}
-            className="material-icons md-50"
+            className="material-icons"
             id="layersIcon"
             uib-tooltip="Layers"
             onClick={() => this.setState({ showing: !showing })}>
             layers
           </i>
-          <div className='popover-message'>Layer Control</div>
+          <div className='popover-message'>Layer Control2</div>
           {showing
             ? <LayerControl id="inMapLegend2" layers={layers} onToggle={updateLayerVisibility} />
             : null
@@ -95,15 +96,12 @@ export function Wellmap(): any {
 
   map?.on('mousemove', (e: { point: any; lngLat: any; }) => {
     document.getElementById('show-location')!.innerHTML =
-      // `e.point` is the x, y coordinates of the `mousemove` event
-      // relative to the top-left corner of the map.
-      JSON.stringify(e.point) +
-      '<br />' +
       // `e.lngLat` is the longitude, latitude geographical position of the event.
       JSON.stringify(e.lngLat.wrap());
   });
 
-  eMap.map=map;
+  MapControl[2].control=LayerControlWhole;
+
 
   return (
     <div className="well-map-wrapper">
@@ -246,24 +244,7 @@ export function Wellmap(): any {
                 </div>
               </td>
               <td style={{ padding: "10px 5px" }}>
-                <div id="measureAreaDiv">
-                  <i
-                    id="activeMeasureAreaIcon"
-                    style={{ cursor: "pointer" }}
-                    className="material-icons"
-                    uib-tooltip="Measure Area"
-                  >
-                    area_chart
-                  </i>
-                  <i
-                    id="deactivateMeasureAreaIcon"
-                    style={{ cursor: "pointer", display: "none" }}
-                    className="material-icons"
-                    uib-tooltip="Measure Area"
-                  >
-                    area_chart
-                  </i>
-                </div>
+                <LayerControlWhole />
               </td>
               <td id="printIconDiv" style={{ padding: "10px 5px" }}>
                 <PrintPage />
@@ -273,8 +254,6 @@ export function Wellmap(): any {
         </table>
       </div>
       <div id="map" className={s.map} ref={mapContainer}>
-
-        <LayerControlWhole />
       </div>
     </div>
   );

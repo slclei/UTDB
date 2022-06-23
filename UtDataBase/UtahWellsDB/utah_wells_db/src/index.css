@@ -138,16 +138,6 @@ code {
   display: block;
 }
 
-.LayerC {
-  align-items: center;
-  display: block;
-  justify-content: center;
-  position: absolute;
-  right: 300px;
-  top: 15px;
-  z-index: 1000;
-}
-
 #infoTable{ 
   position: absolute;
   width: 500px;
@@ -156,6 +146,16 @@ code {
   display: table;
   overflow: hidden;
   z-index: 2000;
+}
+
+.LayerC {
+  align-items: center;
+  display: block;
+  justify-content: center;
+  position: relative;
+  right: 0;
+  top: 0;
+  z-index: 1000;
 }
 
 .LayerC .popover-message {

@@ -1,2 +1,4 @@
 const eMap: any = {map:null};
-export default eMap;
+const eLayer: any = {layer:null};
+const eLayerControl: any = {control:null};
+export const MapControl= [eMap, eLayer, eLayerControl];
