@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Checkbox,
     FormGroup,
@@ -10,6 +11,7 @@ import {
   
   export const LayerControl = ({id, layers, onToggle }:{id:string, layers: any, onToggle: any}) => {
     return (
+      // eslint-disable-next-line react/react-in-jsx-scope
       <Paper className={s.layerControlRoot} id={id}>
         Layers:
         <List>

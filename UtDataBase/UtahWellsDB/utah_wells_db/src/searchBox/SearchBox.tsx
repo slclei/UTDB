@@ -2,23 +2,41 @@ import React from "react";
 import WellSearchResult from "./WellSearchResult";
 
 function SearchBox(this: any): any {
-  const clearSearch = async (fields: string) => {
-    if (fields === "all" || fields === "api") {
-      (document.getElementById("compareAPI") as HTMLSelectElement)!.value = "";
+  const clearSearch = async (fields: string ) => {
+    console.log(fields);
+    if (fields === "all" || fields === "1") {
+      (document.getElementById("searchInput1") as HTMLInputElement)!.value = "";
+      (document.getElementById(
+        "searchInput1"
+      ) as HTMLInputElement)!.placeholder = "Filter Input...";
     }
-    if (fields === "all" || fields === "api") {
-      (document.getElementById("API") as HTMLInputElement)!.value = "";
-      (document.getElementById("API") as HTMLInputElement)!.placeholder =
-        "Filter Input...";
+    if (fields === "all" || fields === "2") {
+      (document.getElementById("searchInput2") as HTMLInputElement)!.value = "";
+      (document.getElementById(
+        "searchInput2"
+      ) as HTMLInputElement)!.placeholder = "Filter Input...";
     }
-    if (fields === "all" || fields === "wellName") {
-      (document.getElementById("compareWellName") as HTMLSelectElement)!.value =
-        "";
-    }
-    if (fields === "all" || fields === "wellName") {
-      (document.getElementById("WellName") as HTMLInputElement)!.value = "";
-      (document.getElementById("WellName") as HTMLInputElement)!.placeholder =
-        "Filter Input...";
+  };
+
+  const searchFields = new Map<string, string[]>();
+  searchFields.set("wells", ["No.", "API", "WellName", "County", "WellType"]);
+  //  , "epa_sector": "Other", "fuel": null, "co2_tonne": 51383, "co2_bio": null, "year": 2013, "data_source": "U.S. EPA GHG Reporting Program", "comments": null, "featid": 78 }, "geometry": { "type": "Point", "coordinates": [ -111.646375416999945, 40.247044129000074 ] } },
+
+  searchFields.set("CO2", [
+    "No.",
+    "Ghgrp_id",
+    "Source_name",
+    "City",
+    "CO2_tonne",
+  ]);
+
+  const selectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const fieldID = (document.getElementById("searchBy") as HTMLInputElement)
+      ?.value;
+    const field = searchFields.get(fieldID);
+    if (field) {
+      document.getElementById("search1")!.innerText = field[1];
+      document.getElementById("search2")!.innerText = field[2];
     }
   };
 
@@ -40,10 +58,8 @@ function SearchBox(this: any): any {
               <td id="bToggleSearch" style={{ padding: "10px 5px" }}>
                 <button
                   className="material-icons"
-                  id="activeSearchIconClear"
-                  onClick={(e) => {
-                    clearSearch("all");
-                  }}
+                  id="clearAll"
+                  onClick={()=>clearSearch("all")}
                 >
                   clear
                 </button>
@@ -62,9 +78,13 @@ function SearchBox(this: any): any {
                       <select
                         className="uiOperatorComboBox"
                         id="searchBy"
+                        onChange={selectChange}
                         data-placeholder=" "
                       >
+                        <option value="CO2">CO2 Stationary Sources</option>
                         <option value="saline">Saline</option>
+                        <option value="salineGrid">Saline Grid 10km</option>
+                        <option value="basin">Sedimentary Basin</option>
                         <option value="wells" selected={true}>
                           Well
                         </option>
@@ -72,22 +92,13 @@ function SearchBox(this: any): any {
                     </td>
                   </tr>
                   <tr className="searchTr">
-                    <td className="filterPrompt">API:</td>
-                    <td>
-                      <select
-                        title="compareAPI10"
-                        id="compareAPI"
-                        className="uiOperatorComboBox"
-                        data-placeholder="="
-                      >
-                        <option value="=" />
-                        <option value="=">=</option>
-                      </select>
+                    <td className="filterPrompt" id="search1">
+                      API
                     </td>
                     <td className="uiTextBox">
                       <input
                         type="text"
-                        id="API"
+                        id="searchInput1"
                         defaultValue=""
                         className="uiTextBox"
                         placeholder="Filter Input..."
@@ -96,32 +107,22 @@ function SearchBox(this: any): any {
                     <td className="clearTD">
                       <i
                         className="material-icons"
-                        onClick={(e) => {
-                          clearSearch("api");
-                        }}
-                        uib-tooltip="Clear"
+                        id="searchClear1"
+                        style={{ cursor: "pointer" }}
+                        onClick={()=>clearSearch("1")}
                       >
                         clear
                       </i>
                     </td>
                   </tr>
                   <tr className="searchTr">
-                    <td className="filterPrompt">Well Name:</td>
-                    <td>
-                      <select
-                        title="compareWellName"
-                        id="compareWellName"
-                        className="uiOperatorComboBox"
-                        data-placeholder="="
-                      >
-                        <option value="=" />
-                        <option value="=">=</option>
-                      </select>
+                    <td className="filterPrompt" id="search2">
+                      WellName
                     </td>
                     <td className="uiTextBox">
                       <input
                         type="text"
-                        id="WellName"
+                        id="searchInput2"
                         defaultValue=""
                         className="uiTextBox"
                         placeholder="Filter Input..."
@@ -130,10 +131,9 @@ function SearchBox(this: any): any {
                     <td className="clearTD">
                       <i
                         className="material-icons"
-                        onClick={(e) => {
-                          clearSearch("wellName");
-                        }}
-                        uib-tooltip="Clear"
+                        id="searchClear2"
+                        style={{ cursor: "pointer" }}
+                        onClick={()=>clearSearch("2")}
                       >
                         clear
                       </i>

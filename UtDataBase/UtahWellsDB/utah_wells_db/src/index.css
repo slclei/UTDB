@@ -177,15 +177,14 @@ code {
   font-size: 50px !important;
 }
 
-#inMapLegend2 {
+#inMapLegend {
   display: block;
-  position: absolute;
-  top: 40px;
-  right: 400px;
+  position: fixed;
+  top: 20%;
   width: max-content;
   background-color: #fff;
   padding: 0.5em;
-  left: 5%;
+  left: 30%;
 }
 
 #features {
@@ -260,7 +259,7 @@ code {
 }
 
 .searchTr .clearTD {
-  padding-left: 15%;
+  padding-left: 25%;
   width: 10px;
 }
 

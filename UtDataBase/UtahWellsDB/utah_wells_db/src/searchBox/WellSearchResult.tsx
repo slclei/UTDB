@@ -5,71 +5,96 @@ import Amplify from "aws-amplify";
 import config from "../aws-exports";
 //import welldata from '../data/wellUTforData.json';
 import AWSAppSyncClient, { AUTH_TYPE } from "aws-appsync";
-import {MapControl} from "../basemap/exportMap";
+import { MapControl } from "../basemap/exportMap";
 import mapboxgl from "mapbox-gl";
 
 Amplify.configure(config);
-const eMap=MapControl[0];
+const eMap = MapControl[0];
 
 //get input from search parameters, and search result from target layer
 function WellSearchResult() {
   const [resultDic, setresultDic] = useState<any>({});
   const [resultList, setresultList] = useState<any>([]);
 
-  //get search layer from element searchBy
-  const layer =
-    (document.getElementById("searchBy") as HTMLInputElement)?.value + "InUT";
+  const searchFields = new Map<string, string[]>();
+  searchFields.set("wells", ["No.", "API", "WellName", "County", "WellType"]);
+  //  , "epa_sector": "Other", "fuel": null, "co2_tonne": 51383, "co2_bio": null, "year": 2013, "data_source": "U.S. EPA GHG Reporting Program", "comments": null, "featid": 78 }, "geometry": { "type": "Point", "coordinates": [ -111.646375416999945, 40.247044129000074 ] } },
+
+  searchFields.set("CO2", [
+    "No.",
+    "Ghgrp_id",
+    "Source_name",
+    "City",
+    "CO2_tonne",
+  ]);
+
+  const fieldID = (document.getElementById("searchBy") as HTMLInputElement)
+    ?.value;
+  const field = searchFields.get(fieldID);
 
   const newResult = async (e: React.MouseEvent<HTMLElement>) => {
+    //get search layer from element searchBy
+    const layer =
+      (document.getElementById("searchBy") as HTMLInputElement)?.value + "InUT";
     const map = eMap.map;
     //get information from compareAPI and API elements for search by API
     const tmpArr: { [key: number]: any[] } = {};
     //query=api:4300320047,wellName:abc
     const query: any[] = ["all"];
-    if (
-      document.getElementById("compareAPI") &&
-      document.getElementById("API")
-    ) {
-      //get api value and operation
-      const apiValue = (document.getElementById("API") as HTMLInputElement)
-        ?.value;
-      if (apiValue !== "") {
-        const tmpQ: any[] = [];
-        tmpQ.push("==");
-        tmpQ.push("api");
-        tmpQ.push(parseInt(apiValue));
-        query.push(tmpQ);
-      }
+
+    //get api value and operation
+    const search1Value = (
+      document.getElementById("searchInput1") as HTMLInputElement
+    )?.value;
+
+    const search1Name = ((document.getElementById("search1") as HTMLTableColElement)
+      ?.innerText).toLowerCase();
+
+    if (search1Value !== "") {
+      const tmpQ: any[] = [];
+      tmpQ.push("==");
+      tmpQ.push(search1Name);
+      tmpQ.push(parseInt(search1Value));
+      query.push(tmpQ);
     }
-    if (document.getElementById("WellName")) {
-      //get api value and operation
-      const nameValue = (
-        document.getElementById("WellName") as HTMLInputElement
-      )?.value;
-      if (nameValue != "") {
-        const tmpQ = [];
-        tmpQ.push("==");
-        tmpQ.push("wellname");
-        tmpQ.push(nameValue);
-        query.push(tmpQ);
-      }
+
+    //get api value and operation
+    const search2Value = (
+      document.getElementById("searchInput2") as HTMLInputElement
+    )?.value;
+    const search2Name = (
+      document.getElementById("search2") as HTMLTableColElement
+    )?.innerText.toLowerCase();
+
+    if (search2Value != "") {
+      const tmpQ = [];
+      tmpQ.push("==");
+      tmpQ.push(search2Name);
+      tmpQ.push(search2Value);
+      query.push(tmpQ);
     }
+
     //in case of query is not null, get data with query
     if (query.length > 0) {
       const tmp = map?.querySourceFeatures(layer, {
         filter: query,
       });
 
+      console.log(query);
+
       for (const each of tmp) {
+        
         const tmpEach: any[] = [];
-        tmpEach.push(each.properties.api);
-        tmpEach.push(each.properties.wellname);
-        tmpEach.push(each.properties.county);
-        tmpEach.push(each.properties.welltype);
+        if (field!=undefined){
+        tmpEach.push(each.properties[field[1].toLowerCase()]);
+        tmpEach.push(each.properties[field[2].toLowerCase()]);
+        tmpEach.push(each.properties[field[3].toLowerCase()]);
+        tmpEach.push(each.properties[field[4].toLowerCase()]);
         tmpEach.push(each.geometry.coordinates);
+        console.log(tmpEach); 
         if (tmpEach.length > 0) {
-          tmpArr[each.properties.api] = tmpEach;
-        }
+          tmpArr[each.properties[field[1].toLowerCase()]] = tmpEach;
+        }}
       }
 
       setresultDic(tmpArr);
@@ -83,55 +108,68 @@ function WellSearchResult() {
   };
 
   const addToResult = async (e: React.MouseEvent<HTMLElement>) => {
+    //get search layer from element searchBy
+    const layer =
+      (document.getElementById("searchBy") as HTMLInputElement)?.value + "InUT";
     const map = eMap.map;
     //get information from compareAPI and API elements for search by API
     const tmpArr: { [key: number]: any[] } = resultDic;
     //query=api:4300320047,wellName:abc
     const query: any[] = ["all"];
-    if (
-      document.getElementById("compareAPI") &&
-      document.getElementById("API")
-    ) {
-      //get api value and operation
-      const apiValue = (document.getElementById("API") as HTMLInputElement)
-        ?.value;
-      if (apiValue !== "") {
-        const tmpQ: any[] = [];
-        tmpQ.push("==");
-        tmpQ.push("api");
-        tmpQ.push(parseInt(apiValue));
-        query.push(tmpQ);
-      }
+
+    //get api value and operation
+    const search1Value = (
+      document.getElementById("searchInput1") as HTMLInputElement
+    )?.value;
+
+    const search1Name = ((document.getElementById("search1") as HTMLTableColElement)
+      ?.innerText).toLowerCase();
+
+    if (search1Value !== "") {
+      const tmpQ: any[] = [];
+      tmpQ.push("==");
+      tmpQ.push(search1Name);
+      tmpQ.push(parseInt(search1Value));
+      query.push(tmpQ);
     }
-    if (document.getElementById("WellName")) {
-      //get api value and operation
-      const nameValue = (
-        document.getElementById("WellName") as HTMLInputElement
-      )?.value;
-      if (nameValue != "") {
-        const tmpQ = [];
-        tmpQ.push("==");
-        tmpQ.push("wellname");
-        tmpQ.push(nameValue);
-        query.push(tmpQ);
-      }
+
+    //get api value and operation
+    const search2Value = (
+      document.getElementById("searchInput2") as HTMLInputElement
+    )?.value;
+    const search2Name = (
+      document.getElementById("search2") as HTMLTableColElement
+    )?.innerText.toLowerCase();
+
+    if (search2Value != "") {
+      const tmpQ = [];
+      tmpQ.push("==");
+      tmpQ.push(search2Name);
+      tmpQ.push(search2Value);
+      query.push(tmpQ);
     }
+
     //in case of query is not null, get data with query
     if (query.length > 0) {
       const tmp = map?.querySourceFeatures(layer, {
         filter: query,
       });
 
+      console.log(query);
+
       for (const each of tmp) {
+        
         const tmpEach: any[] = [];
-        tmpEach.push(each.properties.api);
-        tmpEach.push(each.properties.wellname);
-        tmpEach.push(each.properties.county);
-        tmpEach.push(each.properties.welltype);
+        if (field!=undefined){
+        tmpEach.push(each.properties[field[1].toLowerCase()]);
+        tmpEach.push(each.properties[field[2].toLowerCase()]);
+        tmpEach.push(each.properties[field[3].toLowerCase()]);
+        tmpEach.push(each.properties[field[4].toLowerCase()]);
         tmpEach.push(each.geometry.coordinates);
+        console.log(tmpEach); 
         if (tmpEach.length > 0) {
-          tmpArr[each.properties.api] = tmpEach;
-        }
+          tmpArr[each.properties[field[1].toLowerCase()]] = tmpEach;
+        }}
       }
 
       setresultDic(tmpArr);
@@ -152,22 +190,23 @@ function WellSearchResult() {
           const i = parseInt(
             event.target.parentElement!.childNodes[0].textContent
           );
-          const cor=resultList[i][4];
+          const cor = resultList[i][4];
 
-          const el = document.createElement('div');
-          el.className = 'marker';
-          new mapboxgl.Marker(el).setLngLat(cor).addTo(eMap.map)
+          const el = document.createElement("div");
+          el.className = "marker";
+          new mapboxgl.Marker(el).setLngLat(cor).addTo(eMap.map);
         }
       }
       if (event.type == "mouseout" && event.target.parentElement != null) {
         event.target.parentElement!.className = "";
-        const els=document.getElementsByClassName('marker');
+        const els = document.getElementsByClassName("marker");
         for (const el of els) {
-          el.className='markerdisabled';
+          el.className = "markerdisabled";
         }
       }
     }
   };
+
   return (
     <div>
       <div
@@ -200,29 +239,29 @@ function WellSearchResult() {
           </tr>
         </table>
       </div>
-      <div id="ReNumber">
+      <div id="ReNumber" style={{ overflow: "auto", padding: "2px" }}>
         Result total number is: {resultList.length}
         <table>
           <thead>
             <tr>
-              <th style={{ width: "3vw" }}>ItemNo.</th>
-              <th style={{ width: "5vw" }}>API</th>
-              <th style={{ width: "5vw" }}>WellName</th>
-              <th style={{ width: "5vw" }}>County</th>
-              <th style={{ width: "5vw" }}>WellType</th>
+              <th style={{ width: "3vw" }}>{field?.at(0)}</th>
+              <th style={{ width: "5vw" }}>{field?.at(1)}</th>
+              <th style={{ width: "5vw" }}>{field?.at(2)}</th>
+              <th style={{ width: "5vw" }}>{field?.at(3)}</th>
+              <th style={{ width: "5vw" }}>{field?.at(4)}</th>
             </tr>
           </thead>
         </table>
-        <div id="resultDic" style={{ overflow: "auto" }}>
-          {resultList.length > 0 &&
-            resultList.map((item: any) => (
-              <table>
+        <div id="resultDic">
+          <table>
+            {resultList.length > 0 &&
+              resultList.map((item: any) => (
                 <tr
                   style={{ border: "1px solid #e6e6e6" }}
                   onMouseOver={(e: React.MouseEvent<HTMLElement>) => handler(e)}
                   onMouseOut={(e: React.MouseEvent<HTMLElement>) => handler(e)}
                 >
-                  <td style={{ padding: 0, width: "5vw" }}>
+                  <td style={{ padding: 0, width: "20px" }}>
                     {resultList.indexOf(item)}
                   </td>
                   <td style={{ padding: 0, width: "5vw" }}>{item[0]}</td>
@@ -236,8 +275,8 @@ function WellSearchResult() {
                     {item[3]}
                   </td>
                 </tr>
-              </table>
-            ))}
+              ))}
+          </table>
         </div>
       </div>
     </div>

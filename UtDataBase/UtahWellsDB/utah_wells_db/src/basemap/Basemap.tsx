@@ -56,7 +56,7 @@ export function Wellmap(): any {
           </i>
           <div className='popover-message'>Layer Control2</div>
           {showing
-            ? <LayerControl id="inMapLegend2" layers={layers} onToggle={updateLayerVisibility} />
+            ? <LayerControl id="inMapLegend" layers={layers} onToggle={updateLayerVisibility} />
             : null
           }
         </div>

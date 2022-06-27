@@ -5,12 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import SearchBox from "./searchBox/SearchBox";
-import WellService from "./services/WellService";
 
 import Feedback from "feeder-react-feedback"; // import Feedback component
 import "feeder-react-feedback/dist/feeder-react-feedback.css"; // import stylesheet
 import Login from "./elements/logIn";
-import { Table } from "@mui/material";
 import Info from "./elements/info";
 
 const root = ReactDOM.createRoot(
