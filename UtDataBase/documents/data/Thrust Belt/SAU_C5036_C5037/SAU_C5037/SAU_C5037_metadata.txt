@@ -1,0 +1,430 @@
+Identification_Information:
+  Citation:
+    Citation_Information:
+      Title: SAU_C5037xxxx.shp (Greater Green River Basin (C5037) Storage Assessment Units for CO2 Sequestration)
+      Originator: United States Geological Survey (USGS)
+      Publication_Date: 2014
+      Geospatial_Data_Presentation_Form: vector digital data
+      Series_Information:
+        Series_Name: Shapefile
+        Issue_Identification: SAU_C5037xxxx.shp
+      Publication_Information:
+        Publication_Place: Reston, Virginia
+        Publisher: U.S. Geological Survey
+      Online_Linkage: <http://energy.usgs.gov/HealthEnvironment/EnergyProductionUse/GeologicCO2Sequestration.aspx>
+      Larger_Work_Citation:
+        Citation_Information:
+          Publication_Date: 2014
+          Title: Geologic Framework for the National Assessment of Carbon Dioxide Storage Resources-Greater Green River Basin, Wyoming, Colorado, and Utah, and Wyoming-Idaho-Utah Thrust Belt
+          Online_Linkage: <http://dx.doi.org/10.3133/ofr20121024E>
+          Series_Information:
+            Series_Name: USGS Open-File Report
+            Issue_Identification: OFR-2012-1024-E
+          Publication_Information:
+            Publication_Place: Reston, Virginia
+            Publisher: U.S. Geological Survey
+          Originator: Buursink, M.L.
+          Originator: Slucher, E.R.
+          Originator: Brennan, S.T.
+          Originator: Doolan, C.A.
+          Originator: Drake, R.M., II
+          Originator: Merrill, M.D.
+          Originator: Warwick, P.D.
+          Originator: Blondes, M.S.
+          Originator: Freeman, P.A.
+          Originator: Cahan, S.M.
+          Originator: DeVera, C.A.
+          Originator: Lohr, C.D.
+  Description:
+    Abstract: The storage assessment unit (SAU) is the fundamental unit used in the National Assessment of Geologic Carbon Dioxide Storage Resources project for the assessment of geologic CO2 storage resources. The SAU is shown here as a geographic boundary interpreted, defined, and mapped by the geologist responsible for the assessment interval. Individual storage SAUs are defined on the basis of common geologic and hydrologic characteristics. The resource that is assessed is the mass of CO2 that can be stored in the technically accessible pore volume of a storage formation. The technically accessible storage resource is one that may be available using present-day geological and engineering knowledge and technology for CO2 injection into geologic formations and therefore is not a total in-place resource estimate. The SAU boundary is defined geologically as the limits of the geologic elements that define the SAU, such as limits of reservoir rock, geologic structures, depth, and seal lithologies. The only exceptions to this are SAUs that border the international, or Federal-State water boundary. In these cases, the international or Federal-State water boundary forms part of the SAU boundary.
+    Purpose: The purpose of these files is to define and illustrate the geographic extent and geologic boundaries of the storage assessment units within the sedimentary basin, as required for the  National Assessment of Geologic Carbon Dioxide Storage Resources project. In 2007, the Energy Independence and Security Act (Public Law 110-140; URL <http://www.federalregister.gov/articles/2010/07/08/2010-16236/energy-independence-and-security-act-pub-l-110-140>) authorized the USGS to conduct a national assessment of geologic storage resources for CO2. The storage assessment units were used as the fundamental units for the assessment of CO2 geologic storage resources.
+    Supplemental_Information: Carbon dioxide storage assessment units within province C5037 (Greater Green River Basin) are listed below in Stratum Keywords by storage assessment unit name. The storage assessment unit boundaries define the combined geologic limits of each storage assessment unit and are described and defined in the text of the basin description publication. See Buursink and others (2014) for a description of how individual assessments were drawn; also see Brennan and others (2010) for a description on the USGS CO2 storage assessment methodology. (Brennan, S.T., Burruss, R.C., Merrill, M.D., Freeman, P.A., and Ruppert L.F., 2010, A probabilistic assessment methodology for the evaluation of geologic carbon dioxide storage: U.S. Geological Survey Open-File Report 2010-1127, 31 p., available only at <http://pubs.usgs.gov/of/2010/1127>). Buursink, M.L, Slucher, E.R., Brennan, S.T., Doolan, C.A., Drake, R.M., II, Merrill, M.D., Warwick, P.D., Blondes, M.S., Freeman, P.A., Cahan, S.M., DeVera, C.A., and Lohr, C.D., 2014, Geologic Framework for the National Assessment of Carbon Dioxide Storage Resources-Greater Green River Basin, Wyoming, Colorado, and Utah, and Wyoming-Idaho-Utah Thrust Belt, chap. E of Warwick, P.D., and Corum, M.D., eds., Geologic framework for the national assessment of carbon dioxide storage resources: U.S. Geological Survey Open-File Report 2012-1024-E, 50 p., available only at URL <http://dx.doi.org/10.3133/ofr20121024E>.
+  Time_Period_of_Content:
+    Time_Period_Information:
+      Single_Date/Time:
+        Calendar_Date: 2014
+    Currentness_Reference: publication date
+  Spatial_Domain:
+    Bounding_Coordinates:
+      West_Bounding_Coordinate: -110.8
+      East_Bounding_Coordinate: -106.6
+      North_Bounding_Coordinate: 43.4
+      South_Bounding_Coordinate: 39.9
+  Keywords:
+    Theme:
+      Theme_Keyword_Thesaurus: Energy Resources Keyword Thesaurus
+      Theme_Keyword: National Assessment of Geologic Carbon Dioxide Storage Resources
+      Theme_Keyword: U.S. Geological Survey World Energy Region 5
+      Theme_Keyword: CO2 Storage Resources
+      Theme_Keyword: Carbon Dioxide
+      Theme_Keyword: Resource Assessment
+      Theme_Keyword: Earth Science
+      Theme_Keyword: Natural Resources
+      Theme_Keyword: U.S. Geological Survey
+      Theme_Keyword: USGS
+      Theme_Keyword: Geology
+      Theme_Keyword: Storage Assessment Unit
+    Place:
+      Place_Keyword_Thesaurus: none
+      Place_Keyword: United States
+      Place_Keyword: U.S. Geological Survey World Energy Region 5
+      Place_Keyword: Greater Green River Basin
+      Place_Keyword: Wyoming
+      Place_Keyword: Colorado
+      Place_Keyword: Utah
+    Place:
+      Place_Keyword_Thesaurus: Augmented FIPS 10-4 and FIPS 6-4, version 1.0
+      Place_Keyword: US56
+      Place_Keyword: US08
+      Place_Keyword: US49
+    Place:
+      Place_Keyword_Thesaurus: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Place_Keyword: C503701 = Greater Green River Basin
+    Theme:
+      Theme_Keyword_Thesaurus: ISO 19115 Topic Category
+      Theme_Keyword: Geoscientific Information
+    Stratum:
+      Stratum_Keyword: Paleozoic Composite
+      Stratum_Keyword: Paleozoic Composite Deep
+      Stratum_Keyword: Nugget Sandstone
+      Stratum_Keyword: Nugget Sandstone Deep
+      Stratum_Keyword: Muddy Sandstone and Cloverly Formation
+      Stratum_Keyword: Muddy Sandstone and Cloverly Formation Deep
+      Stratum_Keyword: Frontier Sandstone
+      Stratum_Keyword: Frontier Sandstone Deep
+      Stratum_Keyword: Hilliard, Baxter, and Mancos Shales
+      Stratum_Keyword: Hilliard, Baxter, and Mancos Shales Deep
+      Stratum_Keyword: Mesaverde Group
+      Stratum_Keyword: Mesaverde Group Deep
+      Stratum_Keyword: Dad Member
+      Stratum_Keyword: Dad Member Deep
+      Stratum_Keyword_Thesaurus: National Assessment of Geologic Carbon Dioxide Storage Resources Storage Assessment Units
+    Temporal:
+      Temporal_Keyword: Ordovician
+      Temporal_Keyword: Devonian
+      Temporal_Keyword: Carboniferous
+      Temporal_Keyword: Pennsylvanian
+      Temporal_Keyword: Mississippian
+      Temporal_Keyword: Paleozoic
+      Temporal_Keyword: Triassic
+      Temporal_Keyword: Jurassic
+      Temporal_Keyword: Cretaceous
+      Temporal_Keyword: Tertiary
+      Temporal_Keyword: Paleocene
+      Temporal_Keyword: Eocene
+  Access_Constraints: None
+  Use_Constraints: None. Users of this geospatial database and geologic information derived therefrom should acknowledge the U.S. Geological Survey as the source of the data. Although software enables a user to display images at various scales, map data in this report should not be used at scales greater than 1:24,000.
+  Security_Information:
+    Security_Classification_System: None
+    Security_Classification: Unclassified
+    Security_Handling_Description: None
+  Point_of_Contact:
+    Contact_Information:
+      Contact_Person_Primary:
+        Contact_Person: Peter D. Warwick
+        Contact_Organization: U.S. Geological Survey, Eastern Energy Resources Science Center
+      Contact_Position: Research Geologist
+      Contact_Address:
+        Address_Type: mailing and physical address
+        Address: U.S. Geological Survey, 956 National Center, 12201 Sunrise Valley Drive
+        City: Reston
+        State_or_Province: Virginia
+        Postal_Code: 20192
+        Country: U.S.A.
+      Contact_Voice_Telephone: (703) 648-6469
+      Contact_Facsimile_Telephone: (703) 648-6419
+      Contact_Electronic_Mail_Address: pwarwick@usgs.gov
+  Native_Data_Set_Environment: Microsoft Windows Server 2008 R2 Version 6.1 (Build 7601) Service Pack 1; ESRI ArcGIS 10.0.2.3200
+  Status:
+    Progress: Complete
+    Maintenance_and_Update_Frequency: As needed
+Data_Quality_Information:
+  Attribute_Accuracy:
+    Attribute_Accuracy_Report: The storage assessment unit coverage is based on geological expertise and is as accurate as possible. The nine-digit number identifies the USGS-specific storage assessment unit. The preceding letter "C" refers to a carbon dioxide storage assessment unit and distinguishes it from USGS National Oil and Gas Assessment Project assessment units that may have similar numbers. The first digit after "C" of the code indicates the world region number (5), the following three digits (037) are the North America province number, the following two digits (C5037xx) are the basin number, and the last two digits (C503701xx) are the storage assessment unit number of that particular basin. For more detailed description of how the storage assessment unit boundary was drawn, refer to the Greater Green River Basin, Wyoming, Colorado, and Utah section of the Open-File Report by Buursink and others (2014).
+  Lineage:
+    Source_Information:
+      Source_Citation:
+        Citation_Information:
+          Originator: IHS Energy Group
+          Publication_Date: 20110120
+          Title: IHS Enerdeq U.S. well data
+          Geospatial_Data_Presentation_Form: tabular digital data
+          Publication_Information:
+            Publication_Place: Englewood, Colorado, U.S.A.
+            Publisher: IHS Energy Group
+          Online_Linkage: <http://www.ihs.com/products/oil-gas-information/data-access/enerdeq/browser.aspx>
+      Type_of_Source_Media: online
+      Source_Time_Period_of_Content:
+        Time_Period_Information:
+          Single_Date/Time:
+            Calendar_Date: 20110120
+        Source_Currentness_Reference: publication date
+      Source_Citation_Abbreviation: Well data
+      Source_Contribution: Source of all well records used to determine the depth and extent of specific SAUs.
+    Source_Information:
+      Source_Citation:
+        Citation_Information:
+          Originator: Nehring Associates, Inc.
+          Publication_Date: 2010
+          Title: The significant oil and gas fields of the United States
+          Geospatial_Data_Presentation_Form: tabular digital data
+          Publication_Information:
+            Publication_Place: Colorado Springs, CO
+            Publisher: Nehring Associates, Inc.
+          Online_Linkage: <http://www.nehringdatabase.com/>
+      Source_Time_Period_of_Content:
+        Time_Period_Information:
+          Single_Date/Time:
+            Calendar_Date: 2010
+        Source_Currentness_Reference: publication date
+      Source_Citation_Abbreviation: Reservoir data
+      Source_Contribution: Reservoir depths were used to help define the extent of the SAU boundary.
+    Process_Step:
+      Process_Description: Wells that have penetrated formations of interest in the Greater Green River Basin were retrieved from IHS Energy Group, WHCS database for wells (downloaded Jan 20, 2011, from IHS ENERDEQ), and Nehring Associates, Inc., Significant Oil and Gas Field File (2008 update). The boundaries of the storage assessment units were determined by the Greater Green River Basin Assessment team and were drawn on the basis of geologic characteristics and conditions favorable for carbon dioxide storage, such as reservoir characteristics, depth, water quality, seal rocks, and trapping mechanisms, that combine to distinguish SAUs from each other.
+      Process_Date: 2011
+    Process_Step:
+      Process_Description: Projection of the SAU boundaries was changed from: Datum: North American Datum 1983 (NAD83) Albers Conical Equal Area Projection XY Units : US FEET Ellipsoid: Clarke 1866 Central Meridian : -96.0000000 Latitude of Origin : 23.0000000 False Northing : 0.0 False Easting : 0.0 Northern Reference Latitude : 45.5000000 Southern Reference Latitude : 29.5000000 to the current geographic system and North American Datum of 1983 using ArcGIS 9.3 project tool.
+      Process_Date: 2011
+    Process_Step:
+      Process_Description: The attributes were added from the storage assessment output data file for the Greater Green River Basin. This output file is available at the URL to the  National Assessment of Geologic Carbon Dioxide Storage Resources project Online Homepage (see Distribution Information). See: Buursink, M.L, Slucher, E.R., Brennan, S.T., Doolan, C.A., Drake, R.M., II, Merrill, M.D., Warwick, P.D., Blondes, M.S., Freeman, P.A., Cahan, S.M., DeVera, C.A., and Lohr, C.D., 2014, Geologic framework for the national assessment of carbon dioxide storage resourcesGreater Green River Basin, Wyoming, Colorado, and Utah, and Wyoming-Idaho-Utah Thrust Belt, chap. E of Warwick, P.D., and Corum, M.D., eds., Geologic framework for the national assessment of carbon dioxide storage resources: U.S. Geological Survey Open-File Report 2012-1024-E, 50 p., available only at URL <http://dx.doi.org/10.3133/ofr20121024E>.
+      Process_Date: 2011
+      Process_Contact:
+        Contact_Information:
+          Contact_Person_Primary:
+            Contact_Person: Steven M. Cahan
+            Contact_Organization: U.S. Geological Survey, Eastern Energy Resources Science Center
+          Contact_Position: GIS Analyst
+          Contact_Address:
+            Address_Type: mailing and physical address
+            Address: U.S. Geological Survey MS 956, 12201 Sunrise Valley Drive
+            City: Reston
+            State_or_Province: Virginia
+            Postal_Code: 20192
+            Country: U.S.A.
+          Contact_Voice_Telephone: (703) 648-6435
+          Contact_Facsimile_Telephone: (703) 648-6419
+          Contact_Electronic_Mail_Address: scahan@usgs.gov
+  Logical_Consistency_Report: The storage assessment unit coverage was reviewed at multiple stages by the geologists and geographic information specialists. The storage assessment unit boundaries were checked for their geographic extent and compared to other storage assessment unit boundaries within their basin. Attribute tables and projections were also checked and are as accurate as possible.
+  Completeness_Report: The storage assessment unit was mapped in part on the data contained in the IHS Energy Group, WHCS database for wells (downloaded Jan 20, 2011, from IHS ENERDEQ), and the Nehring Associates, Inc., Significant Oil and Gas Field File (2008 update). The Nehring file has production through December 2008. There is a lag time between the data vintage and the publication date.
+  Positional_Accuracy:
+    Horizontal_Positional_Accuracy:
+      Horizontal_Positional_Accuracy_Report: The storage assessment unit boundary represents the gross boundary of the combined geologic elements that comprise the storage assessment unit. The boundaries of the storage assessment units were determined by the Greater Green River Basin Assessment Team, and were drawn on the basis of geologic characteristics and conditions favorable for carbon dioxide storage, such as reservoir characteristics, depth, water quality, seal rocks, and trapping mechanisms, that combine to distinguish SAUs from each other. In many cases the boundary was defined by consulting well data or existing paper copies of digital maps. Transformation of data from the data sources may have introduced errors in horizontal accuracy. The interval geologist was required to defend the geologic boundaries of each storage assessment unit in a formal geologic and storage assessment unit review meeting. The lateral position of the SAU boundary is generally considered to be accurate to plus or minus (+/-) 10 percent of the area defined by the SAU boundary. If the geologist is uncertain about the position of the boundary, a greater variation percentage may be used. The percentage of this uncertainty is recorded on the assessment input form that will be published with the SAU assessment results.
+Spatial_Data_Organization_Information:
+  Point_and_Vector_Object_Information:
+    SDTS_Terms_Description:
+      SDTS_Point_and_Vector_Object_Type: Complete chain
+      Point_and_Vector_Object_Count: 14
+    SDTS_Terms_Description:
+      SDTS_Point_and_Vector_Object_Type: Entity point
+    SDTS_Terms_Description:
+      SDTS_Point_and_Vector_Object_Type: GT-polygon composed of chains
+  Direct_Spatial_Reference_Method: Vector
+Spatial_Reference_Information:
+  Horizontal_Coordinate_System_Definition:
+    Geographic:
+      Latitude_Resolution: 0.000001
+      Longitude_Resolution: 0.000001
+      Geographic_Coordinate_Units: Decimal degrees
+    Geodetic_Model:
+      Horizontal_Datum_Name: North American Datum of 1983
+      Ellipsoid_Name: Geodetic Reference System 80
+      Semi-major_Axis: 6378137.0
+      Denominator_of_Flattening_Ratio: 298.257222
+Entity_and_Attribute_Information:
+  Detailed_Description:
+    Entity_Type:
+      Entity_Type_Label: SAU_(SAU_CODE)
+      Entity_Type_Definition: SAU features of the storage assessment unit code
+      Entity_Type_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+    Attribute:
+      Attribute_Label: FID
+      Attribute_Definition: Internal feature number
+      Attribute_Definition_Source: ESRI
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Sequential unique whole numbers that are automatically generated.
+    Attribute:
+      Attribute_Label: Shape
+      Attribute_Definition: Feature geometry
+      Attribute_Definition_Source: ESRI
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Coordinates defining the features.
+    Attribute:
+      Attribute_Label: SAU_CODE
+      Attribute_Definition: The nine-digit number identifies the U.S. Geological Survey-specific assessment unit. The preceding letter "C" refers to a carbon dioxide storage assessment unit and distinguishes it from USGS National Oil and Gas Assessment Project assessment units that may have similar numbers. The first digit after "C" of the code indicates the world region number (5), the following three digits (C5037) are the North America province number, the following two digits (C5037xx) are the basin number, and the last two digits (C503701xx) are the storage assessment unit number of that particular basin.
+      Attribute_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370101
+          Enumerated_Domain_Value_Definition: Paleozoic Composite
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370102
+          Enumerated_Domain_Value_Definition: Paleozoic Composite Deep
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370103
+          Enumerated_Domain_Value_Definition: Nugget Sandstone
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370104
+          Enumerated_Domain_Value_Definition: Nugget Sandstone Deep
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370105
+          Enumerated_Domain_Value_Definition: Muddy Sandstone and Cloverly Formation
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370106
+          Enumerated_Domain_Value_Definition: Muddy Sandstone and Cloverly Formation Deep
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370107
+          Enumerated_Domain_Value_Definition: Frontier Sandstone
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370108
+          Enumerated_Domain_Value_Definition: Frontier Sandstone Deep
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370109
+          Enumerated_Domain_Value_Definition: Hilliard, Baxter, and Mancos Shales
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370110
+          Enumerated_Domain_Value_Definition: Hilliard, Baxter, and Mancos Shales Deep
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370111
+          Enumerated_Domain_Value_Definition: Mesaverde Group
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370112
+          Enumerated_Domain_Value_Definition: Mesaverde Group Deep
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370113
+          Enumerated_Domain_Value_Definition: Dad Member
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50370114
+          Enumerated_Domain_Value_Definition: Dad Member Deep
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+    Attribute:
+      Attribute_Label: REGION
+      Attribute_Definition: U.S. Geological Survey World Region Name
+      Attribute_Definition_Source: U.S. Geological Survey World Energy Project; <http://energy.usgs.gov/OilGasAssessmentsData/WorldPetroleumAssessment.aspx>; downloadable data
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Unabbreviated descriptive text
+    Attribute:
+      Attribute_Label: PROVINCE
+      Attribute_Definition: U.S. Geological Survey World Energy Province
+      Attribute_Definition_Source: U.S. Geological Survey World Energy Project; <http://energy.usgs.gov/OilGasAssessmentsData/WorldPetroleumAssessment.aspx>; downloadable data
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Unabbreviated descriptive text
+    Attribute:
+      Attribute_Label: BASIN
+      Attribute_Definition: U.S. Geological Survey World Energy Basin
+      Attribute_Definition_Source: U.S. Geological Survey World Energy Project; <http://energy.usgs.gov/OilGasAssessmentsData/WorldPetroleumAssessment.aspx>; downloadable data
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Unabbreviated descriptive text
+    Attribute:
+      Attribute_Label: SAU_NAME
+      Attribute_Definition: Name of the storage assessment unit based on the storage formation name or interval
+      Attribute_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Unabbreviated descriptive text
+    Attribute:
+      Attribute_Label: SYSTEM
+      Attribute_Definition: Geologic age of the storage assessment unit
+      Attribute_Definition_Source: Geologic literature
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: Paleozoic
+          Enumerated_Domain_Value_Definition: Geologic system of the storage assessment unit based on geological literature as determined by the National Assessment of Geologic Carbon Dioxide Storage Resources project
+          Enumerated_Domain_Value_Definition_Source: U.S. Geological Survey Geologic Names Committee, 2010, Divisions of geologic timeMajor chronostratigraphic and geochronological units: U.S. Geological Survey Fact Sheet 2010-3059, 2 p., available only at URL <http://pubs.usgs.gov/fs/2010/3059/>
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: Triassic-Jurassic
+          Enumerated_Domain_Value_Definition: Geologic system of the storage assessment unit based on geological literature as determined by the National Assessment of Geologic Carbon Dioxide Storage Resources project
+          Enumerated_Domain_Value_Definition_Source: U.S. Geological Survey Geologic Names Committee, 2010, Divisions of geologic timeMajor chronostratigraphic and geochronological units: U.S. Geological Survey Fact Sheet 2010-3059, 2 p., available only at URL <http://pubs.usgs.gov/fs/2010/3059>
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: Cretaceous
+          Enumerated_Domain_Value_Definition: Geologic system of the storage assessment unit based on geological literature as determined by the National Assessment of Geologic Carbon Dioxide Storage Resources project
+          Enumerated_Domain_Value_Definition_Source: U.S. Geological Survey Geologic Names Committee, 2010, Divisions of geologic timeMajor chronostratigraphic and geochronological units: U.S. Geological Survey Fact Sheet 2010-3059, 2 p., available only at URL <http://pubs.usgs.gov/fs/2010/3059/>
+    Attribute:
+      Attribute_Label: ACRES
+      Attribute_Definition: Area in acres of the storage assessment unit
+      Attribute_Definition_Source: Calculated in ArcGIS
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Decimal number of the acreage
+Distribution_Information:
+  Distributor:
+    Contact_Information:
+      Contact_Organization_Primary:
+        Contact_Organization: USGS Information Services
+      Contact_Address:
+        Address_Type: mailing address
+        Address: Box 25286 Denver Federal Center
+        City: Denver
+        State_or_Province: Colorado
+        Postal_Code: 80225
+        Country: U.S.A.
+      Contact_Voice_Telephone: 1-888-ASK-USGS
+      Contact_Facsimile_Telephone: 303-202-4693
+      Contact_Electronic_Mail_Address: ask@usgs.gov
+      Contact_Instructions: The dataset is available at National Assessment of Geologic Carbon Dioxide Storage Resources project Online Homepage at <http://energy.usgs.gov/HealthEnvironment/EnergyProductionUse/GeologicCO2Sequestration.aspx>.
+  Resource_Description: Downloadable data
+  Distribution_Liability: None. This database, identified as Open-File Report 2012-1024-E, has been approved for release and publication by the Director of the U.S. Geological Survey. Although the database has been subjected to rigorous review and is substantially complete, the USGS reserves the right to revise the data pursuant to further analysis and review. Furthermore, it is released on condition that neither the USGS nor the United States Government may be held liable for any damages resulting from its authorized or unauthorized use. Although these data have been processed successfully on a computer system at the USGS, no warranty expressed or implied is made regarding the display or utility of the data on any other system, or for general or scientific purposes, nor shall the act of distribution constitute any such warranty. The USGS shall not be held liable for improper or incorrect use of the data described and/or contained herein. Any use of trade, product, or firm names is for descriptive purposes only and does not imply endorsement by the U.S. Government. Although this information product, for the most part, is in the public domain, it may also contain copyrighted materials as noted in the text. Permission to reproduce copyrighted items for other than personal use must be secured by the copyright owner.
+  Standard_Order_Process:
+    Digital_Form:
+      Digital_Transfer_Information:
+        Format_Name: Shapefile
+        Format_Information_Content: Storage assessment unit geographic features and attribute data
+        File_Decompression_Technique: unzip
+        Transfer_Size: 281 KB
+      Digital_Transfer_Option:
+        Online_Option:
+          Computer_Contact_Information:
+            Network_Address:
+              Network_Resource_Name: <http://energy.usgs.gov/HealthEnvironment/EnergyProductionUse/GeologicCO2Sequestration.aspx>
+          Access_Instructions: URL above links to a compressed file containing one or more storage assessment unit boundaries
+    Fees: None
+    Ordering_Instructions: These products can be downloaded individually using any one of the Network_Resource_Name URLs above. Each of these URLs provide access to various formats of these data.
+Metadata_Reference_Information:
+  Metadata_Contact:
+    Contact_Information:
+      Contact_Person_Primary:
+        Contact_Person: Steven M. Cahan
+        Contact_Organization: U.S. Geological Survey, Eastern Energy Resources Science Center
+      Contact_Position: GIS Analyst
+      Contact_Address:
+        Address_Type: mailing and physical address
+        Address: U.S. Geological Survey, MS 956, 12201 Sunrise Valley Drive
+        City: Reston
+        State_or_Province: Virginia
+        Postal_Code: 20192
+        Country: U.S.A.
+      Contact_Voice_Telephone: (703) 648-6435
+      Contact_Facsimile_Telephone: (703) 648-6419
+      Contact_Electronic_Mail_Address: scahan@usgs.gov
+  Metadata_Date: 20140123
+  Metadata_Standard_Name: FGDC Content Standards for Digital Geospatial Metadata
+  Metadata_Standard_Version: FGDC-STD-001-1998
+  Metadata_Time_Convention: local time
+  Metadata_Extensions:
+    Online_Linkage: <http://www.esri.com/metadata/esriprof/80.html>
+    Profile_Name: ESRI Metadata Profile

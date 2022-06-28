@@ -7,6 +7,7 @@ import config from "../aws-exports";
 import AWSAppSyncClient, { AUTH_TYPE } from "aws-appsync";
 import { MapControl } from "../basemap/exportMap";
 import mapboxgl from "mapbox-gl";
+import searchFields from "./SearchField";
 
 Amplify.configure(config);
 const eMap = MapControl[0];
@@ -15,18 +16,6 @@ const eMap = MapControl[0];
 function WellSearchResult() {
   const [resultDic, setresultDic] = useState<any>({});
   const [resultList, setresultList] = useState<any>([]);
-
-  const searchFields = new Map<string, string[]>();
-  searchFields.set("wells", ["No.", "API", "WellName", "County", "WellType"]);
-  //  , "epa_sector": "Other", "fuel": null, "co2_tonne": 51383, "co2_bio": null, "year": 2013, "data_source": "U.S. EPA GHG Reporting Program", "comments": null, "featid": 78 }, "geometry": { "type": "Point", "coordinates": [ -111.646375416999945, 40.247044129000074 ] } },
-
-  searchFields.set("CO2", [
-    "No.",
-    "Ghgrp_id",
-    "Source_name",
-    "City",
-    "CO2_tonne",
-  ]);
 
   const fieldID = (document.getElementById("searchBy") as HTMLInputElement)
     ?.value;
@@ -81,19 +70,17 @@ function WellSearchResult() {
         filter: query,
       });
 
-      console.log(query);
-
       for (const each of tmp) {
         const tmpEach: any[] = [];
         if (field != undefined) {
+          tmpEach.push(each.properties[field[0].toLowerCase()]);
           tmpEach.push(each.properties[field[1].toLowerCase()]);
           tmpEach.push(each.properties[field[2].toLowerCase()]);
           tmpEach.push(each.properties[field[3].toLowerCase()]);
-          tmpEach.push(each.properties[field[4].toLowerCase()]);
           tmpEach.push(each.geometry.coordinates);
           console.log(tmpEach);
           if (tmpEach.length > 0) {
-            tmpArr[each.properties[field[1].toLowerCase()]] = tmpEach;
+            tmpArr[each.properties[field[0].toLowerCase()]] = tmpEach;
           }
         }
       }
@@ -162,10 +149,10 @@ function WellSearchResult() {
       for (const each of tmp) {
         const tmpEach: any[] = [];
         if (field != undefined) {
+          tmpEach.push(each.properties[field[0].toLowerCase()]);
           tmpEach.push(each.properties[field[1].toLowerCase()]);
           tmpEach.push(each.properties[field[2].toLowerCase()]);
           tmpEach.push(each.properties[field[3].toLowerCase()]);
-          tmpEach.push(each.properties[field[4].toLowerCase()]);
           tmpEach.push(each.geometry.coordinates);
           console.log(tmpEach);
           if (tmpEach.length > 0) {
@@ -246,11 +233,11 @@ function WellSearchResult() {
         <table style={{ overflow: "auto", height: "100%" }} id="ReTable">
           <thead>
             <tr>
-              <th style={{ border: "1px solid #e6e6e6", width: "3vw",textAlign: "center" }}>{field?.at(0)}</th>
+              <th style={{ border: "1px solid #e6e6e6", width: "3vw",textAlign: "center" }}>No.</th>
+              <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(0)}</th>
               <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(1)}</th>
               <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(2)}</th>
               <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(3)}</th>
-              <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(4)}</th>
             </tr>
           </thead>
           {resultList.length > 0 &&

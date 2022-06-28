@@ -1,26 +1,49 @@
-import React, { useRef, useEffect, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
-import { useMap } from '../useMap/useMap';
+import React, { useRef, useEffect, useState } from "react";
+import mapboxgl from "mapbox-gl";
+import { useMap } from "../useMap/useMap";
 import s from "./Map.module.css";
 import { LayerControl } from "../layerControl/LayerControl";
 import ReactDOM from "react-dom";
-import AddressSearch from '../elements/addressSearch';
-import XySearch from '../elements/xySearch';
-import Buff from '../elements/bufferS';
-import PrintPage from '../elements/printPage';
-import LayerControlWhole from '../elements/layerControlWhole';
-import {MapControl} from './exportMap';
-//import {Source} from "react-map-gl";
-//import Layer from "react-mapbox-gl/lib-esm/layer"; // eslint-disable-line import/no-webpack-loader-syntax
+import AddressSearch from "../elements/addressSearch";
+import XySearch from "../elements/xySearch";
+import Buff from "../elements/bufferS";
+import PrintPage from "../elements/printPage";
+import LayerControlWhole from "../elements/layerControlWhole";
+import { MapControl } from "./exportMap";
+import searchFields from "../searchBox/SearchField";
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2xjbGVpIiwiYSI6ImNsMXV6czRnYjJkbnQzZG1qMHRxeGd0YmoifQ.mvtESpI1GCIdTrWSupNEIw';
+mapboxgl.accessToken =
+  "pk.eyJ1Ijoic2xjbGVpIiwiYSI6ImNsMXV6czRnYjJkbnQzZG1qMHRxeGd0YmoifQ.mvtESpI1GCIdTrWSupNEIw";
 
-const Popup = ({ featureName, featureNumber, field, type }: { featureName: any, featureNumber: any, field: any, type: any }) => (
+//Array.from(p).map( ([key, value]) => value * value )
+//key is layer name, value is an array of values for each feature from that layer
+//searchFields[key] is an array of table headers for each feature in the layer
+const Popup = ({ popDic }: { popDic: Map<string, any[][]> }) => (
   <div className="popup">
-    <p className="popField">WellName: {featureName}</p>
-    <p className="popField">API: {featureNumber}</p>
-    <p className="popField">WellType: {type}</p>
-    <p className="popField">FieldName: {field}</p>
+    {Array.from(popDic).map(([key, value]) => (
+      <div key={key} className="popupName">{key}
+      <table key={key} className="popupTable">
+        <thead>
+          <tr>
+            {searchFields.get(key.substring(0, key.length - 9))?.map((item: string) => (
+              <th key={item} className="popupHead">
+                {item}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        {value.map((eachV: any[]) => (
+          <tr key={eachV[0]} className="popupTr">
+            {eachV.map((tmpEachV: any) => (
+              <td key={tmpEachV} className="popupTd">
+                {tmpEachV}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </table>
+      </div>
+    ))}
   </div>
 );
 
@@ -39,7 +62,7 @@ export function Wellmap(): any {
   });
 
   class LayerControlWhole extends React.Component {
-    state = { showing: false };
+    state = { showing: true };
 
     render() {
       const { showing } = this.state;
@@ -51,57 +74,75 @@ export function Wellmap(): any {
             className="material-icons"
             id="layersIcon"
             uib-tooltip="Layers"
-            onClick={() => this.setState({ showing: !showing })}>
+            onClick={() => this.setState({ showing: !showing })}
+          >
             layers
           </i>
-          <div className='popover-message'>Layer Control2</div>
-          {showing
-            ? <LayerControl id="inMapLegend" layers={layers} onToggle={updateLayerVisibility} />
-            : null
-          }
+          <div className="popover-message">Layer Control</div>
+          {showing ? (
+            <LayerControl
+              id="inMapLegend"
+              layers={layers}
+              onToggle={updateLayerVisibility}
+            />
+          ) : null}
         </div>
-      )
+      );
     }
   }
 
-  map?.on("click", (e: { point: any; lngLat: any; }) => {
+  map?.on("click", (e: { point: any; lngLat: any }) => {
     if (map.getContainer == null) {
       return;
     }
     const bbox = [
       [e.point.x - 3, e.point.y - 3],
-      [e.point.x + 3, e.point.y + 3]
+      [e.point.x + 3, e.point.y + 3],
     ];
     const features = map?.queryRenderedFeatures(bbox, {
-      layers: ["wellsInUTLayer"],
+      layers: ["wellsInUTLayer","CO2InUTLayer","salineGridInUTLayer","salineInUTLayer","basinInUTLayer"],
     });
+
+    //{"layerName":[[ "API", "WellName", "County", "WellType"],[]]}
+    const popDic = new Map<string, any[][]>();
+
     if (features.length > 0) {
-      const feature = features[0];
-      {
-        // create popup node
-        const popupNode = document.createElement("div");
-        ReactDOM.render(
-          <Popup
-            featureName={feature?.properties?.wellname}
-            featureNumber={feature?.properties?.api} field={undefined} type={undefined} />,
-          popupNode
-        );
-        popUpRef.current
-          .setLngLat(e.lngLat)
-          .setDOMContent(popupNode)
-          .addTo(map);
+      /*id: undefined
+layer: {id: 'wellsInUTLayer', type: 'circle', source: 'wellsInUT', layout: {…}, paint: {…}}
+properties: {objectid_1: 2, objectid: 131719, api: 4304130006, wellname: 'Federal 42-24', operator: 'Energetics Inc', …}
+source: "wellsInUT"*/
+      for (const feature of features) {
+        const tmpLayer: string = feature?.layer?.id;
+        const keys: string[] = searchFields.get(
+          tmpLayer.substring(0, tmpLayer.length - 9)
+        )!;
+        //used to store feature in each layer in popDic
+        const tmpList: string[] = [];
+
+        for (const key of keys) {
+          tmpList.push(feature?.properties[key.toLowerCase()]);
+        }
+
+        if (!popDic.has(tmpLayer)) {
+          popDic.set(tmpLayer, []);
+        }
+        popDic.get(tmpLayer)!.push(tmpList);
       }
+      // create popup node
+      const popupNode = document.createElement("div");
+      console.log(popDic);
+      ReactDOM.render(<Popup popDic={popDic} />, popupNode);
+      popUpRef.current.setLngLat(e.lngLat).setDOMContent(popupNode).addTo(map);
     }
   });
 
-  map?.on('mousemove', (e: { point: any; lngLat: any; }) => {
-    document.getElementById('show-location')!.innerHTML =
+  map?.on("mousemove", (e: { point: any; lngLat: any }) => {
+    document.getElementById("show-location")!.innerHTML =
       // `e.lngLat` is the longitude, latitude geographical position of the event.
       JSON.stringify(e.lngLat.wrap());
   });
 
-  MapControl[2].control=LayerControlWhole;
-
+  MapControl[2].control = LayerControlWhole;
 
   return (
     <div className="well-map-wrapper">
@@ -121,7 +162,7 @@ export function Wellmap(): any {
               >
                 Map
               </td>
-              <td id="show-location"/>
+              <td id="show-location" />
               <td id="addressIconDiv" style={{ padding: "10px 5px" }}>
                 <AddressSearch />
               </td>
@@ -253,9 +294,7 @@ export function Wellmap(): any {
           </tbody>
         </table>
       </div>
-      <div id="map" className={s.map} ref={mapContainer}>
-      </div>
+      <div id="map" className={s.map} ref={mapContainer}></div>
     </div>
   );
 }
-

@@ -1,5 +1,6 @@
 import React from "react";
 import WellSearchResult from "./WellSearchResult";
+import searchFields from "./SearchField";
 
 function SearchBox(this: any): any {
   const clearSearch = async (fields: string ) => {
@@ -17,18 +18,6 @@ function SearchBox(this: any): any {
       ) as HTMLInputElement)!.placeholder = "Filter Input...";
     }
   };
-
-  const searchFields = new Map<string, string[]>();
-  searchFields.set("wells", ["No.", "API", "WellName", "County", "WellType"]);
-  //  , "epa_sector": "Other", "fuel": null, "co2_tonne": 51383, "co2_bio": null, "year": 2013, "data_source": "U.S. EPA GHG Reporting Program", "comments": null, "featid": 78 }, "geometry": { "type": "Point", "coordinates": [ -111.646375416999945, 40.247044129000074 ] } },
-
-  searchFields.set("CO2", [
-    "No.",
-    "Ghgrp_id",
-    "Source_name",
-    "City",
-    "CO2_tonne",
-  ]);
 
   const selectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const fieldID = (document.getElementById("searchBy") as HTMLInputElement)

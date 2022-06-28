@@ -1,0 +1,399 @@
+Identification_Information:
+  Citation:
+    Citation_Information:
+      Originator: United States Geological Survey (USGS)
+      Publication_Date: 2014
+      Title: Cell_C5036xxxx.shp (Wyoming-Idaho-Utah Thrust Belt (C5036) Well Density for CO2 Storage Assessment Units)
+      Geospatial_Data_Presentation_Form: vector digital data
+      Series_Information:
+        Series_Name: Shapefile
+        Issue_Identification: Cell_C5036xxxx.shp
+      Publication_Information:
+        Publication_Place: Reston, Virginia
+        Publisher: U.S. Geological Survey
+      Online_Linkage: <http://energy.usgs.gov/HealthEnvironment/EnergyProductionUse/GeologicCO2Sequestration.aspx>
+      Larger_Work_Citation:
+        Citation_Information:
+          Publication_Date: 2014
+          Title: Geologic Framework for the National Assessment of Carbon Dioxide Storage ResourcesGreater Green River Basin, Wyoming, Colorado, and Utah, and Wyoming-Idaho-Utah Thrust Belt
+          Series_Information:
+            Series_Name: USGS Open-File Report
+            Issue_Identification: OFR-2012-1024-E
+          Publication_Information:
+            Publication_Place: Reston, VA
+            Publisher: U.S. Geological Survey
+          Online_Linkage: <http://dx.doi.org/10.3133/ofr20121024e>
+          Originator: Buursink, M.L.
+          Originator: Slucher, E.R.
+          Originator: Brennan, S.T.
+          Originator: Doolan, C.A.
+          Originator: Drake, R.M., II
+          Originator: Merrill, M.D.
+          Originator: Warwick, P.D.
+          Originator: Blondes, M.S.
+          Originator: Freeman, P.A.
+          Originator: Cahan, S.M.
+          Originator: DeVera, C.A.
+          Originator: Lohr, C.D.
+  Description:
+    Abstract: Drilling-density cell maps show the number of wells that have been drilled into the storage assessment unit (SAU). Each 1-square-mile cell has a count for the number of unique well boreholes drilled into the SAU. For a given sedimentary basin, the National Assessment of Geologic Carbon Dioxide Storage Resources project identifies SAUs containing the potential for storage and sequestration of carbon dioxide. Proprietary well header data from IHS ENERDEQ through 2010 were queried to determine which wells were drilled into specific SAUs. The coordinates of wells are proprietary and cannot be released; however, counts of the number of wells per square mile are presented in the well drilling density data layer.
+    Purpose: The purpose of the drilling-density cell map is to identify the amount of drilling that has occurred through 2010. The well density is the number of unique well boreholes drilled per square-mile cell into the SAU as reported to or collected by IHS, Inc. Drilling-density cell maps are generated for each SAU as part of the National Assessment of Geologic Carbon Dioxide Storage Resources project. In 2007, the Energy Independence and Security Act (Public Law 110-140; see: <http://www.federalregister.gov/articles/2010/07/08/2010-16236/energy-independence-and-security-act-pub-l-110-140>) authorized the USGS to conduct a national assessment of geologic storage resources for CO2.
+    Supplemental_Information: Drilling-density cell maps for specific SAUs within the Wyoming-Idaho-Utah Thrust Belt are listed below in Stratum Keywords by storage assessment unit name. The following is a description of the online linkage URL: <http://dx.doi.org/10.3133/ofr20121024e> GIS data download page for Wyoming-Idaho-Utah Thrust Belt CO2 Storage Assessment data (C5036). Also see the following report: Buursink, M.L., Slucher, E.R., Brennan, S.T., Doolan, C.A., Drake, R.M., II, Merrill, M.D., Warwick, P.D., Blondes, M.S., Freeman, P.A., Cahan, S.M., DeVera, C.A., Lohr, C.D., 2014, Geologic framework for the national assessment of carbon dioxide storage resourcesGreater Green River Basin, Wyoming, Colorado, and Utah, and Wyoming-Idaho-Utah Thrust Belt, chap. E of Warwick, P.D., and Corum, M.D., eds., Geologic framework for the national assessment of carbon dioxide storage resources: U.S. Geological Survey Open-File Report 2012-1024-E, 50 p., available only at URL <http://dx.doi.org/10.3133/ofr20121024e>.
+  Keywords:
+    Theme:
+      Theme_Keyword_Thesaurus: Energy Resources Keyword Thesaurus
+      Theme_Keyword: National Assessment of Geologic Carbon Dioxide Storage Resources
+      Theme_Keyword: U.S. Geological Survey World Energy Region 5
+      Theme_Keyword: CO2 Storage Resources
+      Theme_Keyword: Carbon Dioxide
+      Theme_Keyword: Resource Assessment
+      Theme_Keyword: Earth Science
+      Theme_Keyword: Natural Resources
+      Theme_Keyword: U.S. Geological Survey
+      Theme_Keyword: USGS
+      Theme_Keyword: Cell Map
+      Theme_Keyword: Drilling Density
+      Theme_Keyword: Well Density
+    Place:
+      Place_Keyword_Thesaurus: none
+      Place_Keyword: United States
+      Place_Keyword: Wyoming-Idaho-Utah Thrust Belt
+      Place_Keyword: Wyoming
+      Place_Keyword: Idaho
+      Place_Keyword: Utah
+      Place_Keyword: U.S. Geological Survey World Energy Region 5
+    Place:
+      Place_Keyword_Thesaurus: Augmented FIPS 10-4 and FIPS 6-4, version 1.0
+      Place_Keyword: US46
+      Place_Keyword: US16
+      Place_Keyword: US49
+    Theme:
+      Theme_Keyword_Thesaurus: ISO 19115 Topic Category
+      Theme_Keyword: Geoscientific Information
+    Place:
+      Place_Keyword_Thesaurus: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Place_Keyword: C503601 = Wyoming-Idaho-Utah Thrust Belt
+    Stratum:
+      Stratum_Keyword_Thesaurus: National Assessment of Geologic Carbon Dioxide Storage Resources Storage Assessment Units
+      Stratum_Keyword: Paleozoic Composite
+      Stratum_Keyword: Paleozoic Composite Deep
+      Stratum_Keyword: Nugget Sandstone
+      Stratum_Keyword: Nugget Sandstone Deep
+      Stratum_Keyword: Bear River Formation
+      Stratum_Keyword: Bear River Formation Deep
+      Stratum_Keyword: Frontier Sandstone
+      Stratum_Keyword: Frontier Sandstone Deep
+    Temporal:
+      Temporal_Keyword_Thesaurus: none
+      Temporal_Keyword: Paleozoic
+      Temporal_Keyword: Triassic
+      Temporal_Keyword: Jurassic
+      Temporal_Keyword: Cretaceous
+  Time_Period_of_Content:
+    Time_Period_Information:
+      Single_Date/Time:
+        Calendar_Date: 2014
+    Currentness_Reference: publication date
+  Status:
+    Progress: Complete
+    Maintenance_and_Update_Frequency: As needed
+  Spatial_Domain:
+    Bounding_Coordinates:
+      West_Bounding_Coordinate: -112.3
+      East_Bounding_Coordinate: -110.3
+      North_Bounding_Coordinate: 43.9
+      South_Bounding_Coordinate: 40.6
+  Access_Constraints: None
+  Use_Constraints: None. Users of this geospatial database and geologic information derived therefrom should acknowledge the U.S. Geological Survey as the source of the data. Although software enables a user to display images at various scales, map data in this report should not be used at scales greater than 1:24,000.
+  Point_of_Contact:
+    Contact_Information:
+      Contact_Person_Primary:
+        Contact_Person: Peter D. Warwick
+        Contact_Organization: U.S. Geological Survey, Eastern Energy Resources Science Center
+      Contact_Position: Research Geologist
+      Contact_Address:
+        Address_Type: mailing and physical address
+        Address: U.S. Geological Survey, 956 National Center, 12201 Sunrise Valley Drive
+        City: Reston
+        State_or_Province: Virginia
+        Postal_Code: 20192
+        Country: U.S.A.
+      Contact_Voice_Telephone: (703) 648-6469
+      Contact_Facsimile_Telephone: (703) 648-6419
+      Contact_Electronic_Mail_Address: pwarwick@usgs.gov
+  Native_Data_Set_Environment: Microsoft Windows Server 2008 R2 Version 6.1 (Build 7601) Service Pack 1; ESRI ArcGIS 10.0
+  Security_Information:
+    Security_Classification_System: None
+    Security_Classification: Unclassified
+    Security_Handling_Description: None
+Data_Quality_Information:
+  Attribute_Accuracy:
+    Attribute_Accuracy_Report: For the storage assessment unit, the nine-digit code identifies the USGS-specific storage assessment unit. The preceding letter "C" refers to a carbon dioxide storage assessment unit and distinguishes it from USGS National Oil and Gas Assessment Project assessment units that may have similar numbers. The first digit after "C" of the code indicates the world region number (5), the following three digits (036) are the North America province number, the following two digits (C5036xx) are the basin number, and the last two digits (C503601xx) are the storage assessment unit number of that particular basin. For each storage assessment unit, a well-density cell map displays the number of well penetrations per 1-square-mile cell into the storage formation. For more detailed description of how the storage assessment unit boundary was drawn or the well-density cell map, refer to the Wyoming-Idaho-Utah Thrust Belt section of the Open-File Report by Buursink and others (2014).
+  Logical_Consistency_Report: The drilling-density cell maps are derived from a compilation of well data in the proprietary IHS ENERDEQ database. Individual wells are assessed to determine whether the well penetrated the storage assessment unit of interest. Wells sharing the same well borehole are treated as a single penetration. This storage-assessment-unit-penetrating subset of all wells is then compared to a national cell map to calculate the number of wells or the density of wells per 1-square-mile cell. The cell density values have been compared to actual locations of wells.
+  Completeness_Report: The drilling-density cell maps are complete to the extent that specific information was reported by the well driller and subsequently included in the proprietary IHS ENERDEQ database. In the absence of reported data about the formation at total depth, oldest age penetrated, driller's total depth, true vertical depth, producing formation for initial production, completion and status information, and dates for spudding, completion, and abandonment, wells are conservatively eliminated from consideration for creating the drilling-density cell maps. Old historical drilling or nonpetroleum industry wells might not be included in the IHS well database; however, the minimum depth to a storage assessment unit is 3,000 feet.
+  Positional_Accuracy:
+    Horizontal_Positional_Accuracy:
+      Horizontal_Positional_Accuracy_Report: The drilling-density cell maps are derived from well data reported in the proprietary IHS ENERDEQ database. Surface locations of wells are used to calculate the well density per 1-square-mile cell. The horizontal accuracy depends on the accuracy of the position of the well reported in the database. Drilling density based on the surface is an approximation of the drilling density on top of the structure of the storage assessment unit.
+  Lineage:
+    Source_Information:
+      Source_Citation:
+        Citation_Information:
+          Originator: IHS Energy Group
+          Publication_Date: 20110120
+          Title: IHS Enerdeq U.S. well data
+          Geospatial_Data_Presentation_Form: tabular digital data
+          Publication_Information:
+            Publication_Place: Englewood, Colorado, U.S.A.
+            Publisher: IHS Energy Group
+          Online_Linkage: <http://www.ihs.com/products/oil-gas-information/data-access/enerdeq/browser.aspx>
+      Type_of_Source_Media: online
+      Source_Time_Period_of_Content:
+        Time_Period_Information:
+          Single_Date/Time:
+            Calendar_Date: 20110120
+        Source_Currentness_Reference: publication date
+      Source_Citation_Abbreviation: Well data
+      Source_Contribution: Source of all well records used to determine the drilling-density cell map or the count of wells drilled into specific SAUs.
+    Source_Information:
+      Source_Citation:
+        Citation_Information:
+          Originator: U.S. Geological Survey
+          Publication_Date: 2014
+          Title: National Geologic Carbon Dioxide Storage Resources project: Wyoming-Idaho-Utah Thrust Belt (C5036) Storage Assessment Units
+          Geospatial_Data_Presentation_Form: vector digital data
+          Publication_Information:
+            Publication_Place: Reston, Virginia
+            Publisher: U.S. Geological Survey
+          Online_Linkage: <http://energy.usgs.gov/HealthEnvironment/EnergyProductionUse/GeologicCO2Sequestration.aspx>
+          Larger_Work_Citation:
+            Citation_Information:
+              Publication_Date: 2014
+              Title: Geologic Framework for the National Assessment of Carbon Dioxide Storage ResourcesGreater Green River Basin, Wyoming, Colorado, and Utah, and Wyoming-Idaho-Utah Thrust Belt
+              Series_Information:
+                Series_Name: USGS Open-File Report
+                Issue_Identification: OFR-2012-1024-E
+              Publication_Information:
+                Publication_Place: Reston, Virginia
+                Publisher: U.S. Geological Survey
+              Online_Linkage: <http://dx.doi.org/10.3133/ofr20121024e>
+              Originator: Buursink, M.L.
+              Originator: Slucher, E.R.
+              Originator: Brennan, S.T.
+              Originator: Doolan, C.A.
+              Originator: Drake, R.M., II
+              Originator: Merrill, M.D.
+              Originator: Warwick, P.D.
+              Originator: Blondes, M.S.
+              Originator: Freeman, P.A.
+              Originator: Cahan, S.M.
+              Originator: DeVera, C.A.
+              Originator: Lohr, C.D.
+          Series_Information:
+            Series_Name: Shapefile
+            Issue_Identification: SAU_C5036xxxx.shp
+      Source_Time_Period_of_Content:
+        Time_Period_Information:
+          Single_Date/Time:
+            Calendar_Date: 2014
+        Source_Currentness_Reference: publication date
+      Type_of_Source_Media: online
+      Source_Citation_Abbreviation: SAU boundary
+      Source_Contribution: Storage assessment unit boundary used to clip wells in order to generate drilling-density cell map for respective SAU.
+    Process_Step:
+      Process_Description: Wells of the Wyoming-Idaho-Utah Thrust Belt were retrieved from IHS (downloaded Jan 20, 2011, from IHS ENERDEQ). Wells penetrating each storage assessment unit were identified.
+      Process_Date: 2013
+    Process_Step:
+      Process_Description: Projection of well data changed from North American Datum 1927 to North American Datum 1983 using ArcGIS 10.0 project tool and the NADCON_1927_1983 transformation.
+      Process_Date: 2013
+    Process_Step:
+      Process_Description: Well data clipped to storage assessment unit.
+      Process_Date: 2013
+    Process_Step:
+      Process_Description: Based on a spatial join of wells to a reference cell map, the number of wells drilled per 1-square-mile cell is calculated. The attributes were added from the storage assessment unit output data file for the Wyoming-Idaho-Utah Thrust Belt. This output file is available at the URL to the National Assessment of Geologic Carbon Dioxide Storage Resources Online Homepage (see Distribution Information).
+      Process_Date: 2013
+Spatial_Data_Organization_Information:
+  Direct_Spatial_Reference_Method: Vector
+  Point_and_Vector_Object_Information:
+    SDTS_Terms_Description:
+      SDTS_Point_and_Vector_Object_Type: G-polygon
+      Point_and_Vector_Object_Count: 1154
+Spatial_Reference_Information:
+  Horizontal_Coordinate_System_Definition:
+    Geographic:
+      Latitude_Resolution: 0.000001
+      Longitude_Resolution: 0.000001
+      Geographic_Coordinate_Units: Decimal degrees
+    Geodetic_Model:
+      Horizontal_Datum_Name: North American Datum of 1983
+      Ellipsoid_Name: Geodetic Reference System 80
+      Semi-major_Axis: 6378137.000000
+      Denominator_of_Flattening_Ratio: 298.257222
+Entity_and_Attribute_Information:
+  Detailed_Description:
+    Entity_Type:
+      Entity_Type_Label: Cell_(SAU_CODE)
+      Entity_Type_Definition: Well-density cell feature for the storage assessment unit code
+      Entity_Type_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+    Attribute:
+      Attribute_Label: FID
+      Attribute_Definition: Internal feature number
+      Attribute_Definition_Source: ESRI
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Sequential unique whole numbers that are automatically generated
+    Attribute:
+      Attribute_Label: Shape
+      Attribute_Definition: Feature geometry
+      Attribute_Definition_Source: ESRI
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Coordinates defining the features
+    Attribute:
+      Attribute_Label: SAU_CODE
+      Attribute_Definition: The nine-digit code identifies the USGS-specific storage assessment unit. The preceding letter "C" refers to a carbon dioxide storage assessment unit and distinguishes it from USGS National Oil and Gas Assessment Project assessment units that may have similar numbers. The first digit after "C" of the code indicates the world region number (5), the following three digits (036) are the North America province number, the following two digits (C5036xx) are the basin number, and the last two digits (C503601xx) are the storage assessment unit number of that particular basin.
+      Attribute_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50360101
+          Enumerated_Domain_Value_Definition: Paleozoic Composite
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50360102
+          Enumerated_Domain_Value_Definition: Paleozoic Composite Deep
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50360103
+          Enumerated_Domain_Value_Definition: Nugget Sandstone
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50360104
+          Enumerated_Domain_Value_Definition: Nugget Sandstone Deep
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50360105
+          Enumerated_Domain_Value_Definition: Bear River Formation
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50360106
+          Enumerated_Domain_Value_Definition: Bear River Formation Deep
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50360107
+          Enumerated_Domain_Value_Definition: Frontier Sandstone
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: C50360108
+          Enumerated_Domain_Value_Definition: Frontier Sandstone Deep
+          Enumerated_Domain_Value_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+    Attribute:
+      Attribute_Label: REGION
+      Attribute_Definition: U.S. Geological Survey World Energy Region Name
+      Attribute_Definition_Source: U.S. Geological Survey World Energy Project; <http://energy.usgs.gov/OilGas/AssessmentsData/WorldPetroleumAssessment.aspx>; downloadable data
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Unabbreviated descriptive text
+    Attribute:
+      Attribute_Label: PROVINCE
+      Attribute_Definition: U.S. Geological Survey World Energy Province
+      Attribute_Definition_Source: U.S. Geological Survey World Energy Project; <http://energy.usgs.gov/OilGas/AssessmentsData/WorldPetroleumAssessment.aspx>; downloadable data
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Unabbreviated descriptive text
+    Attribute:
+      Attribute_Label: BASIN
+      Attribute_Definition: U.S. Geological Survey World Energy Basin
+      Attribute_Definition_Source: U.S. Geological Survey World Energy Project; <http://energy.usgs.gov/OilGas/AssessmentsData/WorldPetroleumAssessment.aspx>; downloadable data
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Unabbreviated descriptive text
+    Attribute:
+      Attribute_Label: SAU_NAME
+      Attribute_Definition: Name of the storage assessment unit based on the storage formation or interval
+      Attribute_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Unabbreviated descriptive text
+    Attribute:
+      Attribute_Label: SYSTEM
+      Attribute_Definition: Geologic age of the storage assessment unit
+      Attribute_Definition_Source: Geologic literature
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: Paleozoic
+          Enumerated_Domain_Value_Definition: Geologic system of the storage assessment unit based on geological literature as determined by the U.S. Geological Survey National Assessment of Geologic Carbon Dioxide Storage Resources project
+          Enumerated_Domain_Value_Definition_Source: U.S. Geological Survey Geologic Names Committee, 2010, Divisions of geologic timeMajor chronostratigraphic and geochronologic units: U.S. Geological Survey Fact Sheet 2010-3059, 2 p., available only at URL <http://pubs.usgs.gov/fs/2010/3059/>.
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: Triassic - Jurassic
+          Enumerated_Domain_Value_Definition: Geologic system of the storage assessment unit based on geological literature as determined by the U.S. Geological Survey National Assessment of Geologic Carbon Dioxide Storage Resources project
+          Enumerated_Domain_Value_Definition_Source: U.S. Geological Survey Geologic Names Committee, 2010, Divisions of geologic timeMajor chronostratigraphic and geochronologic units: U.S. Geological Survey Fact Sheet 2010-3059, 2 p., available only at URL <http://pubs.usgs.gov/fs/2010/3059/>.
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: Cretaceous
+          Enumerated_Domain_Value_Definition: Geologic system of the storage assessment unit based on geological literature as determined by the U.S. Geological Survey National Assessment of Geologic Carbon Dioxide Storage Resources project
+          Enumerated_Domain_Value_Definition_Source: U.S. Geological Survey Geologic Names Committee, 2010, Divisions of geologic timeMajor chronostratigraphic and geochronological units: U.S. Geological Survey Fact Sheet 2010-3059, 2 p., available only at URL <http://pubs.usgs.gov/fs/2010/3059>
+    Attribute:
+      Attribute_Label: DENSITY
+      Attribute_Definition: Number of wells per 1-square-mile cell
+      Attribute_Definition_Source: National Assessment of Geologic Carbon Dioxide Storage Resources project
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Integer defining the well density
+Distribution_Information:
+  Distributor:
+    Contact_Information:
+      Contact_Organization_Primary:
+        Contact_Organization: USGS Information Services
+      Contact_Address:
+        Address_Type: mailing address
+        Address: Box 25286 Denver Federal Center
+        City: Denver
+        State_or_Province: Colorado
+        Postal_Code: 80225
+        Country: U.S.A.
+      Contact_Voice_Telephone: 1-888-ASK-USGS
+      Contact_Facsimile_Telephone: 303-202-4693
+      Contact_Electronic_Mail_Address: ask@usgs.gov
+      Contact_Instructions: The dataset is available at National Geologic Carbon Dioxide Sequestration Assessment Project online homepage at <http://energy.usgs.gov/HealthEnvironment/EnergyProductionUse/GeologicCO2Sequestration.aspx>.
+  Resource_Description: Downloadable data
+  Distribution_Liability: None. This database, identified as Open-File Report 2012-1024-E, has been approved for release and publication by the Director of the U.S. Geological Survey. Although the database has been subjected to rigorous review and is substantially complete, the USGS reserves the right to revise the data pursuant to further analysis and review. Furthermore, it is released on condition that neither the USGS nor the United States Government may be held liable for any damages resulting from its authorized or unauthorized use. Although these data have been processed successfully on a computer system at the USGS, no warranty expressed or implied is made regarding the display or utility of the data on any other system, or for general or scientific purposes, nor shall the act of distribution constitute any such warranty. The USGS shall not be held liable for improper or incorrect use of the data described and/or contained herein. Any use of trade, product, or firm names is for descriptive purposes only and does not imply endorsement by the U.S. Government. Although this information product, for the most part, is in the public domain, it may also contain copyrighted materials as noted in the text. Permission to reproduce copyrighted items for other than personal use must be secured by the copyright owner.
+  Standard_Order_Process:
+    Digital_Form:
+      Digital_Transfer_Information:
+        Format_Name: Shapefile
+        Format_Information_Content: Drilling-density cell features and attribute data of storage assessment unit
+        File_Decompression_Technique: unzip
+        Transfer_Size: 132 KB
+      Digital_Transfer_Option:
+        Online_Option:
+          Computer_Contact_Information:
+            Network_Address:
+              Network_Resource_Name: <http://energy.usgs.gov/HealthEnvironment/EnergyProductionUse/GeologicCO2Sequestration.aspx>
+          Access_Instructions: The URL above links to a compressed file containing drilling-density cell maps for one or more storage assessment unit boundaries.
+    Fees: None
+    Ordering_Instructions: These products can be downloaded individually using any one of the Network_Resource_Name URLs above. Each of these URLs provide access to various formats of these data.
+Metadata_Reference_Information:
+  Metadata_Contact:
+    Contact_Information:
+      Contact_Position: Operations Research Analyst
+      Contact_Address:
+        Address_Type: mailing and physical address
+        Address: U.S. Geological Survey, 956 National Center, 12201 Sunrise Valley Drive
+        City: Reston
+        State_or_Province: Virginia
+        Postal_Code: 20192
+        Country: U.S.A.
+      Contact_Voice_Telephone: (703) 648-6447
+      Contact_Facsimile_Telephone: (703) 648-6419
+      Contact_Electronic_Mail_Address: pfreeman@usgs.gov
+      Contact_Instructions: For inquiries regarding this document, please include the metadata contact person's name, dataset name, and publication series and number.
+      Contact_Person_Primary:
+        Contact_Person: Philip Freeman
+        Contact_Organization: U.S. Geological Survey, Eastern Energy Resources Science Center
+  Metadata_Date: 20130221
+  Metadata_Standard_Name: FGDC Content Standards for Digital Geospatial Metadata
+  Metadata_Standard_Version: FGDC-STD-001-1998
+  Metadata_Time_Convention: local time
+  Metadata_Extensions:
+    Online_Linkage: <http://www.esri.com/metadata/esriprof80.html>
+    Profile_Name: ESRI Metadata Profile
