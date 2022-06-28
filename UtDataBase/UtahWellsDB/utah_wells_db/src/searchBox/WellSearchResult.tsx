@@ -47,8 +47,9 @@ function WellSearchResult() {
       document.getElementById("searchInput1") as HTMLInputElement
     )?.value;
 
-    const search1Name = ((document.getElementById("search1") as HTMLTableColElement)
-      ?.innerText).toLowerCase();
+    const search1Name = ((
+      document.getElementById("search1") as HTMLTableColElement
+    )?.innerText).toLowerCase();
 
     if (search1Value !== "") {
       const tmpQ: any[] = [];
@@ -83,18 +84,18 @@ function WellSearchResult() {
       console.log(query);
 
       for (const each of tmp) {
-        
         const tmpEach: any[] = [];
-        if (field!=undefined){
-        tmpEach.push(each.properties[field[1].toLowerCase()]);
-        tmpEach.push(each.properties[field[2].toLowerCase()]);
-        tmpEach.push(each.properties[field[3].toLowerCase()]);
-        tmpEach.push(each.properties[field[4].toLowerCase()]);
-        tmpEach.push(each.geometry.coordinates);
-        console.log(tmpEach); 
-        if (tmpEach.length > 0) {
-          tmpArr[each.properties[field[1].toLowerCase()]] = tmpEach;
-        }}
+        if (field != undefined) {
+          tmpEach.push(each.properties[field[1].toLowerCase()]);
+          tmpEach.push(each.properties[field[2].toLowerCase()]);
+          tmpEach.push(each.properties[field[3].toLowerCase()]);
+          tmpEach.push(each.properties[field[4].toLowerCase()]);
+          tmpEach.push(each.geometry.coordinates);
+          console.log(tmpEach);
+          if (tmpEach.length > 0) {
+            tmpArr[each.properties[field[1].toLowerCase()]] = tmpEach;
+          }
+        }
       }
 
       setresultDic(tmpArr);
@@ -122,8 +123,9 @@ function WellSearchResult() {
       document.getElementById("searchInput1") as HTMLInputElement
     )?.value;
 
-    const search1Name = ((document.getElementById("search1") as HTMLTableColElement)
-      ?.innerText).toLowerCase();
+    const search1Name = ((
+      document.getElementById("search1") as HTMLTableColElement
+    )?.innerText).toLowerCase();
 
     if (search1Value !== "") {
       const tmpQ: any[] = [];
@@ -158,18 +160,18 @@ function WellSearchResult() {
       console.log(query);
 
       for (const each of tmp) {
-        
         const tmpEach: any[] = [];
-        if (field!=undefined){
-        tmpEach.push(each.properties[field[1].toLowerCase()]);
-        tmpEach.push(each.properties[field[2].toLowerCase()]);
-        tmpEach.push(each.properties[field[3].toLowerCase()]);
-        tmpEach.push(each.properties[field[4].toLowerCase()]);
-        tmpEach.push(each.geometry.coordinates);
-        console.log(tmpEach); 
-        if (tmpEach.length > 0) {
-          tmpArr[each.properties[field[1].toLowerCase()]] = tmpEach;
-        }}
+        if (field != undefined) {
+          tmpEach.push(each.properties[field[1].toLowerCase()]);
+          tmpEach.push(each.properties[field[2].toLowerCase()]);
+          tmpEach.push(each.properties[field[3].toLowerCase()]);
+          tmpEach.push(each.properties[field[4].toLowerCase()]);
+          tmpEach.push(each.geometry.coordinates);
+          console.log(tmpEach);
+          if (tmpEach.length > 0) {
+            tmpArr[each.properties[field[1].toLowerCase()]] = tmpEach;
+          }
+        }
       }
 
       setresultDic(tmpArr);
@@ -239,45 +241,34 @@ function WellSearchResult() {
           </tr>
         </table>
       </div>
-      <div id="ReNumber" style={{ overflow: "auto", padding: "2px" }}>
+      <div id="ReNumber" style={{ overflow: "auto", height: "52vh",  padding: "2px" }}>
         Result total number is: {resultList.length}
-        <table>
+        <table style={{ overflow: "auto", height: "100%" }} id="ReTable">
           <thead>
             <tr>
-              <th style={{ width: "3vw" }}>{field?.at(0)}</th>
-              <th style={{ width: "5vw" }}>{field?.at(1)}</th>
-              <th style={{ width: "5vw" }}>{field?.at(2)}</th>
-              <th style={{ width: "5vw" }}>{field?.at(3)}</th>
-              <th style={{ width: "5vw" }}>{field?.at(4)}</th>
+              <th style={{ border: "1px solid #e6e6e6", width: "3vw",textAlign: "center" }}>{field?.at(0)}</th>
+              <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(1)}</th>
+              <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(2)}</th>
+              <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(3)}</th>
+              <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(4)}</th>
             </tr>
           </thead>
+          {resultList.length > 0 &&
+            resultList.map((item: any) => (
+              <tr
+                onMouseOver={(e: React.MouseEvent<HTMLElement>) => handler(e)}
+                onMouseOut={(e: React.MouseEvent<HTMLElement>) => handler(e)}
+              >
+                <td style={{ border: "1px solid #e6e6e6",padding: 0, width: "20px", textAlign: "center"}}>
+                  {resultList.indexOf(item)}
+                </td>
+                <td style={{ border: "1px solid #e6e6e6",padding: 0, width: "5vw", textAlign: "center"}}>{item[0]}</td>
+                <td style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center" }}>{item[1]}</td>
+                <td style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center" }}>{item[2]}</td>
+                <td style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center" }}>{item[3]}</td>
+              </tr>
+            ))}
         </table>
-        <div id="resultDic">
-          <table>
-            {resultList.length > 0 &&
-              resultList.map((item: any) => (
-                <tr
-                  style={{ border: "1px solid #e6e6e6" }}
-                  onMouseOver={(e: React.MouseEvent<HTMLElement>) => handler(e)}
-                  onMouseOut={(e: React.MouseEvent<HTMLElement>) => handler(e)}
-                >
-                  <td style={{ padding: 0, width: "20px" }}>
-                    {resultList.indexOf(item)}
-                  </td>
-                  <td style={{ padding: 0, width: "5vw" }}>{item[0]}</td>
-                  <td style={{ width: "5vw", textAlign: "center" }}>
-                    {item[1]}
-                  </td>
-                  <td style={{ width: "5vw", textAlign: "center" }}>
-                    {item[2]}
-                  </td>
-                  <td style={{ width: "5vw", textAlign: "center" }}>
-                    {item[3]}
-                  </td>
-                </tr>
-              ))}
-          </table>
-        </div>
       </div>
     </div>
   );

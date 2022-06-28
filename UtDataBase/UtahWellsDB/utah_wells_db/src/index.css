@@ -282,6 +282,10 @@ code {
   font-size: medium;
 }
 
+#ReTable .thead{
+
+}
+
 .Square {
   width: max-content;
   font-size: medium;

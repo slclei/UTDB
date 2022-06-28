@@ -85,7 +85,7 @@ root.render(
               </a>
             </td>
             <td className="login">
-              <Login signOut={undefined} />
+              
             </td>
           </tbody>
         </table>
