@@ -311,3 +311,9 @@ code {
   overflow: auto;
   text-align: center;
 }
+
+.popup{
+  position: absolute;
+  top:20%;
+  left:20%;
+}

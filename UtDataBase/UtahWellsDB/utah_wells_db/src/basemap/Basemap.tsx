@@ -11,6 +11,7 @@ import PrintPage from "../elements/printPage";
 import LayerControlWhole from "../elements/layerControlWhole";
 import { MapControl } from "./exportMap";
 import searchFields from "../searchBox/SearchField";
+import {Sources,Layers} from "../data/SpatialData";
 
 mapboxgl.accessToken =
   "pk.eyJ1Ijoic2xjbGVpIiwiYSI6ImNsMXV6czRnYjJkbnQzZG1qMHRxeGd0YmoifQ.mvtESpI1GCIdTrWSupNEIw";
@@ -18,10 +19,18 @@ mapboxgl.accessToken =
 //Array.from(p).map( ([key, value]) => value * value )
 //key is layer name, value is an array of values for each feature from that layer
 //searchFields[key] is an array of table headers for each feature in the layer
+console.log(Layers);
+const layerIndex=new Map<string, number>();
+layerIndex.set("wellsInUTLayer",0);
+layerIndex.set("salineInUTLayer",1);
+layerIndex.set("salineGridInUTLayer",2);
+layerIndex.set("CO2InUTLayer",3);
+layerIndex.set("basinInUTLayer",4);
+
 const Popup = ({ popDic }: { popDic: Map<string, any[][]> }) => (
   <div className="popup">
     {Array.from(popDic).map(([key, value]) => (
-      <div key={key} className="popupName">{key}
+      <div key={key} className="popupName">{Layers[layerIndex.get(key)!].name}
       <table key={key} className="popupTable">
         <thead>
           <tr>
