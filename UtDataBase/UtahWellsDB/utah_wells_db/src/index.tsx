@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, NavLink } from "react-router-dom";
 import SearchBox from "./searchBox/SearchBox";
 
 import Feedback from "feeder-react-feedback"; // import Feedback component
@@ -14,6 +14,9 @@ import Info from "./elements/info";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const egi = "https://www.egi.utah.edu/";
+const uu = "https://www.utah.edu";
 
 root.render(
   //<React.StrictMode>
@@ -35,58 +38,58 @@ root.render(
           }}
         >
           <tbody style={{ display: "block" }}>
-            <td className="header2Text">
-              <p>Utah CO2 Capture and Storeage</p>
-            </td>
-            <td style={{ width: "100%" }} />
-            <td className="icons">
-              <a
-                href="https://www.egi.utah.edu/"
-                tooltip-placement="bottom"
-                uib-tooltip="Google Home"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="material-icons">home</i>
-              </a>
-            </td>
-            <td className="icons">
-              <a
-                href="javascript: restart();"
-                tooltip-placement="bottom"
-                uib-tooltip="Restart Session"
-              >
-                <i className="material-icons">refresh</i>
-              </a>
-            </td>
-            <td id="alertIconDiv" className="icons">
-              <Info />
-            </td>
-            <td id="helpDiv" className="icons">
-              <a
-                href="javascript: help();"
-                tooltip-placement="bottom"
-                uib-tooltip="Help"
-              >
-                <i className="material-icons">help</i>
-              </a>
-            </td>
-            <td id="reportingIconDiv">
-              <a
-                id="reportTop"
-                tooltip-placement="bottom-right"
-                popover-is-open="reportPopoverOpen"
-                popover-trigger="outsideClick"
-                uib-tooltip="Reporting"
-                uib-popover-template="'reportingTemplate.html'"
-                popover-placement="bottom-right"
-              >
-                <i className="material-icons">folder</i>
-              </a>
-            </td>
-            <td className="login">
-              
-            </td>
+            <tr>
+              <td className="header2Text">
+                <p>Utah CO2 Capture and Storeage</p>
+              </td>
+              <td style={{ width: "100%" }} />
+              <td className="icons">
+                <a
+                  href={egi}
+                  tooltip-placement="bottom"
+                  uib-tooltip="Google Home"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i className="material-icons">home</i>
+                </a>
+              </td>
+              <td className="icons">
+                <NavLink
+                  to="#"
+                  onClick={(e) => e.preventDefault()}
+                  tooltip-placement="bottom"
+                >
+                  <i className="material-icons">refresh</i>
+                </NavLink>
+              </td>
+              <td id="alertIconDiv" className="icons">
+                <Info />
+              </td>
+              <td id="helpDiv" className="icons">
+                <NavLink
+                  to="#"
+                  onClick={(e) => e.preventDefault()}
+                  tooltip-placement="bottom"
+                >
+                  <i className="material-icons">help</i>
+                </NavLink>
+              </td>
+              <td id="reportingIconDiv">
+                <a
+                  id="reportTop"
+                  tooltip-placement="bottom-right"
+                  popover-is-open="reportPopoverOpen"
+                  popover-trigger="outsideClick"
+                  uib-tooltip="Reporting"
+                  uib-popover-template="'reportingTemplate.html'"
+                  popover-placement="bottom-right"
+                >
+                  <i className="material-icons">folder</i>
+                </a>
+              </td>
+              <td className="login"></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -115,13 +118,13 @@ root.render(
         {/*Credits*/}
         <div id="credits">
           Development support provided by: the{" "}
-          <a href="https://www.egi.utah.edu/" target="_blank" rel="noreferrer">
+          <NavLink to={egi} onClick={(e) => e.preventDefault()}>
             Energy and geoscience institute
-          </a>
+          </NavLink>
           , and the{" "}
-          <a href="https://www.utah.edu/" target="_blank" rel="noreferrer">
+          <NavLink to={uu} onClick={(e) => e.preventDefault()}>
             University of Utah
-          </a>
+          </NavLink>
           .&nbsp;&nbsp;&nbsp;
         </div>
       </div>

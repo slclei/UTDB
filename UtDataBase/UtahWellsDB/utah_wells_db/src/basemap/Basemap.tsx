@@ -4,6 +4,7 @@ import { useMap } from "../useMap/useMap";
 import s from "./Map.module.css";
 import { LayerControl } from "../layerControl/LayerControl";
 import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import AddressSearch from "../elements/addressSearch";
 import XySearch from "../elements/xySearch";
 import Buff from "../elements/bufferS";
@@ -11,7 +12,7 @@ import PrintPage from "../elements/printPage";
 import LayerControlWhole from "../elements/layerControlWhole";
 import { MapControl } from "./exportMap";
 import searchFields from "../searchBox/SearchField";
-import {Sources,Layers} from "../data/SpatialData";
+import { Sources, Layers } from "../data/SpatialData";
 
 mapboxgl.accessToken =
   "pk.eyJ1Ijoic2xjbGVpIiwiYSI6ImNsMXV6czRnYjJkbnQzZG1qMHRxeGd0YmoifQ.mvtESpI1GCIdTrWSupNEIw";
@@ -19,38 +20,43 @@ mapboxgl.accessToken =
 //Array.from(p).map( ([key, value]) => value * value )
 //key is layer name, value is an array of values for each feature from that layer
 //searchFields[key] is an array of table headers for each feature in the layer
-console.log(Layers);
-const layerIndex=new Map<string, number>();
-layerIndex.set("wellsInUTLayer",0);
-layerIndex.set("salineInUTLayer",1);
-layerIndex.set("salineGridInUTLayer",2);
-layerIndex.set("CO2InUTLayer",3);
-layerIndex.set("basinInUTLayer",4);
+
+const layerIndex = new Map<string, number>();
+layerIndex.set("wellsInUTLayer", 0);
+layerIndex.set("salineInUTLayer", 1);
+layerIndex.set("salineGridInUTLayer", 2);
+layerIndex.set("CO2InUTLayer", 3);
+layerIndex.set("basinInUTLayer", 4);
 
 const Popup = ({ popDic }: { popDic: Map<string, any[][]> }) => (
   <div className="popup">
     {Array.from(popDic).map(([key, value]) => (
-      <div key={key} className="popupName">{Layers[layerIndex.get(key)!].name}
-      <table key={key} className="popupTable">
-        <thead>
-          <tr>
-            {searchFields.get(key.substring(0, key.length - 9))?.map((item: string) => (
-              <th key={item} className="popupHead">
-                {item}
-              </th>
+      <div key={key} className="popupName">
+        {Layers[layerIndex.get(key)!].name}
+        <table className="popupTable">
+          <thead>
+            <tr>
+              {searchFields
+                .get(key.substring(0, key.length - 9))
+                ?.map((item: string) => (
+                  <th key={item} className="popupHead">
+                    {item}
+                  </th>
+                ))}
+            </tr>
+          </thead>
+          <tbody>
+            {value.map((eachV: any[]) => (
+              <tr key={eachV[0]} className="popupTr">
+                {eachV.map((tmpEachV: any) => (
+                  <td key={tmpEachV + "td"} className="popupTd">
+                    {tmpEachV}
+                  </td>
+                ))}
+              </tr>
             ))}
-          </tr>
-        </thead>
-        {value.map((eachV: any[]) => (
-          <tr key={eachV[0]} className="popupTr">
-            {eachV.map((tmpEachV: any) => (
-              <td key={tmpEachV} className="popupTd">
-                {tmpEachV}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </table>
+          </tbody>
+        </table>
       </div>
     ))}
   </div>
@@ -109,7 +115,13 @@ export function Wellmap(): any {
       [e.point.x + 3, e.point.y + 3],
     ];
     const features = map?.queryRenderedFeatures(bbox, {
-      layers: ["wellsInUTLayer","CO2InUTLayer","salineGridInUTLayer","salineInUTLayer","basinInUTLayer"],
+      layers: [
+        "wellsInUTLayer",
+        "CO2InUTLayer",
+        "salineGridInUTLayer",
+        "salineInUTLayer",
+        "basinInUTLayer",
+      ],
     });
 
     //{"layerName":[[ "API", "WellName", "County", "WellType"],[]]}
@@ -125,8 +137,10 @@ source: "wellsInUT"*/
         const keys: string[] = searchFields.get(
           tmpLayer.substring(0, tmpLayer.length - 9)
         )!;
+        
         //used to store feature in each layer in popDic
         const tmpList: string[] = [];
+        
 
         for (const key of keys) {
           tmpList.push(feature?.properties[key.toLowerCase()]);
@@ -137,11 +151,14 @@ source: "wellsInUT"*/
         }
         popDic.get(tmpLayer)!.push(tmpList);
       }
+      
       // create popup node
       const popupNode = document.createElement("div");
-      console.log(popDic);
-      ReactDOM.render(<Popup popDic={popDic} />, popupNode);
-      popUpRef.current.setLngLat(e.lngLat).setDOMContent(popupNode).addTo(map);
+      popupNode.id="popUp";
+      //ReactDOM.render(<Popup popDic={popDic} />, popupNode);
+      const popupRoot = createRoot(popupNode!);
+      popupRoot.render(<Popup popDic={popDic} />);
+      popUpRef.current.setLngLat(e.lngLat).setDOMContent(popupNode!).addTo(map);
     }
   });
 
@@ -172,6 +189,9 @@ source: "wellsInUT"*/
                 Map
               </td>
               <td id="show-location" />
+              <td style={{ padding: "10px 5px" }}>
+                <LayerControlWhole />
+              </td>
               <td id="addressIconDiv" style={{ padding: "10px 5px" }}>
                 <AddressSearch />
               </td>
@@ -293,9 +313,7 @@ source: "wellsInUT"*/
                   </i>
                 </div>
               </td>
-              <td style={{ padding: "10px 5px" }}>
-                <LayerControlWhole />
-              </td>
+              
               <td id="printIconDiv" style={{ padding: "10px 5px" }}>
                 <PrintPage />
               </td>

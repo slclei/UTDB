@@ -78,7 +78,7 @@ function WellSearchResult() {
           tmpEach.push(each.properties[field[2].toLowerCase()]);
           tmpEach.push(each.properties[field[3].toLowerCase()]);
           tmpEach.push(each.geometry.coordinates);
-          console.log(tmpEach);
+
           if (tmpEach.length > 0) {
             tmpArr[each.properties[field[0].toLowerCase()]] = tmpEach;
           }
@@ -91,6 +91,7 @@ function WellSearchResult() {
         tmpArr1.push(resultDic[key]);
       }
       setresultList(tmpArr1);
+      
     }
     return;
   };
@@ -144,8 +145,6 @@ function WellSearchResult() {
         filter: query,
       });
 
-      console.log(query);
-
       for (const each of tmp) {
         const tmpEach: any[] = [];
         if (field != undefined) {
@@ -154,9 +153,9 @@ function WellSearchResult() {
           tmpEach.push(each.properties[field[2].toLowerCase()]);
           tmpEach.push(each.properties[field[3].toLowerCase()]);
           tmpEach.push(each.geometry.coordinates);
-          console.log(tmpEach);
+
           if (tmpEach.length > 0) {
-            tmpArr[each.properties[field[1].toLowerCase()]] = tmpEach;
+            tmpArr[each.properties[field[0].toLowerCase()]] = tmpEach;
           }
         }
       }
@@ -212,48 +211,136 @@ function WellSearchResult() {
         className="headerRect"
       >
         <table>
-          <tr>
-            <td style={{ width: "50%" }}>
-              <Square
-                message={"Add to Result"}
-                onClick={(e: React.MouseEvent<HTMLElement>) => addToResult(e)}
-              />
-            </td>
-            <td>
-              <Square
-                message={"Filter New Result"}
-                onClick={(e: React.MouseEvent<HTMLElement>) => newResult(e)}
-              />
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td style={{ width: "50%" }}>
+                <Square
+                  message={"Add to Result"}
+                  onClick={(e: React.MouseEvent<HTMLElement>) => addToResult(e)}
+                />
+              </td>
+              <td>
+                <Square
+                  message={"Filter New Result"}
+                  onClick={(e: React.MouseEvent<HTMLElement>) => newResult(e)}
+                />
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
-      <div id="ReNumber" style={{ overflow: "auto", height: "52vh",  padding: "2px" }}>
+      <div
+        id="ReNumber"
+        style={{ overflow: "auto", height: "52vh", padding: "2px" }}
+      >
         Result total number is: {resultList.length}
         <table style={{ overflow: "auto", height: "100%" }} id="ReTable">
           <thead>
             <tr>
-              <th style={{ border: "1px solid #e6e6e6", width: "3vw",textAlign: "center" }}>No.</th>
-              <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(0)}</th>
-              <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(1)}</th>
-              <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(2)}</th>
-              <th style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center"}}>{field?.at(3)}</th>
+              <th
+                style={{
+                  border: "1px solid #e6e6e6",
+                  width: "3vw",
+                  textAlign: "center",
+                }}
+              >
+                No.
+              </th>
+              <th
+                style={{
+                  border: "1px solid #e6e6e6",
+                  width: "5vw",
+                  textAlign: "center",
+                }}
+              >
+                {field?.at(0)}
+              </th>
+              <th
+                style={{
+                  border: "1px solid #e6e6e6",
+                  width: "5vw",
+                  textAlign: "center",
+                }}
+              >
+                {field?.at(1)}
+              </th>
+              <th
+                style={{
+                  border: "1px solid #e6e6e6",
+                  width: "5vw",
+                  textAlign: "center",
+                }}
+              >
+                {field?.at(2)}
+              </th>
+              <th
+                style={{
+                  border: "1px solid #e6e6e6",
+                  width: "5vw",
+                  textAlign: "center",
+                }}
+              >
+                {field?.at(3)}
+              </th>
             </tr>
           </thead>
+
           {resultList.length > 0 &&
             resultList.map((item: any) => (
-              <tr
-                onMouseOver={(e: React.MouseEvent<HTMLElement>) => handler(e)}
-                onMouseOut={(e: React.MouseEvent<HTMLElement>) => handler(e)}
-              >
-                <td style={{ border: "1px solid #e6e6e6",padding: 0, width: "20px", textAlign: "center"}}>
-                  {resultList.indexOf(item)}
-                </td>
-                <td style={{ border: "1px solid #e6e6e6",padding: 0, width: "5vw", textAlign: "center"}}>{item[0]}</td>
-                <td style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center" }}>{item[1]}</td>
-                <td style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center" }}>{item[2]}</td>
-                <td style={{ border: "1px solid #e6e6e6",width: "5vw", textAlign: "center" }}>{item[3]}</td>
-              </tr>
+              <tbody  key={item[0] + "tbody"}>
+                <tr
+                  onMouseOver={(e: React.MouseEvent<HTMLElement>) => handler(e)}
+                  onMouseOut={(e: React.MouseEvent<HTMLElement>) => handler(e)}
+                >
+                  <td
+                    style={{
+                      border: "1px solid #e6e6e6",
+                      padding: 0,
+                      width: "20px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {resultList.indexOf(item)}
+                  </td>
+                  <td
+                    style={{
+                      border: "1px solid #e6e6e6",
+                      padding: 0,
+                      width: "5vw",
+                      textAlign: "center",
+                    }}
+                  >
+                    {item[0]}
+                  </td>
+                  <td
+                    style={{
+                      border: "1px solid #e6e6e6",
+                      width: "5vw",
+                      textAlign: "center",
+                    }}
+                  >
+                    {item[1]}
+                  </td>
+                  <td
+                    style={{
+                      border: "1px solid #e6e6e6",
+                      width: "5vw",
+                      textAlign: "center",
+                    }}
+                  >
+                    {item[2]}
+                  </td>
+                  <td
+                    style={{
+                      border: "1px solid #e6e6e6",
+                      width: "5vw",
+                      textAlign: "center",
+                    }}
+                  >
+                    {item[3]}
+                  </td>
+                </tr>
+              </tbody>
             ))}
         </table>
       </div>

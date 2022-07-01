@@ -4,7 +4,7 @@ import searchFields from "./SearchField";
 
 function SearchBox(this: any): any {
   const clearSearch = async (fields: string ) => {
-    console.log(fields);
+    
     if (fields === "all" || fields === "1") {
       (document.getElementById("searchInput1") as HTMLInputElement)!.value = "";
       (document.getElementById(
@@ -24,8 +24,8 @@ function SearchBox(this: any): any {
       ?.value;
     const field = searchFields.get(fieldID);
     if (field) {
-      document.getElementById("search1")!.innerText = field[1];
-      document.getElementById("search2")!.innerText = field[2];
+      document.getElementById("search1")!.innerText = field[0];
+      document.getElementById("search2")!.innerText = field[1];
     }
   };
 
@@ -38,6 +38,7 @@ function SearchBox(this: any): any {
       >
         <div className="headerRect">
           <table>
+            <tbody>
             <tr>
               <td style={{ padding: 10 }}>
                 <i className="material-icons">search</i>
@@ -54,6 +55,7 @@ function SearchBox(this: any): any {
                 </button>
               </td>
             </tr>
+            </tbody>
           </table>
         </div>
         <div id="searchContentDiv">
@@ -69,12 +71,13 @@ function SearchBox(this: any): any {
                         id="searchBy"
                         onChange={selectChange}
                         data-placeholder=" "
+                        defaultValue="wells"
                       >
                         <option value="CO2">CO2 Stationary Sources</option>
                         <option value="saline">Saline</option>
                         <option value="salineGrid">Saline Grid 10km</option>
                         <option value="basin">Sedimentary Basin</option>
-                        <option value="wells" selected={true}>
+                        <option value="wells">
                           Well
                         </option>
                       </select>
