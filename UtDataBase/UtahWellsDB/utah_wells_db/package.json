@@ -29,7 +29,7 @@
         "stream": false,
         "tls": false
     },
-    "proxy": "http://localhost:6123",
+    "proxy": "https://by0dhye7tl.execute-api.us-west-1.amazonaws.com/staging",
     "scripts": {
         "start": "webpack serve --config webpack.config.js --env env=dev",
         "build": "webpack --config webpack.config.js --env env=prod"

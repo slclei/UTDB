@@ -8,17 +8,18 @@ class App extends React.Component {
     data: null,
   };
 
-  
   componentDidMount() {
     this.callBackendAPI()
-      .then((res) => this.setState({ data: res.express }))
+      .then((res) => this.setState({ data: res.success }))
       .catch((err) => console.log(err));
   }
   // fetching the GET route from the Express server which matches the GET route from server.js
   callBackendAPI = async () => {
-    const response = await fetch("http://localhost:6123/api");
+    const response = await fetch(
+      "https://by0dhye7tl.execute-api.us-west-1.amazonaws.com/staging/server"
+    );
     const body = await response.json();
-    console.log(body);
+    console.log(body.success);
 
     if (response.status !== 200) {
       throw Error(body.message);
@@ -26,50 +27,28 @@ class App extends React.Component {
     return body;
   };
 
-  addButton=async(e: React.MouseEvent<HTMLElement>)=>{
-    const response = await fetch("/api");
+  addButton = async (e: React.MouseEvent<HTMLElement>) => {
+    const response = await fetch(
+      "https://by0dhye7tl.execute-api.us-west-1.amazonaws.com/staging/server"
+    );
     const body = await response.json();
-    this.setState({data: body.express});
+    this.setState({ data: body.success });
     console.log(body);
     return;
-
-  }
+  };
 
   public render() {
     return (
       <div>
-        <p className="App-intro">{this.state.data+"test"}</p>
-        <button onClick={(e: React.MouseEvent<HTMLElement>) => this.addButton(e)}>Get from api</button>
+        <p className="App-intro">{this.state.data + "test"}</p>
+        <button
+          onClick={(e: React.MouseEvent<HTMLElement>) => this.addButton(e)}
+        >
+          Get from api
+        </button>
         <Wellmap />
       </div>
     );
-    /*
-    return (
-        <div>
-             <nav className="navbar navbar-expand navbar-dark bg-dark">
-      <Link to={"/boreholes"} className="navbar-brand">
-        bezKoder
-      </Link>
-      <div className="navbar-nav mr-auto">
-        <li className="nav-item">
-          <Link to={"/boreholes/4304120208"} className="nav-link">
-            boreholes
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link to={"/add"} className="nav-link">
-            Add
-          </Link>
-        </li>
-      </div>
-    </nav>
-            <div>
-            <Routes>
-                <Route path="/boreholes/4304120208" element={<Boreholes/>}/>
-            </Routes>
-            </div>
-        </div>
-    );*/
   }
 }
 

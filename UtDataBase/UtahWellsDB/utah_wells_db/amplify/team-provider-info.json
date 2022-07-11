@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "utdbutdatabaseutahwe313d3bbc": {}
+      },
+      "function": {
+        "server": {
+          "deploymentBucketName": "amplify-amplify80f15160e17a4-staging-205830-deployment",
+          "s3Key": "amplify-builds/server-6857776e55594173314b-build.zip"
+        }
       }
     }
   }
