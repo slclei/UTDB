@@ -1,5 +1,5 @@
-//import welldata from "./wellsut.json";
-import welldata from "./wellsutless.json";
+import welldata from "./wellsut.json";
+//import welldata from "./wellsutless.json";
 import salinedata from "./JSON/salineUT.json";
 import CO2SSUT from "./JSON/CO2StationarySourcesUT.json";
 import Saline10kUT from "./JSON/Saline_10kUT.json";

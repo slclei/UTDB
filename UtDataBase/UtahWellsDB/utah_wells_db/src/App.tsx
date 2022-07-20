@@ -40,12 +40,6 @@ class App extends React.Component {
   public render() {
     return (
       <div>
-        <p className="App-intro">{this.state.data + "test"}</p>
-        <button
-          onClick={(e: React.MouseEvent<HTMLElement>) => this.addButton(e)}
-        >
-          Get from api
-        </button>
         <Wellmap />
       </div>
     );
