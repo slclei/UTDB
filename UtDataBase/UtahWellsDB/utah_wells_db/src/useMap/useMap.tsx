@@ -1,3 +1,6 @@
+//Load and display map with APIs form Mapbox
+//Function to change the Visibility of different layer
+
 import {useCallback, useEffect, useState, useRef} from "react";
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
 import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';

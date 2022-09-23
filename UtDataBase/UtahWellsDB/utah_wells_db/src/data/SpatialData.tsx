@@ -1,3 +1,5 @@
+//Module that import data from data source.
+
 import welldata from "./wellsut.json";
 //import welldata from "./wellsutless.json";
 import salinedata from "./JSON/salineUT.json";

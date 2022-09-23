@@ -1,3 +1,5 @@
+//JSX.Element for layer control function
+
 import React from 'react';
 import {
     Checkbox,

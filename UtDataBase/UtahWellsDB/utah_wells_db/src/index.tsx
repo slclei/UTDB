@@ -1,3 +1,4 @@
+//This renders the root element, which is the main frame of the database
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -5,10 +6,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, NavLink } from "react-router-dom";
 import SearchBox from "./searchBox/SearchBox";
-
 import Feedback from "feeder-react-feedback"; // import Feedback component
 import "feeder-react-feedback/dist/feeder-react-feedback.css"; // import stylesheet
-import Login from "./elements/logIn";
+//login function is not loaded (06/2022)
+//import Login from "./elements/logIn";
 import Info from "./elements/info";
 
 const root = ReactDOM.createRoot(

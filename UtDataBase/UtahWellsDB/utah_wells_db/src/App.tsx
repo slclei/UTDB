@@ -1,6 +1,7 @@
 import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+//import map from Wellmap
 import { Wellmap } from "./basemap/Basemap";
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
       .catch((err) => console.log(err));
   }
   // fetching the GET route from the Express server which matches the GET route from server.js
+  //used for update data from source automatically
   callBackendAPI = async () => {
     const response = await fetch(
       "https://by0dhye7tl.execute-api.us-west-1.amazonaws.com/staging/server"
@@ -27,6 +29,7 @@ class App extends React.Component {
     return body;
   };
 
+  //add a button for the function of testing server connection
   addButton = async (e: React.MouseEvent<HTMLElement>) => {
     const response = await fetch(
       "https://by0dhye7tl.execute-api.us-west-1.amazonaws.com/staging/server"

@@ -1,3 +1,5 @@
+//Set search fields for pop features according to different layers
+
 const searchFields = new Map<string, string[]>();
 searchFields.set("wells", [ "API", "WellName", "County", "WellType"]);
 

@@ -1,3 +1,7 @@
+//This file builds the base map with APIs from Mapbox.
+//Functions in the base map: display the axis for mouse over point; display related features in the mouse over point; change visiable of layers.
+//Other functions are impored from folder "elements"
+
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import { useMap } from "../useMap/useMap";
@@ -5,11 +9,13 @@ import s from "./Map.module.css";
 import { LayerControl } from "../layerControl/LayerControl";
 import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
+//Followings are elements in top right corner
 import AddressSearch from "../elements/addressSearch";
 import XySearch from "../elements/xySearch";
 import Buff from "../elements/bufferS";
 import PrintPage from "../elements/printPage";
 import LayerControlWhole from "../elements/layerControlWhole";
+
 import { MapControl } from "./exportMap";
 import searchFields from "../searchBox/SearchField";
 import { Sources, Layers } from "../data/SpatialData";
@@ -70,12 +76,14 @@ export function Wellmap(): any {
   const [height, setHight] = useState(1500);
   const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
 
+  //create map
   const { layers, map, updateLayerVisibility } = useMap(mapContainer, {
     style: "mapbox://styles/mapbox/outdoors-v11",
     center: [lng, lat],
     zoom: zoom,
   });
 
+  //control layer visibility
   class LayerControlWhole extends React.Component {
     state = { showing: true };
 
@@ -106,6 +114,7 @@ export function Wellmap(): any {
     }
   }
 
+  //click on map to display features in visible layers
   map?.on("click", (e: { point: any; lngLat: any }) => {
     if (map.getContainer == null) {
       return;
@@ -124,14 +133,9 @@ export function Wellmap(): any {
       ],
     });
 
-    //{"layerName":[[ "API", "WellName", "County", "WellType"],[]]}
     const popDic = new Map<string, any[][]>();
 
     if (features.length > 0) {
-      /*id: undefined
-layer: {id: 'wellsInUTLayer', type: 'circle', source: 'wellsInUT', layout: {…}, paint: {…}}
-properties: {objectid_1: 2, objectid: 131719, api: 4304130006, wellname: 'Federal 42-24', operator: 'Energetics Inc', …}
-source: "wellsInUT"*/
       for (const feature of features) {
         const tmpLayer: string = feature?.layer?.id;
         const keys: string[] = searchFields.get(
@@ -162,6 +166,7 @@ source: "wellsInUT"*/
     }
   });
 
+  //display location for mouse move
   map?.on("mousemove", (e: { point: any; lngLat: any }) => {
     document.getElementById("show-location")!.innerHTML =
       // `e.lngLat` is the longitude, latitude geographical position of the event.
