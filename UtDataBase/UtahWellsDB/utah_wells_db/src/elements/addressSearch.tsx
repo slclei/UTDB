@@ -1,9 +1,62 @@
+import { stringify } from 'querystring';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { MapControl } from '../basemap/exportMap';
 
 class AddressSearch extends React.Component {
 
+    accessToken =
+  "pk.eyJ1Ijoic2xjbGVpIiwiYSI6ImNsMXV6czRnYjJkbnQzZG1qMHRxeGd0YmoifQ.mvtESpI1GCIdTrWSupNEIw";
+
     state = { showing: false };
+    //<input type="text" class="mapboxgl-ctrl-geocoder--input" placeholder="Search" aria-label="Search">
+    //search element
+
+    //id="doSearchByAddress"    onClick={submit()}
+
+    submit(){
+      let searchText=(document.getElementById("txtAddress") as HTMLInputElement)
+      ?.value;
+
+      //let search=document.getElementsByClassName("mapboxgl-ctrl-geocoder--input")[0] as HTMLInputElement;
+      //console.log(search);
+      //search.value=searchText;
+      //search.userEvent("onclick");
+      let url="https://api.mapbox.com/geocoding/v5/mapbox.places/"+searchText+".json?"+"access_token="+this.accessToken;
+
+      let result=this.getData(url);
+      //console.log(this.searchXY);
+    }
+
+    //set url for geocode api
+    //https://api.mapbox.com/geocoding/v5/mapbox.places/{longitude},{latitude}.json
+    //id="txtAddress"
+
+    //// Center the map on the coordinates of any clicked circle from the 'circle' layer.
+    //map.on('click', 'circle', (e) => {
+    //map.flyTo({
+    //center: e.features[0].geometry.coordinates
+    //});
+    //});
+    getData(url: string) {
+      return fetch(url)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson.features[0].center);
+        const searchXY=responseJson.features[0].center;
+        const map=MapControl[0].map;
+        // Center the map on the coordinates of any clicked circle from the 'circle' layer.
+        
+        map.flyTo({
+        center: searchXY,
+        zoom: 18,
+        });
+        return responseJson.features[0].center;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+   }
 
     render() {
         const { showing } = this.state;
@@ -91,6 +144,7 @@ class AddressSearch extends React.Component {
                             style={{ cursor: "pointer", width: 100 }}
                             className="material-icons"
                             id="doSearchByAddress"
+                            onClick={(e: React.MouseEvent<HTMLElement>) => this.submit()}
                             >done</i>
                           <i
                             className="material-icons"

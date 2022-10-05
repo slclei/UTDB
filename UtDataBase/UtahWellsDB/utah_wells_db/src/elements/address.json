@@ -1,0 +1,30 @@
+{"type":"FeatureCollection",
+"query":["991","e","3665","s"],
+"features":[
+    {"id":"address.2896180660297924",
+"type":"Feature","place_type":["address"],"relevance":1,
+"properties":{"accuracy":"rooftop"},"text":"3665 South",
+"place_name":"991 3665 South, Millcreek, Utah 84106, United States",
+"center":[-111.862725,40.69194],
+"geometry":{"type":"Point","coordinates":[-111.862725,40.69194]},"address":"991",
+"context":[{"id":"postcode.287518444","text":"84106"},
+{"id":"place.213092588","text":"Millcreek"},
+{"id":"district.20457196","wikidata":"Q484556","text":"Salt Lake County"},
+{"id":"region.2886300008670350","short_code":"US-UT","wikidata":"Q829","text":"Utah"},
+{"id":"country.14135384517372290","wikidata":"Q30","short_code":"us","text":"United States"}]},
+
+
+
+{"id":"address.4389803410504230",
+"type":"Feature","place_type":["address"],"relevance":0.857333,
+"properties":{"accuracy":"interpolated"},"text":"Fm 991","place_name":"3665 Fm 991, Texarkana, Texas 75501, United States",
+"center":[-94.226325,33.40071],"geometry":{"type":"Point","coordinates":[-94.226325,33.40071],"interpolated":true},
+"address":"3665","context":[{"id":"postcode.4389803410504230","text":"75501"},
+{"id":"place.325044460","wikidata":"Q844020","text":"Texarkana"},{"id":"district.2041580","wikidata":"Q108612","text":"Bowie County"},
+{"id":"region.10297302913342410","short_code":"US-TX","wikidata":"Q1439","text":"Texas"},
+{"id":"country.14135384517372290","wikidata":"Q30","short_code":"us","text":"United States"}]},
+{"id":"address.7146494766835746","type":"Feature","place_type":["address"],"relevance":0.703704,
+"properties":{"accuracy":"interpolated"},"text":"E","place_name":"E 991, Heroica Guaymas, Sonora, Mexico",
+"center":[-110.906703,27.931162],"geometry":{"type":"Point","coordinates":[-110.906703,27.931162],"interpolated":true,"omitted":true},
+"address":"991","context":[{"id":"place.11815071","wikidata":"Q990001","text":"Heroica Guaymas"}}],
+"attribution":"NOTICE: © 2022 Mapbox and its suppliers. All rights reserved. Use of this data is subject to the Mapbox Terms of Service (https://www.mapbox.com/about/maps/). This response and the information it contains may not be retained. POI(s) provided by Foursquare."}

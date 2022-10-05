@@ -7,6 +7,8 @@ import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
 import MapService from "../services/MapService";
 import {Sources, Layers} from "../data/SpatialData";
 import {MapControl} from '../basemap/exportMap';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'; 
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 mapboxgl.workerClass = MapboxWorker;
 
@@ -112,6 +114,11 @@ export const useMap = (ref: any, mapConfig: any) => {
           map.getCanvas().style.cursor = '';
         });
 
+        map?.addControl(
+          new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl
+          })); 
         
       }
       if (shouldLoadData) {

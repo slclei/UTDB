@@ -1,15 +1,16 @@
 /* eslint-disable react/jsx-key */
 import React, { useState } from "react";
 import Square from "./Onclick";
-import Amplify from "aws-amplify";
-import config from "../aws-exports";
-//import welldata from '../data/wellUTforData.json';
-import AWSAppSyncClient, { AUTH_TYPE } from "aws-appsync";
+//These settings are for aws backend
+//import Amplify from "aws-amplify";
+//import config from "../aws-exports";
+import welldata from '../data/wellUTforData.json';
+//import AWSAppSyncClient, { AUTH_TYPE } from "aws-appsync";
 import { MapControl } from "../basemap/exportMap";
 import mapboxgl from "mapbox-gl";
 import searchFields from "./SearchField";
 
-Amplify.configure(config);
+//Amplify.configure(config);
 const eMap = MapControl[0];
 
 //get input from search parameters, and search result from target layer

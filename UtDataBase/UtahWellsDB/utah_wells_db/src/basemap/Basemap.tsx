@@ -20,6 +20,9 @@ import { MapControl } from "./exportMap";
 import searchFields from "../searchBox/SearchField";
 import { Sources, Layers } from "../data/SpatialData";
 
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'; 
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+
 mapboxgl.accessToken =
   "pk.eyJ1Ijoic2xjbGVpIiwiYSI6ImNsMXV6czRnYjJkbnQzZG1qMHRxeGd0YmoifQ.mvtESpI1GCIdTrWSupNEIw";
 
@@ -172,6 +175,8 @@ export function Wellmap(): any {
       // `e.lngLat` is the longitude, latitude geographical position of the event.
       JSON.stringify(e.lngLat.wrap());
   });
+
+  
 
   MapControl[2].control = LayerControlWhole;
 
